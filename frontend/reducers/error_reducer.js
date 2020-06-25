@@ -1,4 +1,4 @@
-import {combineReducers} from 'Redux'; 
+import {combineReducers} from 'redux'; 
 import sessionErrorReducer from './session_errors'
 
 const  errorReducer =combineReducers({
