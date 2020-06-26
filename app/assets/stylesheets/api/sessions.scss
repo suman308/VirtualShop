@@ -1,3 +1,151 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(177, 196, 211, 0.7);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
+
+.form-outermost {
+   display:block;
+   align-items: center;
+   min-height: 400px;
+   min-width: 370px;
+   background: #fffbfb;
+   border-radius:10px 10px;
+   box-shadow: 5px 10px 8px 10px #888888;
+}
+
+.session-submit{
+  display:block; 
+  background-color: rgb(105, 196, 77);
+  min-height: 50px;
+  min-width:310px;
+  color:white;
+  font-size: 20px;
+  align-self: center;
+  
+  
+  
+  
+  
+}
+.session-submit:hover{
+  background-color: rgb(97, 165, 84);
+  align-self: center;
+}
+
+.form-cancel{
+  display: flex;
+  box-shadow:rgb(177, 59, 59) ;
+  background-color: rgb(207, 35, 69);
+  height: 6px;
+  width: 6px;
+  padding:9px;
+  margin: 9px;
+  border-radius: 50%;
+  vertical-align: top;
+  
+}
+
+.close {
+  display:none;
+  width:6px;
+  height:6px;
+  text-align: center;
+  vertical-align:center;
+  font-size:15px;
+  position: relative;
+   color: rgb(95, 13, 13);
+}
+
+.form-cancel:hover .close {
+  display:block;
+  
+}
+
+
+
+
+.Input-container {
+  width: 300px;
+  height:50;
+  display:block; 
+  margin:10px;
+  border-radius: 4px;
+  border: whitesmoke;
+  
+}
+
+
+
+.login-input{
+  width:300px ;
+  min-height:30px;
+}
+
+.login-input:hover{
+  background-color: rgb(223, 240, 238);
+}
+
+.form-header {
+  display:flex; 
+  justify-content:space-between;
+}
+
+.title {
+  text-align: center;
+  color:rgb(53, 59, 53);
+  text-shadow: 0.5px 0.5px  #747272;
+  
+}
+
+.container {
+  display:block;
+  margin:10px;
+}
+
+.form-header{ 
+  background-color: rgb(103, 189, 255);
+ 
+}
+
+.session-submit:active{
+  background-color:rgb(85, 255, 255);
+  color:rgb(17, 20, 18);
+}
+
+.error-text{
+  color: red;
+
+}
+
+.login-signup {
+  display:flex; 
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 70px;
+  background-color: rgb(36, 166, 247);
+}
+
+.ls-button {
+  height:25px;
+  width:70px;
+  margin: 5px;
+  background-color:rgb(218, 216, 216);
+  border-radius:8px;
+}
+
