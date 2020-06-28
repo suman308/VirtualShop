@@ -15,8 +15,8 @@ const mapdt = dispatch => {
     return {
         processForm: (user) => dispatch(login(user)),
         otherForm: (
-            <button onClick={() => dispatch(openModal('signup'))}>
-                Signup
+            <button  className="session-submit3"   onClick={() => dispatch(openModal('signup'))}>
+                SIGN UP
             </button>
         ),
         closeModal: () => dispatch(closeModal())

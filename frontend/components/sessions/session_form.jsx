@@ -12,6 +12,8 @@ class SessionForm extends React.Component {
         }
 
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleDemo = this.handleDemo.bind(this)
+
     }
 
     update(type){
@@ -25,8 +27,16 @@ class SessionForm extends React.Component {
        e.preventDefault()
         const user = Object.assign({}, this.state)
         this.props.processForm(user).then(this.props.closeModal)
+        
     
       
+    }
+
+    handleDemo(e){
+         e.preventDefault();
+        const user = { username : "demo", email:'demoemail', password:"password"}
+         
+      this.props.processForm(user).then(this.props.closeModal)
     }
 
     displayErrors(){
@@ -47,21 +57,24 @@ class SessionForm extends React.Component {
     }
 
     render(){
-        const emailInput = (<input type="text" placeholder='Email' onChange={this.update('email')} className="login-input" />)
-
-            const display = (this.props.formType === 'signup') ? emailInput : ""
-            const name = (this.props.formType === 'signup' ? "SIGN UP FORM" : "SIGN IN FORM")
-            const actionType = (this.props.formType === 'signup' ? "REGISTER" : "LOGIN")
+            
+            const emailInput = (<div className='Input-container'>
+                    <label className="input-label">Email</label>
+                    <span className="astrix">*</span>
+                    <input type="text" value={this.state.email} onChange={this.update('email')} className="login-input" /> </div>)
+                    
+            const form = this.props.formType
+            const display = (form === 'signup' ? emailInput : null)
+            const name = (form === 'signup' ? "SIGN UP FORM" : "SIGN IN FORM")
+            const actionType = (form === 'signup' ? "REGISTER" : "LOGIN")
             const titleText  = <h2>{name}</h2>
+            
         return (
             
     <div className="form-outermost"> 
                 <div  className="form-header">
-                        <div> </div>
-                    <div className="form-cancel" onClick={this.props.closeModal}>
-                        
-                        <div  className="close"> X </div>
-                    </div>
+                    
+                 
                 </div>
                  
                 <div className="container">
@@ -76,35 +89,41 @@ class SessionForm extends React.Component {
                 <div className="container">
                    <form onSubmit={this.handleSubmit} className="session-form">
                          
-                
-
+            
                              <div className='Input-container'>
-
-                                     <input type="text" placeholder='Username' onChange={this.update('username')} className="login-input" />
+                                     <label className="input-label">Username</label>
+                                     <span className="astrix">*</span>
+                                     <input type="text" value={this.state.username} onChange={this.update('username')} className="login-input" />
                              </div>
 
 
                              <div className='Input-container'>
-
-                                     <input type="text" placeholder="Password" onChange={this.update('password')} className="login-input" />
-
-                             </div>
-
-
-                             <div className='Input-container'>
-                            
-                                 {display}
+                                    <label className="input-label">Password</label>
+                                    <span className="astrix">*</span>
+                                     <input type="password" value={this.state.password} onChange={this.update('password')} className="login-input" />
 
                              </div>
-                           
+
+
+                               { form === 'signup' ?  emailInput : null}
 
                             <div className='Input-container'>
-
-                                <input className="session-submit" type="submit" value={actionType} />
+                                <label className="input-label"></label>
+                            <button className="session-submit" type="submit" >{actionType}</button> 
 
                              </div>
-                                
-  
+
+                             <div className="Input-container">
+                                  
+                             </div>
+                             
+                            <div className='Input-container'> 
+                                 {form === 'login' ? <button className="session-submit2" onClick={this.handleDemo}>DEMO LOGIN</button> : null}
+                            </div>
+
+                            <div className='Input-container'>
+                                 {this.props.otherForm}
+                            </div>
                      </form>
 
                </div>
