@@ -7,8 +7,9 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(232, 239, 245, 0.7);
+  background: rgba(138, 142, 146, 0.7);
   z-index: 10;
+  
 }
 
 .modal-child {
@@ -24,9 +25,9 @@
    align-items: center;
    min-height: 500px;
    min-width: 370px;
-   background: #033a5cc2;
+   background: #d6e2f7;
    border-radius:10px 10px;
-   box-shadow: 5px 10px 8px 10px #8d8989;
+   box-shadow: 5px 10px 8px 10px #5c5a5a;
    opacity: 1;
    
   
@@ -175,7 +176,7 @@
   justify-content:space-between;
   align-items: center;
   min-height: 70px;
-  background-color: rgb(57, 109, 207);
+  background-color: rgba(213, 51, 219, 0.507);
 }
 
 
@@ -281,3 +282,4 @@ font-size: 20px;
   color:rgb(255, 60, 0);
 
 }
+
