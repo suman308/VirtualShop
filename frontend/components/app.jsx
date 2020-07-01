@@ -7,12 +7,21 @@ import ProductIndexContainer from '../components/products/product_Index_containe
 const App =()=> {
 return (
     <div className= 'background-image'> 
-       <header> 
-         <Modal/>
-         <GreetingContainer className="greeting"/>
-         <ProductIndexContainer className='Product-container'/>
-       </header>
-       
+          <header> 
+            <Modal/>
+            <GreetingContainer className="greeting"/>
+          </header>
+          
+
+    {/* <Switch>
+      <Route exact path="/products/:productId" component={ProductShowContainer} />
+      <Route exact path="/cart/:cardId" component={CartShowContainer} />
+      <Route exact path="/index" component={ProductIndexContainer} /> 
+    </Switch> */}
+
+
+
+
     </div>
 )
 }

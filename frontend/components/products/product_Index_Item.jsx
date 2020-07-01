@@ -10,7 +10,7 @@ function ProductIndexItem (props) {
                         <img src="" alt="" />
                         <imagecaption> {product.name}</imagecaption>
                 </figure> 
-
+                            
                 <div>
                         <h5>{productItem.price}</h5>
                         <h5>{productItem.rating}</h5>

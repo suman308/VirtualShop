@@ -13,14 +13,14 @@ class Api::UsersController < ApplicationController
     end
   end
     
-  
+
 
   def update 
       @user = User.find_by(id: params[:id]) 
       if @user && @user.update_attributes(user_params)
         render "api/users/show"
       elsif !@user 
-        render :json["the selected user cannot be found"] status: 422
+        render :json["the selected user cannot be found"], status: 422
       else 
           render json: @user.errors.full_messages, status: 422
       end 
