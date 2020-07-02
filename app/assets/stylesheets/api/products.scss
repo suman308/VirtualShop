@@ -1,3 +1,41 @@
 // Place all the styles related to the api/products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.productIndex {
+    display:flex-inline; 
+
+}
+.outer-most-box {
+    display: block;
+    height:200px; 
+    width:200px;
+    margin:100px;
+}
+
+
+
+.image-holder-box {
+    
+   height: 200px;
+   width: 200px;
+   border:solid rgb(213, 212, 214) 3px;
+   margin: 2px;
+ 
+}
+
+.name-of-pic {
+    display: block;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(253, 103, 62);
+    background-color: rgba(149, 250, 182, 0.397);
+    margin: 1px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.pic-price-holder {
+  display:block;
+
+}

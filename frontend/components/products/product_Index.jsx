@@ -8,11 +8,12 @@ class ProductIndex extends React.Component {
     }
 
     componentDidMount(){
-     this.props.getProducts
+
+     this.props.getProducts()
     }
     render() {
         const products = this.props.products
-        const display = products.map(product => <ProductIndexItem product={product} key={product.id}/>)
+        const display = products.map(product => <ProductIndexItem product={product} key={product.id} className="productIndex"/>)
         return (
             <ul>
                 {display}

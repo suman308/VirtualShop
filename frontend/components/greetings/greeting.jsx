@@ -1,5 +1,5 @@
 import React from  'react'; 
-
+import ProductIndexContainer from '../../components/products/product_Index_container'
 class Greeting extends React.Component {
    constructor(props){
        super(props)
@@ -21,12 +21,15 @@ class Greeting extends React.Component {
             );
 
             const personalGreeting = ()=> (
+                <div>
                 <div className="login-signup">
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
                       <span>
                         <button className="ls-button" onClick={logout}> Logout</button>
                       </span>
                       
+                </div>
+                    <ProductIndexContainer />
                 </div>
             )
             return (
