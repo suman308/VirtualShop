@@ -15,9 +15,14 @@ class ProductIndex extends React.Component {
         const products = this.props.products
         const display = products.map(product => <ProductIndexItem product={product} key={product.id} className="productIndex"/>)
         return (
-            <ul>
-                {display}
-            </ul>
+            <div className="fixed">
+                <ul className="all-products">
+                    {display}
+              </ul>
+                
+            </div>
+                
+            
               
         )
     }

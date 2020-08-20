@@ -8,8 +8,8 @@
 }
 .outer-most-box {
     display: block;
-    height:200px; 
-    width:200px;
+    height:300px; 
+    width:300px;
     margin:100px;
 }
 
@@ -17,8 +17,8 @@
 
 .image-holder-box {
     
-   height: 200px;
-   width: 200px;
+   height: 300px;
+   width: 300px;
    border:solid rgb(213, 212, 214) 3px;
    margin: 2px;
  
@@ -37,5 +37,18 @@
 
 .pic-price-holder {
   display:block;
+  background-color: rgba(135, 207, 235, 0.726);
+ border-radius: 10px;
+ text-align: center;
+ color:royalblue;
+}
+
+.all-products {
+    display:inline-block;
+    height: 1000px;
 
 }
+.fixed {
+    display:inline-block;
+}
+

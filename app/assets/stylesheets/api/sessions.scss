@@ -23,11 +23,11 @@
 .form-outermost {
    display:block;
    align-items: center;
-   min-height: 500px;
-   min-width: 370px;
-   background: #d6e2f7;
-   border-radius:10px 10px;
-   box-shadow: 5px 10px 8px 10px #5c5a5a;
+   min-height: 570px;
+   min-width: 360px;
+   background: #f8f8f8;
+   border-radius:4px 4px;
+   box-shadow: 1px 2.5px 2px 2.5px #9c9b9b;
    opacity: 1;
    
   
@@ -176,7 +176,7 @@
   justify-content:space-between;
   align-items: center;
   min-height: 70px;
-  background-color: rgba(213, 51, 219, 0.507);
+  background-color: rgb(233, 236, 236);
 }
 
 
@@ -204,16 +204,7 @@ font-size: 20px;
   position: relative;
   padding: 8px 10px;
   margin: 3px;
-	background-color: rgb(255, 6, 6); 
-  background-image: linear-gradient(rgb(231, 5, 5),rgb(248, 88, 88));
-  border-radius: 5px;
-  box-shadow: 0px 1px 4px -2px #333;
-  text-shadow: 0px -1px #333;
 
-  
-	color: #fff;
-	font-size: 13px;
-  font-family: sans-serif;
   
 }
 
@@ -242,7 +233,6 @@ font-size: 20px;
  .greeting {
    
    color: rgb(255, 5, 213);
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 10px #7bff6a, 0 0 13px #6aff7e, 0 0 15px#6aff72, 0 0 18px#6aff76, 0 0 20px #6aff83;
    font-size: 20px;
    margin-left: 15px;
  }

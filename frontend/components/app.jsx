@@ -6,7 +6,7 @@ import GreetingContainer from './greetings/greeting_container'
 const App =()=> {
 return (
   
-     <div className= 'background-image'> 
+     <div id= 'app'> 
           <header> 
               <Modal/>
               <GreetingContainer className="greeting"/> 
