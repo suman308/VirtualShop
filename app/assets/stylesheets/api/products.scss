@@ -7,48 +7,54 @@
 
 }
 .outer-most-box {
-    display: block;
-    height:300px; 
-    width:300px;
-    margin:100px;
+    display:block;
+    max-height:300px; 
+    max-width:300px;
 }
 
 
 
 .image-holder-box {
-    
-   height: 300px;
-   width: 300px;
-   border:solid rgb(213, 212, 214) 3px;
-   margin: 2px;
+   min-height: 100px;
+   min-width: 100px;
+   margin: 1px;
  
 }
 
 .name-of-pic {
     display: block;
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
-    color:rgb(253, 103, 62);
-    background-color: rgba(149, 250, 182, 0.397);
-    margin: 1px;
-    border-radius: 10px;
+    color:rgb(2, 2, 2);
+    margin: 3px;
     text-align: center;
 }
 
 .pic-price-holder {
-  display:block;
-  background-color: rgba(135, 207, 235, 0.726);
- border-radius: 10px;
+  display:inline-flex;
  text-align: center;
- color:royalblue;
+ color:rgb(8, 8, 8);
 }
 
+
+.price-of-pic{
+   display: block;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(2, 2, 2);
+    margin: 3px;
+    text-align: center;
+}
+
+
 .all-products {
-    display:inline-block;
-    height: 1000px;
+    display:inline-flexbox;
+    width: 100%;;
+
 
 }
 .fixed {
-    display:inline-block;
+    display:block;
+    
 }
 

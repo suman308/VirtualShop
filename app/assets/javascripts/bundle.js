@@ -394,15 +394,15 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
             return openModal('login');
           },
           className: "ls-button"
-        }, " Login")));
+        }, " Sign in")));
       };
 
       var personalGreeting = function personalGreeting() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-signup"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          "class": "homepage-logo"
-        }, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+          "class": "Virtual-logo"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           className: "greeting"
         }, " Welcome home  ", currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "ls-button",
@@ -707,16 +707,17 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       var productItem = this.props.product;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outer-most-box"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: productItem.imageUrl,
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-holder-box"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: productItem.imageUrl
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic-price-holder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "name-of-pic"
       }, " ", productItem.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
         className: "price-of-pic"
-      }, " price: $", productItem.price)));
+      }, "  $", productItem.price)));
     }
   }]);
 
@@ -913,8 +914,8 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }), " ");
       var form = this.props.formType;
       var display = form === 'signup' ? emailInput : null;
-      var name = form === 'signup' ? "SIGN UP FORM" : "SIGN IN FORM";
-      var actionType = form === 'signup' ? "REGISTER" : "LOGIN";
+      var name = form === 'signup' ? "Sign up" : "Sign in";
+      var actionType = form === 'signup' ? "Register" : "Sign in";
       var titleText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, name);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-outermost"
@@ -969,7 +970,7 @@ var SessionForm = /*#__PURE__*/function (_React$Component) {
       }, form === 'login' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "session-submit2",
         onClick: this.handleDemo
-      }, "DEMO LOGIN") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Demo login") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "Input-container"
       }, this.props.otherForm))));
     }
@@ -1020,7 +1021,7 @@ var mapdt = function mapdt(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('signup'));
       }
-    }, "SIGN UP"),
+    }, "Sign up"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
@@ -1069,7 +1070,7 @@ var mapdt = function mapdt(dispatch) {
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('login'));
       }
-    }, "LOGIN"),
+    }, "Sign in"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
     }

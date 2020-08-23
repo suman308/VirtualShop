@@ -65,8 +65,8 @@ class SessionForm extends React.Component {
                     
             const form = this.props.formType
             const display = (form === 'signup' ? emailInput : null)
-            const name = (form === 'signup' ? "SIGN UP FORM" : "SIGN IN FORM")
-            const actionType = (form === 'signup' ? "REGISTER" : "LOGIN")
+            const name = (form === 'signup' ? "Sign up" : "Sign in" )
+            const actionType = (form === 'signup' ? "Register" : "Sign in")
             const titleText  = <h2>{name}</h2>
             
         return (
@@ -118,7 +118,7 @@ class SessionForm extends React.Component {
                              </div>
                              
                             <div className='Input-container'> 
-                                 {form === 'login' ? <button className="session-submit2" onClick={this.handleDemo}>DEMO LOGIN</button> : null}
+                                 {form === 'login' ? <button className="session-submit2" onClick={this.handleDemo}>Demo login</button> : null}
                             </div>
 
                             <div className='Input-container'>

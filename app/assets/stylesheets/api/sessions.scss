@@ -39,32 +39,18 @@
 
   min-width:310px;
   height: 50px;
-  color:rgba(255, 255, 255, 1);
+  color:rgb(223, 219, 219);
   font-size: 20px;
-  border-radius: 7px;
+  border-radius: 3px;
   align-self: center;
-  background-image: linear-gradient(rgb(5, 117, 33),rgb(54, 223, 130));
-  border-radius: 5px;
-  box-shadow: 0px 1px 4px -2px #333;
-  text-shadow: 0px -1px #333;
-  
+  background-color: black;
 }
 
-.session-submit:after {
-  content: '';
-	position: absolute;
-	top: 2px;
-	left: 3px;
-	width: calc(100% - 4px);
-	height: 50%;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
-  text-align: center;
 
-}
 .session-submit:hover{
-  background-color: white;
-   background: linear-gradient(rgba(3, 139, 49, 0.7), rgba(20, 158, 15, 0.8));
-  color:rgb(32, 201, 60);
+  background-color: rgba(3, 1, 1, 0.829);
+  
+  
 
 }
 
@@ -76,35 +62,17 @@
 
   min-width:310px;
   height: 50px;
-  color:rgba(255, 255, 255, 1);
+  color:rgb(223, 219, 219);
   font-size: 20px;
-  border-radius: 7px;
+  border-radius: 3px;
   align-self: center;
-  background-image: linear-gradient(rgb(0, 110, 255),rgb(60, 112, 255));
-  border-radius: 5px;
-  box-shadow: 0px 1px 4px -2px #333;
-  text-shadow: 0px -1px #333;
-  
+  background-color: black;
 }
 
-.session-submit2:after {
-  content: '';
-	position: absolute;
-	top: 2px;
-	left: 3px;
-	width: calc(100% - 4px);
-	height: 50%;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
-  text-align: center;
 
-}
 .session-submit2:hover{
-  background-color: white;
-   background: linear-gradient(rgb(0, 86, 199), rgba(49, 64, 206, 0.8));
-  color:rgb(81, 122, 255);
-
+  background-color: rgba(3, 1, 1, 0.829);
 }
-
 
 .Input-container {
   width: 300px;
@@ -121,25 +89,27 @@
 
 .login-input{
   width:300px ;
-  min-height:32px;
-  border-radius: 6px;
-  border-color: rgb(83, 188, 248);
+  min-height:38px;
+  border-radius: 3px;
+  border-color: rgb(194, 198, 201);
 
 }
 
 .login-input:hover{
-  background-color: rgb(227, 240, 255);
+   border-color: rgb(138, 140, 141);
+
 }
 
 .form-header {
-  display:flex; 
+  display:block; 
   justify-content:space-between;
+  margin-bottom:50px;
 }
 
 .title {
   text-align: center;
-  color:rgb(79, 185, 255);
-  text-shadow: 0.8px 0.8px  #615d5d;
+  color:rgb(16, 17, 17);
+  font-size: 20px;
 
  
   
@@ -163,11 +133,10 @@
 }
 
 .error-text{
-  color: rgb(255, 255, 255);
+  color: rgb(255, 56, 56);
   display:block;
-  min-height:inherit;
-  background-color: rgb(206, 27, 27);
-  border-radius: 4px;
+  text-align: center;
+ margin: 2px;
 
 }
 
@@ -188,8 +157,9 @@
 }
 
 .input-label{
-color:rgb(43, 160, 238);
-font-size: 20px;
+color:rgb(0, 0, 0);
+font-size: 16px;
+font-style: bold;
 }
 
 
@@ -199,40 +169,12 @@ font-size: 20px;
 
 }
 
-.ls-button{
-  
-  position: relative;
-  padding: 8px 10px;
-  margin: 3px;
 
-  
-}
 
-.ls-button:after{
-	content: '';
-	position: absolute;
-	top: 2px;
-	left: 3px;
-	width: calc(100% - 4px);
-	height: 50%;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
-  text-align: center;
-
-}
-.ls-button:hover {
-  
-  background: linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.8));
-
-}
-
-.ls-button:active {
-	transform: translateY(4px);
-      
- }
 
  .greeting {
    
-   color: rgb(255, 5, 213);
+   color: rgb(73, 70, 73);
    font-size: 20px;
    margin-left: 15px;
  }
@@ -246,25 +188,37 @@ font-size: 20px;
   height: 50px;
   color:rgba(255, 255, 255, 1);
   font-size: 20px;
-  border-radius: 7px;
+  border-radius: 3px;
   align-self: center;
-  background-image: linear-gradient(rgba(255, 0, 0, 0.993),rgb(236, 91, 47));
-  border-radius: 5px;
-  box-shadow: 0px 1px 4px -2px #333;
-  text-shadow: 0px -1px #333;
+  background-color: black;
+  
+}
+.session-submit3:hover{
+    display:block;
+    background-color: rgba(2, 0, 0, 0.815);
+    
+  
+}
+.ls-inline:hover{
+  display:block;
+  background-color: rgb(175, 172, 172);
+  height: 20px;
+  width: 60px;
+  border-radius: 8px;
+}
+.search-bar{
+  display:block ;
+  height: 50px;
+  width:60%;
+  background-color:rgb(206, 205, 205);
+  border-top-left-radius: 25px;
+  border-bottom-left-radius:25px;
+  border: gray solid 1px;
+
 }
 
-.session-submit3::after{
-  content: '';
-	position: absolute;
-	top: 2px;
-	left: 3px;
-	width: calc(100% - 4px);
-	height: 50%;
-  background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
-  text-align: center;
 
-}
+
 
 
 
