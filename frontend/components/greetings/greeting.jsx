@@ -12,7 +12,7 @@ class Greeting extends React.Component {
                     <div className="Virtual-logo"></div>
                     <form className= "search" >
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
-                         <input type="submit"  className="submit-button" />
+                        <input type="submit" className="submit-button" > <i className="fa fa-search searchIcon"></i> </input>
                     </form >
 
                     <div className="ls-inline">
