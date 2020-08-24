@@ -1,5 +1,7 @@
 import React from  'react'; 
 import ProductIndexContainer from '../../components/products/product_Index_container'
+import { search } from 'react-icons-kit/ionicons/search'
+
 class Greeting extends React.Component {
    constructor(props){
        super(props)
