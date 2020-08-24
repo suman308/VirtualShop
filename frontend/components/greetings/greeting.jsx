@@ -9,20 +9,23 @@ class Greeting extends React.Component {
           const {currentUser, logout, openModal} = this.props
             const navigation = ()=> (
                 <nav className="login-signup">
-                    <div class="Virtual-logo"></div>
-                    <div class= "search-bar"> </div>
-                    <div className="ls-inline">
-                        <button onClick={() => openModal('login')} className="ls-button"> Sign in</button>
-                    </div>
-                    
+                    <div className="Virtual-logo"></div>
+                    <form className= "search" >
+                        <input type="text" className="search-bar" placeholder ="Search for the items" /> 
+                         <input type="submit"  className="submit-button" />
+                    </form >
 
+                    <div className="ls-inline">
+                             <button onClick={() => openModal('login')} className="ls-button"> Sign in</button>
+                    </div>
+                
                 </nav>
             );
 
             const personalGreeting = ()=> (
                 <div>
                 <div className="login-signup">
-                        <div class="Virtual-logo"></div>
+                        <div className="Virtual-logo"></div>
                     
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
                       <span>
