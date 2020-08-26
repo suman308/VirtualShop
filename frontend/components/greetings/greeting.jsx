@@ -1,6 +1,6 @@
 import React from  'react'; 
 import ProductIndexContainer from '../../components/products/product_Index_container'
-import { search } from 'react-icons-kit/ionicons/search'
+
 
 class Greeting extends React.Component {
    constructor(props){
@@ -13,12 +13,14 @@ class Greeting extends React.Component {
                 <nav className="login-signup">
                     <div className="Virtual-logo"></div>
                     <form className= "search" >
+                        <div class="head-search"></div>
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
-                        <input type="submit" className="submit-button" > <i className="fa fa-search searchIcon"></i> </input>
+                        <input type="submit" className="submit-button" />
+                     
                     </form >
 
-                    <div className="ls-inline">
-                             <button onClick={() => openModal('login')} className="ls-button"> Sign in</button>
+                    <div  className="ls-inline-container">
+                        <div className="ls-inline" onClick={() => openModal('login')} > Sign in</div>
                     </div>
                 
                 </nav>
@@ -27,12 +29,12 @@ class Greeting extends React.Component {
             const personalGreeting = ()=> (
                 <div>
                 <div className="login-signup">
-                        <div className="Virtual-logo"></div>
+                        <a className="Virtual-logo"  href='#/'></a>
                     
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
-                      <span>
-                        <button className="ls-button" onClick={logout}> Logout</button>
-                      </span>
+                        <div className="ls-inline-container" >
+                            <div className="ls-inline" onClick={logout}> Logout</div>
+                      </div>
                       
                 </div>
                     <ProductIndexContainer />

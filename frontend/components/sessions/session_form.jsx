@@ -79,6 +79,7 @@ class SessionForm extends React.Component {
                  
                 <div className="container">
                     <div className="title"> {titleText}</div>
+                    <div className="Register"> </div>
                 </div>
 
                 <div className="container">
