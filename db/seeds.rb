@@ -137,7 +137,7 @@ picBookShakesparebook3 = open("#{shakesparebook}shakesparebook3.jpg")
 
 
 # ------------------picture from the clothes folder------------------------
-#clothes 
+#hoodies
 hoodies = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/clothes/"
 picClothesHoodies1 = open("#{hoodies}hoodies1.jpg")
 picClothesHoodies2 = open("#{hoodies}hoodies2.jpg")
@@ -233,17 +233,13 @@ picJewelryTopaz4 = open("#{diamond}topaz4.jpg")
 
 
 
-
-
-
-
-
 # --------------------------the product under the art categroy -----------------------------------
 product1= Product.create(name:"Beach-painting", details:"the greatest detective of the world is facing the greatest challenge can he save the day", price:10.23, category:'Art', store_id: store1.id)
 product2= Product.create(name:"Ganesh-statue", details:"The medium sizd marble statue of the lord ganesh ", price:180.23, category:'Art', store_id:store2.id)
 product3= Product.create(name:"Jesus-painting", details: "The oil painting of the jesus of 55inch * 55inch perfect for the living room wall", price:1380.23, category:'Art', store_id:store3.id)
-product5= Product.create(name:"Kali-paiting", details:"The bright oil painting of the hindu goddess of power and destruction. It is painted on the 1 inch thick canvas.it is deliverd free ", price:7.23, category:'Art', store_id: store5.id)
-product4= Product.create(name:"San Fransisco-painting", details:"The large scale of expressionist painting of the Iconic golden gate bridge of san fransisco", price:180.23, category:'Art', store_id: store4.id)
+product4= Product.create(name:"Kali-paiting", details:"The bright oil painting of the hindu goddess of power and destruction. It is painted on the 1 inch thick canvas.it is deliverd free ", price:7.23, category:'Art', store_id: store5.id)
+product5= Product.create(name:"San Fransisco-painting", details:"The large scale of expressionist painting of the Iconic golden gate bridge of san fransisco", price:180.23, category:'Art', store_id: store4.id)
+product26= Product.create(name:"Ganesh-painting", details:"The large scale of post-modern painting of the lord ganesh", price:180.23, category:'Art', store_id: store6.id)
 
 # --------------------------the product under the book categroy --------------------------------------
 product6= Product.create(name:"Bookselves-cover", details:"The cover of the laptop with the design of the  Bookselves  ", price:80.23, category:'Books', store_id:store6.id)
@@ -272,27 +268,153 @@ product20= Product.create(name:"Pendrive", details:"the glass and shiny metal pe
 product21= Product.create(name:"bluediamonds", details:"The Sparkling blue dimanond of AAA Quality", price:40000, category:'Jewelry', store_id: store4.id)
 product22= Product.create(name:"Dimaond", details:"The Crystal colorless shining dimanond of AAA Quality", price:50000, category:'Jewelry', store_id: store4.id)
 product23= Product.create(name:"golddiamond", details:"The Golden shining dimanond of AAA Quality", price:60000, category:'Jewelry', store_id: store4.id)
-product25= Product.create(name:"Topaz", details:"The pure topaz of the afican mine ", price:70000, category:'Jewelry', store_id: store4.id)
+product24= Product.create(name:"Topaz", details:"The pure topaz of the afican mine ", price:70000, category:'Jewelry', store_id: store4.id)
 
 # ================================================ attach the picture to the products ==============================================
 
+# the picture of beach
 product1.images.attach(io:picArtBeach1, filename: 'beach1.jpg')
 product1.images.attach(io:picArtBeach2, filename: 'beach2.jpg')
 product1.images.attach(io:picArtBeach3, filename: 'beach3.jpg')
 product1.images.attach(io:picArtBeach4, filename: 'beach4.jpg')
 
+# The statue  of ganesh 
+product2.images.attach(io:picArtGana1, filename: 'gana1.jpg')
+product2.images.attach(io:picArtGana2, filename: 'gana2.jpg')
+product2.images.attach(io:picArtGana3, filename: 'gana3.jpg')
+product2.images.attach(io:picArtGana4, filename: 'gana4.jpg')
 
-product2.image.attach(io:pic2, filename:'Glass%2BTropic%2BWave.jpimage')
-product3.image.attach(io:pic3, filename: 'batbecon.jpg')
-product4.image.attach(io:pic4, filename: 'batcase.jpg')
-product5.image.attach(io:pic5, filename: 'batman-superman-comics.jpg')
-product6.image.attach(io:pic6, filename:'batmobile.jpg')
-product7.image.attach(io:pic7, filename:'bluetree-art.jpg')
-product8.image.attach(io:pic8, filename:'bookAtomic.jpg')
-product9.image.attach(io:pic9, filename:'chekie.jpg')
-product10.image.attach(io:pic10, filename:'outdoor-lamp.jpeg')
+# The painting of ganesh 
+product26.images.attach(io:picArtGanesh1, filename: 'ganesh.jpg')
+product26.images.attach(io:picArtGanesh2, filename: 'ganesh2.jpg')
+product26.images.attach(io:picArtGanesh3, filename: 'ganesh3.jpg')
 
+# The painting of Jesus 
+product3.images.attach(io:picArtJesus1, filename: 'jesus1.jpg')
+product3.images.attach(io:picArtJesus2, filename: 'jesus2.jpg')
+product3.images.attach(io:picArtJesus3, filename: 'jesus3.jpg')
+product3.images.attach(io:picArtJesus4, filename: 'jesus4.jpg')
+
+# The painting of Jesus 
+product4.images.attach(io:picArtKali1 , filename: 'kali1.jpg')
+product4.images.attach(io:picArtKali2 , filename: 'kali2.jpg')
  
+# The painting of sf-bridge
+product5.images.attach(io:picArtSf1 , filename: 'sf1.jpg')
+product5.images.attach(io:picArtSf2 , filename: 'sf2.jpg')
+product5.images.attach(io:picArtSf3 , filename: 'sf3.jpg')
+product5.images.attach(io:picArtSf4 , filename: 'sf4.jpg')
+
+# The bookselves  
+product6.images.attach(io:picBookBookselves1 , filename: 'bookselves1.jpg')
+product6.images.attach(io:picBookBookselves2 , filename: 'bookselves2.jpg')
+
+#  the calender 
+product7.images.attach(io:picBookCalender1, filename: 'calender1.jpg')
+product7.images.attach(io:picBookCalender2, filename: 'calender2.jpg')
+product7.images.attach(io:picBookCalender3, filename: 'calender3.jpg')
+product7.images.attach(io:picBookCalender4, filename: 'calender4.jpg')
+
+#  colorfulbook 
+product8.images.attach(io:picBookColorfulbook1, filename: 'colorfulbook1.jpg')
+product8.images.attach(io:picBookColorfulbook2, filename: 'colorfulbook2.jpg')
+product8.images.attach(io:picBookColorfulbook3, filename: 'colorfulbook3.jpg')
+product8.images.attach(io:picBookColorfulbook4, filename: 'colorfulbook4.jpg')
+
+# hukkabook
+product9.images.attach(io:picBookHukkabook1, filename: 'hukkabook.jpg')
+product9.images.attach(io:picBookHukkabook2, filename: 'hukkabook2.jpg')
+product9.images.attach(io:picBookHukkabook3, filename: 'hukkabook3.jpg')
+product9.images.attach(io:picBookHukkabook4, filename: 'hukkabook4.jpg')
+
+# leatherbook
+product10.images.attach(io:picBookLeatherbook1 , filename: 'leatherbook1.jpg')
+product10.images.attach(io:picBookLeatherbook2 , filename: 'leatherbook2.jpg')
+product10.images.attach(io:picBookLeatherbook3 , filename: 'leatherbook3.jpg')
+product10.images.attach(io:picBookLeatherbook4 , filename: 'leatherbook4.jpg')
+
+# plannerbook
+product11.images.attach(io:picBookPlannerbook1 , filename: 'plannerbook1.jpg')
+product11.images.attach(io:picBookPlannerbook2 , filename: 'plannerbook2.jpg')
+product11.images.attach(io:picBookPlannerbook3, filename: 'plannerbook3.jpg')
+
+# shakesparebook
+product12.images.attach(io:picBookShakesparebook1 , filename: 'shakesparebook1.jpg')
+product12.images.attach(io:picBookShakesparebook2, filename: 'shakesparebook2.jpg')
+product12.images.attach(io:picBookShakesparebook3, filename: 'shakesparebook3.jpg')
+
+# hoodies
+product13.images.attach(io:picClothesHoodies1, filename: 'hoodies1.jpg')
+product13.images.attach(io:picClothesHoodies2, filename: 'hoodies2.jpg')
+product13.images.attach(io:picClothesHoodies3, filename: 'hoodies3.jpg')
+product13.images.attach(io:picClothesHoodies4, filename: 'hoodies4.jpg')
+
+# Menjeans
+product14.images.attach(io:picClothesMenjeans1, filename: 'menjeans1.jpg')
+product14.images.attach(io:picClothesMenjeans2, filename: 'menjeans2.jpg')
+product14.images.attach(io:picClothesMenjeans3, filename: 'menjeans3.jpg')
+product14.images.attach(io:picClothesMenjeans4, filename: 'menjeans4.jpg')
+
+# shoes
+product15.images.attach(io:picClothesShoes1, filename: 'shoes1.jpg')
+product15.images.attach(io:picClothesShoes2, filename: 'shoes2.jpg')
+product15.images.attach(io:picClothesShoes3, filename: 'shoes3.jpg')
+product15.images.attach(io:picClothesShoes4, filename: 'shoes4.jpg')
+
+# t-shirt
+product16.images.attach(io:picClothesTshirt1, filename: 'tshirt1.jpg')
+product16.images.attach(io:picClothesTshirt2, filename: 'tshirt2.jpg')
+product16.images.attach(io:picClothesTshirt3, filename: 'tshirt3.jpg')
+
+# IronGlass
+product17.images.attach(io:picElectronicsIronglass1, filename: 'ironglass1.jpg')
+product17.images.attach(io:picElectronicsIronglass2, filename: 'ironglass2.jpg')
+product17.images.attach(io:picElectronicsIronglass3, filename: 'ironglass3.jpg')
+product17.images.attach(io:picElectronicsIronglass4, filename: 'ironglass4.jpg')
+
+# joystick
+product18.images.attach(io:picElectronicsIronglass1, filename: 'joystick1.jpg')
+product18.images.attach(io:picElectronicsIronglass2, filename: 'joystick2.jpg')
+product18.images.attach(io:picElectronicsIronglass3, filename: 'joystick3.jpg')
+
+# lightsaber
+product19.images.attach(io:picElectronicsLightsaber1, filename: 'lightsaber1.jpg')
+product19.images.attach(io:picElectronicsLightsaber2, filename: 'lightsaber2.jpg')
+product19.images.attach(io:picElectronicsLightsaber3, filename: 'lightsaber3.jpg')
+product19.images.attach(io:picElectronicsLightsaber4, filename: 'lightsaber4.jpg')
+
+# Pendrive
+product20.images.attach(io:picElectronicsPendrive1, filename: 'pendrive1.jpg')
+product20.images.attach(io:picElectronicsPendrive2, filename: 'pendrive2.jpg')
+product20.images.attach(io:picElectronicsPendrive3, filename: 'pendrive3.jpg')
+product20.images.attach(io:picElectronicsPendrive4, filename: 'pendrive4.jpg')
+
+# bluediamond
+product21.images.attach(io:picJewelryBluediamonds1 , filename: 'bluediamond1.jpg')
+product21.images.attach(io:picJewelryBluediamonds2 , filename: 'bluediamond2.jpg')
+product21.images.attach(io:picJewelryBluediamonds3, filename: 'bluediamond3.jpg')
+product21.images.attach(io:picJewelryBluediamonds4, filename: 'bluediamond4.jpg')
+
+
+# diamond
+product22.images.attach(io:picJewelryCrystaldiamonds1  , filename: 'diamond1.jpg')
+product22.images.attach(io:picJewelryCrystaldiamonds2, filename: 'diamond2.jpg')
+product22.images.attach(io:picJewelryCrystaldiamonds3, filename: 'diamond3.jpg')
+product22.images.attach(io:picJewelryCrystaldiamonds4, filename: 'diamond4.jpg')
+
+# golddiamond
+product23.images.attach(io:picJewelryGoldDiamonds1, filename: 'golddiamond1.jpg')
+product23.images.attach(io:picJewelryGoldDiamonds2, filename: 'golddiamond2.jpg')
+product23.images.attach(io:picJewelryGoldDiamonds3, filename: 'golddiamond3.jpg')
+product23.images.attach(io:picJewelryGoldDiamonds4, filename: 'golddiamond4.jpg')
+
+# golddiamond
+product24.images.attach(io:picJewelryTopaz1, filename: 'topaz1.jpg')
+product24.images.attach(io:picJewelryTopaz2, filename: 'topaz2.jpg')
+product24.images.attach(io:picJewelryTopaz3, filename: 'topaz3.jpg')
+product24.images.attach(io:picJewelryTopaz4, filename: 'topaz4.jpg')
+# =====================================================================
+
 
 
  
