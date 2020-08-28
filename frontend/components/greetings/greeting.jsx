@@ -29,7 +29,7 @@ class Greeting extends React.Component {
             const personalGreeting = ()=> (
                 <div>
                 <div className="login-signup">
-                        <a className="Virtual-logo"  href='#/'></a>
+                    <div className="Virtual-logo" ></div> 
                     
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
                         <div className="ls-inline-container" >

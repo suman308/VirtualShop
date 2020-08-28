@@ -214,7 +214,7 @@ font-style: bold;
   display: block; 
   height:45px; 
   width: 80px;
- vertical-align: middle;
+ 
 }
 
 .ls-inline:hover{
@@ -222,6 +222,7 @@ font-style: bold;
   background-color: rgb(214, 214, 214);
   
 }
+
 .ls-inline:active{display:block;
   background-color: rgb(26, 20, 20);
   color:white;
