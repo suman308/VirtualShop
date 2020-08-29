@@ -1,2 +1,2 @@
 json.extract! product, :id, :name, :details, :price, :category, :store_id
-json.imageUrls  url_for(product.image)
+json.images  url_for(product.images)

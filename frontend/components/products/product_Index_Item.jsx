@@ -12,7 +12,7 @@ class ProductIndexItem extends React.Component  {
                 <div className="outer-most-box" > 
  
                         <div className= "image-holder-box">
-                                <img src={productItem.imageUrl} />
+                                <img src={productItem.images[0]} />
                          </div>
                                  
                         <div className="pic-price-holder">

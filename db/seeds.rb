@@ -46,6 +46,48 @@ store10 = Store.create(name:'Justin-store', owner_id:u13.id)
 # ======================================================== ALL PICTURES WE HAVE IN DATABASE================================================================
 
 
+
+
+
+
+# --------------------------the product under the art categroy -----------------------------------
+product1= Product.create(name:"Beach-painting", details:"The 6feets * 6 feets wall water painting of the beach for the decoration" , price:10.23, category:'Art', store_id:1)
+product2= Product.create(name:"Ganesh-statue", details:"The medium sizd marble statue of the lord ganesh ", price:180.23, category:'Art', store_id:store2.id)
+product3= Product.create(name:"Jesus-painting", details: "The oil painting of the jesus of 55inch * 55inch perfect for the living room wall", price:1380.23, category:'Art', store_id:store3.id)
+product4= Product.create(name:"Kali-paiting", details:"The bright oil painting of the hindu goddess of power and destruction. It is painted on the 1 inch thick canvas.it is deliverd free ", price:7.23, category:'Art', store_id: store5.id)
+product5= Product.create(name:"San Fransisco-painting", details:"The large scale of expressionist painting of the Iconic golden gate bridge of san fransisco", price:180.23, category:'Art', store_id: store4.id)
+product26= Product.create(name:"Ganesh-painting", details:"The large scale of post-modern painting of the lord ganesh", price:180.23, category:'Art', store_id: store6.id)
+
+# --------------------------the product under the book categroy --------------------------------------
+product6= Product.create(name:"Bookselves-cover", details:"The cover of the laptop with the design of the  Bookselves", price:80.23, category:'Books', store_id:store6.id)
+product7= Product.create(name:"Table-calender", details:"Perfect small turning calender for the working table with 10 yrs of the data. ", price:23.34, category:'Books', store_id: store7.id)
+product8= Product.create(name:"Colorful-bookselves", details:"The 4 feets * 4 feets colorful bookselves.The perfect decorative piece for the home libraty or any living room ", price:56.23, category:'Books', store_id: store8.id)
+product9= Product.create(name:"Hukka", details:"Beautiful art piecefrom the Mugal sclupture.Sparkling and colorful decorative Hukka vase", price:146.23, category:'Books', store_id: store9.id)
+product10= Product.create(name:"Leather-book", details:"Classical leather cover book for the man with taste.It has 100 percent cow leather with 2 years warrenty attached", price:1400.23, category:'Books', store_id: store10.id)
+product11= Product.create(name:"Planner-book", details:"The perfect tool to plan and document the events. It has days , date and years with japanese paper", price:1400.23, category:'Books', store_id: store10.id)
+product12= Product.create(name:"Shakespare-play", details:"The collection of the most popular Shakespare's plays with the leather cover and nylon binding for the protection ", price:1400.23, category:'Books', store_id: store10.id)
+
+# --------------------------the product under the clothes categroy --------------------------------------
+product13= Product.create(name:"Hoodies", details:"The medium size hoodies with  varied color of choice ", price:14.23, category:'Clothes', store_id: store9.id)
+product14= Product.create(name:"Men-jeans", details:"The blue dark  jeans for men with 100 percent cotton from america.It is stretchy and comfortable", price:14.23, category:'Clothes', store_id: store10.id)
+product15= Product.create(name:"sneakers", details:"Super cool design sneakers with colorful options", price:44.23, category:'Clothes', store_id: store9.id)
+product16= Product.create(name:"T-shirt", details:"The 100 percent cotton T-shirt with different color choices and comes in three standard size small, medium and large", price:20.45, category:'Clothes', store_id: store4.id)
+
+# --------------------------the product under the Electronics categroy --------------------------------------
+
+product17= Product.create(name:"Polar-glass", details:"The stylish glass for the men with strong polymer frame and hardened glass ", price:20.45, category:'Electronics', store_id: store4.id)
+product18= Product.create(name:"Joystick", details:"The DUALSHOCK Wireless Controller for PS4 gives you what you want in your gaming from precision control over your games to sharing your greatest gameplay moments with your friends while providing easy recharging so you are always ready.", price:96.60, category:'Electronics', store_id: store4.id)
+product19= Product.create(name:"Lightsaber", details:"KYBERS RGB 11 Colors Changeable Metal Hilt Light Saber with 3 Mode Sound Force FX Dueling Lightsaber available in red, blue and green ", price:120.49, category:'Electronics', store_id: store2.id)
+product20= Product.create(name:"Pendrive", details:"the glass and shiny metal pendrive, perfect for as gift. It has 300 GB memory.", price:20.45, category:'Electronics', store_id: store4.id)
+
+#  --------------------------------------picture from the  jewelry folder-----------------------------------
+
+product21= Product.create(name:"bluediamonds", details:"The Sparkling blue dimanond of AAA Quality", price:40000, category:'Jewelry', store_id: store4.id)
+product22= Product.create(name:"Dimaond", details:"The Crystal colorless shining dimanond of AAA Quality", price:50000, category:'Jewelry', store_id: store4.id)
+product23= Product.create(name:"golddiamond", details:"The Golden shining dimanond of AAA Quality", price:60000, category:'Jewelry', store_id: store4.id)
+product24= Product.create(name:"Topaz", details:"The pure topaz of the afican mine ", price:70000, category:'Jewelry', store_id: store4.id)
+
+
 # ------------------pictureS from the art folder------------------------
 
 # beach
@@ -230,46 +272,6 @@ picJewelryTopaz1 = open("#{diamond}topaz1.jpg")
 picJewelryTopaz2 = open("#{diamond}topaz2.jpg")
 picJewelryTopaz3 = open("#{diamond}topaz3.jpg")
 picJewelryTopaz4 = open("#{diamond}topaz4.jpg")
-
-
-
-# --------------------------the product under the art categroy -----------------------------------
-product1= Product.create(name:"Beach-painting", details:"the greatest detective of the world is facing the greatest challenge can he save the day", price:10.23, category:'Art', store_id: store1.id)
-product2= Product.create(name:"Ganesh-statue", details:"The medium sizd marble statue of the lord ganesh ", price:180.23, category:'Art', store_id:store2.id)
-product3= Product.create(name:"Jesus-painting", details: "The oil painting of the jesus of 55inch * 55inch perfect for the living room wall", price:1380.23, category:'Art', store_id:store3.id)
-product4= Product.create(name:"Kali-paiting", details:"The bright oil painting of the hindu goddess of power and destruction. It is painted on the 1 inch thick canvas.it is deliverd free ", price:7.23, category:'Art', store_id: store5.id)
-product5= Product.create(name:"San Fransisco-painting", details:"The large scale of expressionist painting of the Iconic golden gate bridge of san fransisco", price:180.23, category:'Art', store_id: store4.id)
-product26= Product.create(name:"Ganesh-painting", details:"The large scale of post-modern painting of the lord ganesh", price:180.23, category:'Art', store_id: store6.id)
-
-# --------------------------the product under the book categroy --------------------------------------
-product6= Product.create(name:"Bookselves-cover", details:"The cover of the laptop with the design of the  Bookselves  ", price:80.23, category:'Books', store_id:store6.id)
-product7= Product.create(name:"Table-calender", details:"Perfect small turning calender for the working table with 10 yrs of the data. ", price:23.34, category:'Books', store_id: store7.id)
-product8= Product.create(name:"Colorful-bookselves", details:"The 4 feets * 4 feets colorful bookselves.The perfect decorative piece for the home libraty or any living room ", price:56.23, category:'Books', store_id: store8.id)
-product9= Product.create(name:"Hukka", details:"Beautiful art piecefrom the Mugal sclupture.Sparkling and colorful decorative Hukka vase", price:146.23, category:'Books', store_id: store9.id)
-product10= Product.create(name:"Leather-book", details:"Classical leather cover book for the man with taste.It has 100 percent cow leather with 2 years warrenty attached", price:1400.23, category:'Books', store_id: store10.id)
-product11= Product.create(name:"Planner-book", details:"The perfect tool to plan and document the events. It has days , date and years with japanese paper", price:1400.23, category:'Books', store_id: store10.id)
-product12= Product.create(name:"Shakespare-play", details:"The collection of the most popular Shakespare's plays with the leather cover and nylon binding for the protection ", price:1400.23, category:'Books', store_id: store10.id)
-
-# --------------------------the product under the clothes categroy --------------------------------------
-product13= Product.create(name:"Hoodies", details:"The medium size hoodies with  varied color of choice ", price:14.23, category:'Clothes', store_id: store9.id)
-product14= Product.create(name:"Men-jeans", details:"The blue dark  jeans for men with 100 percent cotton from america.It is stretchy and comfortable", price:14.23, category:'Clothes', store_id: store10.id)
-product15= Product.create(name:"sneakers", details:"Super cool design sneakers with colorful options", price:44.23, category:'Clothes', store_id: store9.id)
-product16= Product.create(name:"T-shirt", details:"The 100 percent cotton T-shirt with different color choices and comes in three standard size small, medium and large", price:20.45, category:'Clothes', store_id: store4.id)
-
-# --------------------------the product under the Electronics categroy --------------------------------------
-
-product17= Product.create(name:"Polar-glass", details:"The stylish glass for the men with strong polymer frame and hardened glass ", price:20.45, category:'Electronics', store_id: store4.id)
-product18= Product.create(name:"Joystick", details:"The DUALSHOCK Wireless Controller for PS4 gives you what you want in your gaming from precision control over your games to sharing your greatest gameplay moments with your friends while providing easy recharging so you are always ready.", price:96.60, category:'Electronics', store_id: store4.id)
-product19= Product.create(name:"Lightsaber", details:"KYBERS RGB 11 Colors Changeable Metal Hilt Light Saber with 3 Mode Sound Force FX Dueling Lightsaber available in red, blue and green ", price:120.49, category:'Electronics', store_id: store2.id)
-product20= Product.create(name:"Pendrive", details:"the glass and shiny metal pendrive, perfect for as gift. It has 300 GB memory.", price:20.45, category:'Electronics', store_id: store4.id)
-
-#  --------------------------------------picture from the  jewelry folder-----------------------------------
-
-product21= Product.create(name:"bluediamonds", details:"The Sparkling blue dimanond of AAA Quality", price:40000, category:'Jewelry', store_id: store4.id)
-product22= Product.create(name:"Dimaond", details:"The Crystal colorless shining dimanond of AAA Quality", price:50000, category:'Jewelry', store_id: store4.id)
-product23= Product.create(name:"golddiamond", details:"The Golden shining dimanond of AAA Quality", price:60000, category:'Jewelry', store_id: store4.id)
-product24= Product.create(name:"Topaz", details:"The pure topaz of the afican mine ", price:70000, category:'Jewelry', store_id: store4.id)
-
 # ================================================ attach the picture to the products ==============================================
 
 # the picture of beach

@@ -30,6 +30,6 @@ class Product < ApplicationRecord
     
     belongs_to :order_list, foreign_key: :order_list_id, class_name: :OrderList, optional: :true
     belongs_to :store, foreign_key: :store_id, class_name: :Store
-    has_one_attached :image 
+    has_many_attached :images
 
 end
