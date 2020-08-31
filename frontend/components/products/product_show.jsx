@@ -2,9 +2,7 @@ import React from 'react';
 class ProductShow extends React.Component {
     constructor(props){
         super(props)
-        this.state = {
-            images : this.props.product.imageUrls
-        }
+        
     }
     
     componentDidMount(){

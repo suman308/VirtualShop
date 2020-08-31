@@ -17,8 +17,7 @@ return (
               
              <Switch>
                <Route  path='/' exact component={ProductIndexContainer}/>
-              
-               <Route path='/product/show/:Id' exact component={ProductShowContainer}/>
+               <Route path='/product/show/:id' exact component={ProductShowContainer}/>
                 
              </Switch>
     </div>  
