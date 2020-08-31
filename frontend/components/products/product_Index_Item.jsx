@@ -18,7 +18,7 @@ class ProductIndexItem extends React.Component  {
                          <div className="rating">
                          </div>
 
-                         <div className="the ">
+                         <div className="free-delivered">
 
                          </div>
 
