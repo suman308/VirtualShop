@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .productIndex {
-    display:flex-inline; 
+    display:block; 
+    margin:4px;
 
 }
 // ------------------------the css class for the picture displayed in the index page ------------------------------------
@@ -19,44 +20,48 @@
 }
 .outer-most-box {
     display:block;
-    max-height:302px; 
-    max-width:302px;
-     margin: 4px;
+    max-height: 350px; 
+    max-width:350px;
+    margin: 3px;
+    background-color: white;
+    background-color: rgb(180, 173, 173) 1;
 }
 
 
 
 .image-holder-box {
-   max-height: 300px;
-   max-width: 300px;
+    display:block;
+   max-height: 250px;
+   max-width: 250px;
    margin: 3px;
  
 }
 
-.name-of-pic {
-    display: block;
-    font-size: 16px;
-    font-family: 'Times New Roman', Times, serif;
-    color:rgb(2, 2, 2);
-    text-align: center;
-}
+// -------------------------------< below the pic the name and the price of the pic >--------------------------
 
 .pic-price-holder {
   display:inline-flex;
  text-align: center;
- color:rgb(8, 8, 8);
- margin:3px;
-}
+ 
 
+}
+.name-of-pic {
+    display: block;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(255, 145, 0);
+    text-align: center;
+}
 
 .price-of-pic{
    display: block;
     font-size: 16px;
     font-family: 'Times New Roman', Times, serif;
-    color:rgb(2, 2, 2);
+    color:rgb(241, 137, 0);
     text-align: center;
+    background-color: rgb(172, 201, 182);
 }
-
+//----------------------< below the image holder that hold name price and also the box that hold's the pic >--------------------
 
 .fixed {
     display:block;
