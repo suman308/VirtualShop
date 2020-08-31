@@ -762,78 +762,9 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   !*** ./frontend/components/products/product_Index_Item.jsx ***!
   \*************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
-  _inherits(ProductIndexItem, _React$Component);
-
-  var _super = _createSuper(ProductIndexItem);
-
-  function ProductIndexItem(props) {
-    _classCallCheck(this, ProductIndexItem);
-
-    return _super.call(this, props);
-  }
-
-  _createClass(ProductIndexItem, [{
-    key: "render",
-    value: function render() {
-      var productItem = this.props.product;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "outer-most-box"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "image-holder-box"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "image-holder-box",
-        src: productItem.imageUrls[0]
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "rating"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "free-delivered"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic-price-holder"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
-        className: "name-of-pic"
-      }, " ", productItem.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "price-of-pic"
-      }, "  $", productItem.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "below-the-iamge-holder-box"
-      }));
-    }
-  }]);
-
-  return ProductIndexItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (ProductIndexItem);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/skyhawk/Desktop/App-Academy/VirtualShop/frontend/components/products/product_Index_Item.jsx: Unexpected token, expected \"...\" (21:41)\n\n\u001b[0m \u001b[90m 19 | \u001b[39m                        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m \u001b[32m\"image-holder-box\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 20 | \u001b[39m                                \u001b[33m<\u001b[39m\u001b[33mLink\u001b[39m to\u001b[33m=\u001b[39m{\u001b[32m`/product/show /${productItem.id}`\u001b[39m}  \u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 21 | \u001b[39m                                        {\u001b[33m<\u001b[39m\u001b[33mimg\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"image-holder-box\"\u001b[39m src\u001b[33m=\u001b[39m{productItem\u001b[33m.\u001b[39mimageUrls[\u001b[35m0\u001b[39m]} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 22 | \u001b[39m                                        \u001b[0m\n\u001b[0m \u001b[90m 23 | \u001b[39m                                \u001b[33m<\u001b[39m\u001b[33mLink\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 24 | \u001b[39m                         \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n    at Object._raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:754:17)\n    at Object.raiseWithData (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:747:17)\n    at Object.raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.unexpected (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:8844:16)\n    at Object.expect (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:8830:28)\n    at Object.jsxParseAttribute (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4520:12)\n    at Object.jsxParseOpeningElementAfterName (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4547:28)\n    at Object.jsxParseOpeningElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4540:17)\n    at Object.jsxParseElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4572:33)\n    at Object.jsxParseElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4588:32)\n    at Object.jsxParseElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4588:32)\n    at Object.jsxParseElement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4646:17)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4653:19)\n    at Object.parseExprSubscripts (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Object.parseMaybeUnary (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Object.parseExprOps (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Object.parseMaybeConditional (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Object.parseMaybeAssign (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Object.parseParenAndDistinguishExpression (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:10304:28)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:10044:21)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4658:20)\n    at Object.parseExprSubscripts (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Object.parseMaybeUnary (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Object.parseExprOps (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Object.parseMaybeConditional (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Object.parseMaybeAssign (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Object.parseExpression (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9423:23)\n    at Object.parseReturnStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11560:28)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11241:21)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)");
 
 /***/ }),
 
@@ -915,9 +846,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(ProductShow);
 
   function ProductShow(props) {
+    var _this;
+
     _classCallCheck(this, ProductShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      images: _this.props.product.imageUrls
+    };
+    return _this;
   }
 
   _createClass(ProductShow, [{
@@ -930,8 +867,13 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var product = this.props.product;
       var images = product.imageUrls;
-      var display = images.map;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.details)));
+      var display = images.map(function (image) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "small-image",
+          src: image
+        });
+      });
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, product.details)));
     }
   }]);
 

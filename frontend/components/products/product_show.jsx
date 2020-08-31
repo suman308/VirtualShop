@@ -2,6 +2,9 @@ import React from 'react';
 class ProductShow extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            images : this.props.product.imageUrls
+        }
     }
     
     componentDidMount(){
@@ -10,13 +13,17 @@ class ProductShow extends React.Component {
     render(){
            const product = this.props.product
            const images = product.imageUrls
-           const display = images.map
+        const display = images.map(image => <img className="small-image" src={image} />)
         return (
            <div>
               
                 <div>
-                    
-                    
+                        <div>
+                            {display}
+                        </div>
+                        <div>
+
+                        </div>
                 </div>
 
 

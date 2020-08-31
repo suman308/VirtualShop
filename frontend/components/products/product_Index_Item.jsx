@@ -1,8 +1,12 @@
 import React from 'react';
-
+import {Link } from 'react-router-dom'
 class ProductIndexItem extends React.Component  {
         constructor(props){
         super(props)
+        }
+
+        handleClick(){
+         
         }
     render() {
         const productItem = this.props.product
@@ -13,7 +17,10 @@ class ProductIndexItem extends React.Component  {
                 <div className="outer-most-box" > 
  
                         <div className= "image-holder-box">
-                                <img className="image-holder-box" src={productItem.imageUrls[0]} />
+                                <Link to={`/product/show /${productItem.id}`}  
+                                        {<img className="image-holder-box" src={productItem.imageUrls[0]} />}
+                                        
+                                <Link/>
                          </div>
 
                          <div className="rating">
