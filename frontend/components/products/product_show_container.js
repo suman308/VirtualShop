@@ -1,7 +1,6 @@
 import {connect} from 'react-redux'; 
-import Product from './product_show';
 import ProductShow from './product_show'
-
+import {getProducts} from '../../actions/product_actions'
 const mpst = state=> {
   return { 
      product : state.entities.product[ownProps.match.params.productId]
@@ -10,7 +9,7 @@ const mpst = state=> {
 
 const mapdt = dispatch => {
     return {
-      getProduct:(productId)=> dispatch(getProduct(productId))
+      getProducts: ()=> dispatch(getProducts())
     }
 }
    

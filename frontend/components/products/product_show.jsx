@@ -4,11 +4,17 @@ class ProductShow extends React.Component {
         super(props)
     }
     
+    componentDidMount(){
+        this.props.getProducts();
+    }
     render(){
-           
+           const product = this.props.product
         return (
            <div>
-             <h1>hello</h1>
+              
+
+                <h3> {product.name}</h3>
+                <h3> {product.details}</h3>
            </div> 
         )
     }
