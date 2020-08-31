@@ -15,12 +15,17 @@ class ProductIndex extends React.Component {
         const products = this.props.products
         const display = products.map(product => <ProductIndexItem product={product} key={product.id} className="productIndex"/>)
         return (
+            <div>
+            <div className="animation">
+                <h3 className="message"> Buy Or Sell anything you like in the most trusted online-shop </h3>
+            </div>
             <div className="fixed">
                 <ul className="all-products">
                     {display}
                 </ul>
                 
-            </div>      
+            </div>  
+            </div>    
         )
     }
 }

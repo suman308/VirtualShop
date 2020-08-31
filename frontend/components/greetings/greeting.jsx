@@ -13,7 +13,7 @@ class Greeting extends React.Component {
                 <nav className="login-signup">
                     <div className="Virtual-logo"></div>
                     <form className= "search" >
-                        <div class="head-search"></div>
+                        <div className="head-search"></div>
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
                         <input type="submit" className="submit-button" />
                      

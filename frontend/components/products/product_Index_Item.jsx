@@ -9,6 +9,8 @@ class ProductIndexItem extends React.Component  {
         const productItem = this.props.product
         
         return (
+            
+                
                 <div className="outer-most-box" > 
  
                         <div className= "image-holder-box">
@@ -32,6 +34,7 @@ class ProductIndexItem extends React.Component  {
                         
                          </div>
                 </div>
+                
        )
    }
 }
