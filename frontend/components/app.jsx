@@ -13,9 +13,9 @@ return (
               <GreetingContainer className="greeting"/> 
 
            </header> 
-            <div className="title">
-                 <h3> The best online shop for buying and selling things </h3>
-            </div>
+          <div class="animation">
+               <h3 class="message"> Buy Or Sell anything you like in the most trusted online-shop </h3>
+          </div>
              <Switch>
                <Route  path='/' exact component={ProductIndexContainer}> </Route>
               
