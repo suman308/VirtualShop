@@ -14,11 +14,11 @@ class ProductIndexItem extends React.Component  {
         return (
             
                 <div className="outer-most-box"> 
- 
+                          <Link to={`/product/show/${productItem.id}`} >
                                 <div className= "image-holder-box" >
                                                 {image}
                                 </div>
-
+                         </Link>
 
                                 <div className="rating">
                                 </div>

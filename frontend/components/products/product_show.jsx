@@ -9,9 +9,10 @@ class ProductShow extends React.Component {
         this.props.getProducts();
     }
     render(){
-           const product = this.props.product
-           const images = product.imageUrls
-        const display = images.map(image => <img className="small-image" src={image} />)
+            const product1 = this.props.product
+            const images = product1.imageUrls
+            const display = images.map(image => <img className="small-image" src={image} />)
+
         return (
            <div>
               
@@ -20,17 +21,17 @@ class ProductShow extends React.Component {
                             {display}
                         </div>
                         <div>
-
+                                 <h1>Hello</h1>
                         </div>
                 </div>
 
 
                 <div>
-                    <h3>{product.name}</h3>
+                    <h3>{product1.name}</h3>
 
-                    <h3>{product.price}</h3>
+                    <h3>{product1.price}</h3>
 
-                    <h3>{product.details}</h3>
+                    <h3>{product1.details}</h3>
                 </div>
 
            </div> 
