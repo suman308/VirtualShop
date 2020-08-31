@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom';
 import Modal from './modals/modal'
 import GreetingContainer from './greetings/greeting_container'
  import ProductShowContainer from './products/product_show_container'
- import NavBar from './'
+ import NavBar from './navbar/navbar'
 const App =()=> {
 return (
   
@@ -12,7 +12,7 @@ return (
           <header> 
               <Modal/>
               <GreetingContainer className="greeting"/> 
-              <navbar></navbar>
+              <NavBar/>
            </header> 
               
              <Switch>

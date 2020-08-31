@@ -1,9 +1,20 @@
 .Navbar{
-    display:inline-block;
-
+    display:flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 4px -2px rgb(165, 164, 164);
+    background-color: rgb(206, 206, 206);
 }
 
 .Category{
     display: block;
-    color: indigo;
+    height:20px;
+    width:80px;
+    color: rgb(7, 6, 7);
+    margin:10px;
+    text-align: center;
+    
+}
+.Category:hover{ 
+ background-color: rgb(221, 227, 231);
+ border-radius: 4px;
 }
