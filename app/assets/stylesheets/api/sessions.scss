@@ -292,7 +292,19 @@ font-style: bold;
   color:white;
 }
 
+// ---------------------- the logo and the heading --------------------------------------
 
+.Virtual-logo{
+display:block;
+height:90px; 
+width:130px;
+background-size: 120px 80px;
+background-image: url(https://virtualshop-dev.s3-us-west-1.amazonaws.com/virtula-shop-logo.png);
+background-repeat: no-repeat;
+margin-top:2px;
+
+
+}
 
 
 

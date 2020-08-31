@@ -656,7 +656,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
         className: "fixed"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "all-products"
-      }, display));
+      }, display, console.log(products.length)));
     }
   }]);
 
@@ -725,7 +725,8 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "image-holder-box"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: productItem.images[0]
+        className: "image-holder-box",
+        src: productItem.imageUrls[0]
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic-price-holder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {

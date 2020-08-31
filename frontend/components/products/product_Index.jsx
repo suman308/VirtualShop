@@ -18,6 +18,7 @@ class ProductIndex extends React.Component {
             <div className="fixed">
                 <ul className="all-products">
                     {display}
+                    {console.log(products.length)}
               </ul>
                 
             </div>

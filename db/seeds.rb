@@ -1,10 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+
+require "open-uri"
+
+
 User.destroy_all
 Store.destroy_all 
 Product.destroy_all
@@ -91,330 +89,330 @@ product24= Product.create(name:"Topaz", details:"The pure topaz of the afican mi
 # ------------------pictureS from the art folder------------------------
 
 # beach
-beach = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtBeach1 = open("#{beach}beach1.jpg")
-picArtBeach2 = open("#{beach}beach2.jpg")
-picArtBeach3 = open("#{beach}beach3.jpg")
-picArtBeach4 = open("#{beach}beach4.jpg")
+
+picArtBeach1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/beach1.jpg")
+picArtBeach2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/beach2.jpg")
+picArtBeach3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/beach3.jpg")
+picArtBeach4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/beach4.jpg")
 
 # gana
-gana = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtGana1= open("#{gana}gana1.jpg")
-picArtGana2= open("#{gana}gana2.jpg")
-picArtGana3= open("#{gana}gana3.jpg")
-picArtGana4= open("#{gana}gana4.jpg")
+
+picArtGana1= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/gana1.jpg")
+picArtGana2= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/gana2.jpg")
+picArtGana3= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/gana3.jpg")
+picArtGana4= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/gana4.jpg")
 
 # ganesh 
-ganesh = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtGanesh1 = open("#{ganesh}ganesh.jpg")
-picArtGanesh2 = open("#{ganesh}ganesh2.jpg")
-picArtGanesh3 = open("#{ganesh}ganesh3.jpg")
+
+picArtGanesh1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ganesh.jpg")
+picArtGanesh2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ganesh2.jpg")
+picArtGanesh3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ganesh3.jpg")
 
 # jesus 
-jesus = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtJesus1 = open("#{jesus}jesus1.jpg")
-picArtJesus2 = open("#{jesus}jesus2.jpg")
-picArtJesus3 = open("#{jesus}jesus3.jpg")
-picArtJesus4 = open("#{jesus}jesus4.jpg")
+
+picArtJesus1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/jesus1.jpg")
+picArtJesus2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/jesus2.jpg")
+picArtJesus3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/jesus3.jpg")
+picArtJesus4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/jesus4.jpg")
 
 # kali 
-kali = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtKali1 = open("#{kali}kali1.jpg")
-picArtKali2 = open("#{kali}kali2.jpg")
+
+picArtKali1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/kali1.jpg")
+picArtKali2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/kali2.jpg")
 
 # sf 
-sf = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/art/"
-picArtSf1 = open("#{sf}sf1.jpg")
-picArtSf2 = open("#{sf}sf2.jpg")
-picArtSf3= open("#{sf}sf3.jpg")
-picArtSf4 = open("#{sf}sf4.jpg")
+
+picArtSf1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/sf1.jpg")
+picArtSf2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/sf2.jpg")
+picArtSf3= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/sf3.jpg")
+picArtSf4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/sf4.jpg")
 
 # ------------------picture from the book folder------------------------
 # book 
-bookselves = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookBookselves1 = open("#{bookselves}bookselves1.jpg")
-picBookBookselves2 = open("#{bookselves}bookselves2.jpg")
+
+picBookBookselves1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bookselves1.jpg")
+picBookBookselves2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bookselves2.jpg")
 
 # calender
-calender = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookCalender1 = open("#{calender}calender1.jpg")
-picBookCalender2 = open("#{calender}calender2.jpg")
-picBookCalender3 = open("#{calender}calender3.jpg")
-picBookCalender4 = open("#{calender}calender4.jpg")
+
+picBookCalender1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/calender1.jpg")
+picBookCalender2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/calender2.jpg")
+picBookCalender3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/calender3.jpg")
+picBookCalender4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/calender4.jpg")
 
 # colorfulbook 
-colorfulbook = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookColorfulbook1 =  open("#{colorfulbook}colorfulbook1.jpg")
-picBookColorfulbook2 =  open("#{colorfulbook}colorfulbook2.jpg")
-picBookColorfulbook3 =  open("#{colorfulbook}colorfulbook3.jpg")
-picBookColorfulbook4 =  open("#{colorfulbook}colorfulbook4.jpg")
+
+picBookColorfulbook1 =  open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/colorfulbook1.jpg")
+picBookColorfulbook2 =  open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/colorfulbook2.jpg")
+picBookColorfulbook3 =  open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/colorfulbook3.jpg")
+picBookColorfulbook4 =  open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/colorfulbook4.jpg")
 
 # hukkabook 
-hukkabook = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookHukkabook1 = open("#{hukkabook}hukkabook.jpg")
-picBookHukkabook2 = open("#{hukkabook}hukkabooks2.jpg")
-picBookHukkabook3 = open("#{hukkabook}hukkabook3.jpg")
-picBookHukkabook4 = open("#{hukkabook}hukkabooks4.jpg")
+
+picBookHukkabook1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hukkabook.jpg")
+picBookHukkabook2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hukkabooks2.jpg")
+picBookHukkabook3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hukkabook3.jpg")
+picBookHukkabook4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hukkabooks4.jpg")
 
 # leatherbook 
-leatherbook = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookLeatherbook1 = open("#{leatherbook}leatherbook1.jpg")
-picBookLeatherbook2 = open("#{leatherbook}leatherbook2.jpg")
-picBookLeatherbook3 = open("#{leatherbook}leatherbook3.jpg")
-picBookLeatherbook4 = open("#{leatherbook}leatherbook4.jpg")
+
+picBookLeatherbook1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/leatherbook1.jpg")
+picBookLeatherbook2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/leatherbook2.jpg")
+picBookLeatherbook3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/leatherbook3.jpg")
+picBookLeatherbook4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/leatherbook4.jpg")
 
 # plannerbook
-plannerbook = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookPlannerbook1 = open("#{plannerbook}plannerbook1.jpg")
-picBookPlannerbook2 = open("#{plannerbook}plannerbook2.jpg")
-picBookPlannerbook3 = open("#{plannerbook}plannerbook3.jpg")
+
+picBookPlannerbook1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/plannerbook1.jpg")
+picBookPlannerbook2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/plannerbook2.jpg")
+picBookPlannerbook3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/plannerbook3.jpg")
 
 
 # shakesparebook 
-shakesparebook = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/books/"
-picBookShakesparebook1 = open("#{shakesparebook}shakesparebook1.jpg")
-picBookShakesparebook2 = open("#{shakesparebook}shakesparebook2.jpg")
-picBookShakesparebook3 = open("#{shakesparebook}shakesparebook3.jpg")
+
+picBookShakesparebook1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shakesparebook1.jpg")
+picBookShakesparebook2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shakesparebook2.jpg")
+picBookShakesparebook3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shakesparebook3.jpg")
 
 
 
 # ------------------picture from the clothes folder------------------------
 #hoodies
-hoodies = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/clothes/"
-picClothesHoodies1 = open("#{hoodies}hoodies1.jpg")
-picClothesHoodies2 = open("#{hoodies}hoodies2.jpg")
-picClothesHoodies3 = open("#{hoodies}hoodies3.jpg")
-picClothesHoodies4 = open("#{hoodies}hoodies4.jpg")
+
+picClothesHoodies1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hoodies1.jpg")
+picClothesHoodies2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hoodies2.jpg")
+picClothesHoodies3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hoodies3.jpg")
+picClothesHoodies4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/hoodies4.jpg")
 
 # menjeans 
-menjeans = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/clothes/"
-picClothesMenjeans1 = open("#{menjeans}menjeans1.jpg")
-picClothesMenjeans2 = open("#{menjeans}menjeans2.jpg")
-picClothesMenjeans3 = open("#{menjeans}menjeans3.jpg")
-picClothesMenjeans4 = open("#{menjeans}menjeans4.jpg")
+
+picClothesMenjeans1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/menjeans1.jpg")
+picClothesMenjeans2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/menjeans2.jpg")
+picClothesMenjeans3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/menjeans3.jpg")
+picClothesMenjeans4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/menjeans4.jpg")
 
 #shoes
-shoes = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/clothes/"
-picClothesShoes1 = open("#{shoes}shoes1.jpg")
-picClothesShoes2 = open("#{shoes}shoes2.jpg")
-picClothesShoes3 = open("#{shoes}shoes3.jpg")
-picClothesShoes4 = open("#{shoes}shoes4.jpg")
+
+picClothesShoes1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shoes1.jpg")
+picClothesShoes2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shoes2.jpg")
+picClothesShoes3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shoes3.jpg")
+picClothesShoes4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/shoes4.jpg")
 
 # t-shirts 
-tshirt  = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/clothes/"
-picClothesTshirt1 = open("#{tshirt}tshirt1.jpg")
-picClothesTshirt2 = open("#{tshirt}tshirt2.jpg")
-picClothesTshirt3 = open("#{tshirt}tshirt3.jpg")
+
+picClothesTshirt1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/tshirt1.jpg")
+picClothesTshirt2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/tshirt2.jpg")
+picClothesTshirt3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/tshirt3.jpg")
 
 # ------------------picture from the electronics folder------------------------
 
 #  ironglass
-ironglass = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/electronic+/"
-picElectronicsIronglass1 = open("#{ironglass}ironglass1.jpg")
-picElectronicsIronglass2 = open("#{ironglass}ironglass2.jpg")
-picElectronicsIronglass3 = open("#{ironglass}ironglass3.jpg")
-picElectronicsIronglass4 = open("#{ironglass}ironglass4.jpg")
+
+picElectronicsIronglass1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ironglass1.jpg")
+picElectronicsIronglass2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ironglass2.jpg")
+picElectronicsIronglass3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ironglass3.jpg")
+picElectronicsIronglass4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/ironglass4.jpg")
 
 # joystick 
-joystick = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/electronic+/"
-picElectronicsJoystick1 = open("#{joystick}joystick1.jpg")
-picElectronicsJoystick2 = open("#{joystick}joystick2.jpg")
-picElectronicsJoystick3 = open("#{joystick}joystick3.jpg")
+
+picElectronicsJoystick1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/joystick1.jpg")
+picElectronicsJoystick2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/joystick2.jpg")
+picElectronicsJoystick3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/joystick3.jpg")
 
 # lightsaber 
-lightsaber = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/electronic+/"
-picElectronicsLightsaber1 = open("#{lightsaber}lightsaber1.jpg")
-picElectronicsLightsaber2 = open("#{lightsaber}lightsaber2.jpg")
-picElectronicsLightsaber3 = open("#{lightsaber}lightsaber3.jpg")
-picElectronicsLightsaber4= open("#{lightsaber}lightsaber4.jpg")
+
+picElectronicsLightsaber1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/lightsaber1.jpg")
+picElectronicsLightsaber2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/lightsaber2.jpg")
+picElectronicsLightsaber3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/lightsaber3.jpg")
+picElectronicsLightsaber4= open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/lightsaber4.jpg")
 
 # pendrives 
-pendrives = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/electronic+/"
-picElectronicsPendrive1 = open("#{pendrives}pendrive1.jpg")
-picElectronicsPendrive2 = open("#{pendrives}pendrive2.jpg")
-picElectronicsPendrive3 = open("#{pendrives}pendrive3.jpg")
-picElectronicsPendrive4 = open("#{pendrives}pendrive4.jpg")
+
+picElectronicsPendrive1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/pendrive1.jpg")
+picElectronicsPendrive2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/pendrive2.jpg")
+picElectronicsPendrive3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/pendrive3.jpg")
+picElectronicsPendrive4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/pendrive4.jpg")
 
 
 #  ------------------picture from the  jewelry folder------------------------
 # bluediamonds
 
-bluediamonds = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/jewelry/"
-picJewelryBluediamonds1 = open("#{bluediamonds}bluediamond1.jpg")
-picJewelryBluediamonds2 = open("#{bluediamonds}bluediamond2.jpg")
-picJewelryBluediamonds3 = open("#{bluediamonds}bluediamond3.jpg")
-picJewelryBluediamonds4 = open("#{bluediamonds}bluediamond4.jpg")
+
+picJewelryBluediamonds1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bluediamond1.jpg")
+picJewelryBluediamonds2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bluediamond2.jpg")
+picJewelryBluediamonds3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bluediamond3.jpg")
+picJewelryBluediamonds4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/bluediamond4.jpg")
 
 # crystaldiamonds 
-crystaldiamond = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/jewelry/"
-picJewelryCrystaldiamonds1 = open("#{crystaldiamond}crystaldiamond1.jpg")
-picJewelryCrystaldiamonds2 = open("#{crystaldiamond}crystaldiamond2.jpg")
-picJewelryCrystaldiamonds3 = open("#{crystaldiamond}crystaldiamond3.jpg")
-picJewelryCrystaldiamonds4 = open("#{crystaldiamond}crystaldiamond4.jpg")
+
+picJewelryCrystaldiamonds1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/crystaldiamond1.jpg")
+picJewelryCrystaldiamonds2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/crystaldiamond2.jpg")
+picJewelryCrystaldiamonds3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/crystaldiamond3.jpg")
+picJewelryCrystaldiamonds4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/crystaldiamond4.jpg")
 
 #diamond 
-diamond = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/jewelry/"
-picJewelryDiamonds1 = open("#{diamond}diamond1.jpg")
-picJewelryDiamonds2 = open("#{diamond}diamond2.jpg")
-picJewelryDiamonds3 = open("#{diamond}diamond3.jpg")
-picJewelryDiamonds4 = open("#{diamond}diamond4.jpg")
+
+picJewelryDiamonds1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/diamond1.jpg")
+picJewelryDiamonds2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/diamond2.jpg")
+picJewelryDiamonds3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/diamond3.jpg")
+picJewelryDiamonds4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/diamond4.jpg")
 
 #golddiamond 
-golddiamond = "https://virtualshop-dev.s3-us-west-1.amazonaws.com/jewelry/"
-picJewelryGoldDiamonds1 = open("#{diamond}golddiamond1.jpg")
-picJewelryDiamonds2 = open("#{diamond}golddiamond2.jpg")
-picJewelryDiamonds3 = open("#{diamond}golddiamond3.jpg")
-picJewelryDiamonds4 = open("#{diamond}golddiamond4.jpg")
+
+picJewelryGoldDiamonds1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/golddiamond1.jpg")
+picJewelryGoldDiamonds2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/golddiamond2.jpg")
+picJewelryGoldDiamonds3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/golddiamond3.jpg")
+picJewelryGoldDiamonds4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/golddiamond4.jpg")
 
 #topaz
-topaz= "https://virtualshop-dev.s3-us-west-1.amazonaws.com/jewelry/"
-picJewelryTopaz1 = open("#{diamond}topaz1.jpg")
-picJewelryTopaz2 = open("#{diamond}topaz2.jpg")
-picJewelryTopaz3 = open("#{diamond}topaz3.jpg")
-picJewelryTopaz4 = open("#{diamond}topaz4.jpg")
+
+picJewelryTopaz1 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/topaz1.jpg")
+picJewelryTopaz2 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/topaz2.jpg")
+picJewelryTopaz3 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/topaz3.jpg")
+picJewelryTopaz4 = open("https://virtualshop-dev.s3-us-west-1.amazonaws.com/topaz4.jpg")
 # ================================================ attach the picture to the products ==============================================
 
 # the picture of beach
-product1.images.attach(io:picArtBeach1, filename: 'beach1.jpg')
-product1.images.attach(io:picArtBeach2, filename: 'beach2.jpg')
-product1.images.attach(io:picArtBeach3, filename: 'beach3.jpg')
-product1.images.attach(io:picArtBeach4, filename: 'beach4.jpg')
+product1.images.attach(io: picArtBeach1, filename: 'beach1.jpg')
+product1.images.attach(io: picArtBeach2, filename: 'beach2.jpg')
+product1.images.attach(io: picArtBeach3, filename: 'beach3.jpg')
+product1.images.attach(io: picArtBeach4, filename: 'beach4.jpg')
 
-# The statue  of ganesh 
-product2.images.attach(io:picArtGana1, filename: 'gana1.jpg')
-product2.images.attach(io:picArtGana2, filename: 'gana2.jpg')
-product2.images.attach(io:picArtGana3, filename: 'gana3.jpg')
-product2.images.attach(io:picArtGana4, filename: 'gana4.jpg')
+# The statue  of https://virtualshop-dev.s3-us-west-1.amazonaws.com/ 
+product2.images.attach(io: picArtGana1, filename: 'gana1.jpg')
+product2.images.attach(io: picArtGana2, filename: 'gana2.jpg')
+product2.images.attach(io: picArtGana3, filename: 'gana3.jpg')
+product2.images.attach(io: picArtGana4, filename: 'gana4.jpg')
 
 # The painting of ganesh 
-product26.images.attach(io:picArtGanesh1, filename: 'ganesh.jpg')
-product26.images.attach(io:picArtGanesh2, filename: 'ganesh2.jpg')
-product26.images.attach(io:picArtGanesh3, filename: 'ganesh3.jpg')
+product26.images.attach(io: picArtGanesh1, filename: 'ganesh.jpg')
+product26.images.attach(io: picArtGanesh2, filename: 'ganesh2.jpg')
+product26.images.attach(io: picArtGanesh3, filename: 'ganesh3.jpg')
 
 # The painting of Jesus 
-product3.images.attach(io:picArtJesus1, filename: 'jesus1.jpg')
-product3.images.attach(io:picArtJesus2, filename: 'jesus2.jpg')
-product3.images.attach(io:picArtJesus3, filename: 'jesus3.jpg')
-product3.images.attach(io:picArtJesus4, filename: 'jesus4.jpg')
+product3.images.attach(io: picArtJesus1, filename: 'jesus1.jpg')
+product3.images.attach(io: picArtJesus2, filename: 'jesus2.jpg')
+product3.images.attach(io: picArtJesus3, filename: 'jesus3.jpg')
+product3.images.attach(io: picArtJesus4, filename: 'jesus4.jpg')
 
 # The painting of Jesus 
-product4.images.attach(io:picArtKali1 , filename: 'kali1.jpg')
-product4.images.attach(io:picArtKali2 , filename: 'kali2.jpg')
+product4.images.attach(io: picArtKali1 , filename: 'kali1.jpg')
+product4.images.attach(io: picArtKali2 , filename: 'kali2.jpg')
  
 # The painting of sf-bridge
-product5.images.attach(io:picArtSf1 , filename: 'sf1.jpg')
-product5.images.attach(io:picArtSf2 , filename: 'sf2.jpg')
-product5.images.attach(io:picArtSf3 , filename: 'sf3.jpg')
-product5.images.attach(io:picArtSf4 , filename: 'sf4.jpg')
+product5.images.attach(io: picArtSf1 , filename: 'sf1.jpg')
+product5.images.attach(io: picArtSf2 , filename: 'sf2.jpg')
+product5.images.attach(io: picArtSf3 , filename: 'sf3.jpg')
+product5.images.attach(io: picArtSf4 , filename: 'sf4.jpg')
 
 # The bookselves  
-product6.images.attach(io:picBookBookselves1 , filename: 'bookselves1.jpg')
-product6.images.attach(io:picBookBookselves2 , filename: 'bookselves2.jpg')
+product6.images.attach(io: picBookBookselves1 , filename: 'bookselves1.jpg')
+product6.images.attach(io: picBookBookselves2 , filename: 'bookselves2.jpg')
 
 #  the calender 
-product7.images.attach(io:picBookCalender1, filename: 'calender1.jpg')
-product7.images.attach(io:picBookCalender2, filename: 'calender2.jpg')
-product7.images.attach(io:picBookCalender3, filename: 'calender3.jpg')
-product7.images.attach(io:picBookCalender4, filename: 'calender4.jpg')
+product7.images.attach(io: picBookCalender1, filename: 'calender1.jpg')
+product7.images.attach(io: picBookCalender2, filename: 'calender2.jpg')
+product7.images.attach(io: picBookCalender3, filename: 'calender3.jpg')
+product7.images.attach(io: picBookCalender4, filename: 'calender4.jpg')
 
 #  colorfulbook 
-product8.images.attach(io:picBookColorfulbook1, filename: 'colorfulbook1.jpg')
-product8.images.attach(io:picBookColorfulbook2, filename: 'colorfulbook2.jpg')
-product8.images.attach(io:picBookColorfulbook3, filename: 'colorfulbook3.jpg')
-product8.images.attach(io:picBookColorfulbook4, filename: 'colorfulbook4.jpg')
+product8.images.attach(io: picBookColorfulbook1, filename: 'colorfulbook1.jpg')
+product8.images.attach(io: picBookColorfulbook2, filename: 'colorfulbook2.jpg')
+product8.images.attach(io: picBookColorfulbook3, filename: 'colorfulbook3.jpg')
+product8.images.attach(io: picBookColorfulbook4, filename: 'colorfulbook4.jpg')
 
 # hukkabook
-product9.images.attach(io:picBookHukkabook1, filename: 'hukkabook.jpg')
-product9.images.attach(io:picBookHukkabook2, filename: 'hukkabook2.jpg')
-product9.images.attach(io:picBookHukkabook3, filename: 'hukkabook3.jpg')
-product9.images.attach(io:picBookHukkabook4, filename: 'hukkabook4.jpg')
+product9.images.attach(io: picBookHukkabook1, filename: 'hukkabook.jpg')
+product9.images.attach(io: picBookHukkabook2, filename: 'hukkabook2.jpg')
+product9.images.attach(io: picBookHukkabook3, filename: 'hukkabook3.jpg')
+product9.images.attach(io: picBookHukkabook4, filename: 'hukkabook4.jpg')
 
 # leatherbook
-product10.images.attach(io:picBookLeatherbook1 , filename: 'leatherbook1.jpg')
-product10.images.attach(io:picBookLeatherbook2 , filename: 'leatherbook2.jpg')
-product10.images.attach(io:picBookLeatherbook3 , filename: 'leatherbook3.jpg')
-product10.images.attach(io:picBookLeatherbook4 , filename: 'leatherbook4.jpg')
+product10.images.attach(io: picBookLeatherbook1 , filename: 'leatherbook1.jpg')
+product10.images.attach(io: picBookLeatherbook2 , filename: 'leatherbook2.jpg')
+product10.images.attach(io: picBookLeatherbook3 , filename: 'leatherbook3.jpg')
+product10.images.attach(io: picBookLeatherbook4 , filename: 'leatherbook4.jpg')
 
 # plannerbook
-product11.images.attach(io:picBookPlannerbook1 , filename: 'plannerbook1.jpg')
-product11.images.attach(io:picBookPlannerbook2 , filename: 'plannerbook2.jpg')
-product11.images.attach(io:picBookPlannerbook3, filename: 'plannerbook3.jpg')
+product11.images.attach(io: picBookPlannerbook1 , filename: 'plannerbook1.jpg')
+product11.images.attach(io: picBookPlannerbook2 , filename: 'plannerbook2.jpg')
+product11.images.attach(io: picBookPlannerbook3, filename: 'plannerbook3.jpg')
 
 # shakesparebook
-product12.images.attach(io:picBookShakesparebook1 , filename: 'shakesparebook1.jpg')
-product12.images.attach(io:picBookShakesparebook2, filename: 'shakesparebook2.jpg')
-product12.images.attach(io:picBookShakesparebook3, filename: 'shakesparebook3.jpg')
+product12.images.attach(io: picBookShakesparebook1 , filename: 'shakesparebook1.jpg')
+product12.images.attach(io: picBookShakesparebook2, filename: 'shakesparebook2.jpg')
+product12.images.attach(io: picBookShakesparebook3, filename: 'shakesparebook3.jpg')
 
 # hoodies
-product13.images.attach(io:picClothesHoodies1, filename: 'hoodies1.jpg')
-product13.images.attach(io:picClothesHoodies2, filename: 'hoodies2.jpg')
-product13.images.attach(io:picClothesHoodies3, filename: 'hoodies3.jpg')
-product13.images.attach(io:picClothesHoodies4, filename: 'hoodies4.jpg')
+product13.images.attach(io: picClothesHoodies1, filename: 'hoodies1.jpg')
+product13.images.attach(io: picClothesHoodies2, filename: 'hoodies2.jpg')
+product13.images.attach(io: picClothesHoodies3, filename: 'hoodies3.jpg')
+product13.images.attach(io: picClothesHoodies4, filename: 'hoodies4.jpg')
 
 # Menjeans
-product14.images.attach(io:picClothesMenjeans1, filename: 'menjeans1.jpg')
-product14.images.attach(io:picClothesMenjeans2, filename: 'menjeans2.jpg')
-product14.images.attach(io:picClothesMenjeans3, filename: 'menjeans3.jpg')
-product14.images.attach(io:picClothesMenjeans4, filename: 'menjeans4.jpg')
+product14.images.attach(io: picClothesMenjeans1, filename: 'menjeans1.jpg')
+product14.images.attach(io: picClothesMenjeans2, filename: 'menjeans2.jpg')
+product14.images.attach(io: picClothesMenjeans3, filename: 'menjeans3.jpg')
+product14.images.attach(io: picClothesMenjeans4, filename: 'menjeans4.jpg')
 
 # shoes
-product15.images.attach(io:picClothesShoes1, filename: 'shoes1.jpg')
-product15.images.attach(io:picClothesShoes2, filename: 'shoes2.jpg')
-product15.images.attach(io:picClothesShoes3, filename: 'shoes3.jpg')
-product15.images.attach(io:picClothesShoes4, filename: 'shoes4.jpg')
+product15.images.attach(io: picClothesShoes1, filename: 'shoes1.jpg')
+product15.images.attach(io: picClothesShoes2, filename: 'shoes2.jpg')
+product15.images.attach(io: picClothesShoes3, filename: 'shoes3.jpg')
+product15.images.attach(io: picClothesShoes4, filename: 'shoes4.jpg')
 
 # t-shirt
-product16.images.attach(io:picClothesTshirt1, filename: 'tshirt1.jpg')
-product16.images.attach(io:picClothesTshirt2, filename: 'tshirt2.jpg')
-product16.images.attach(io:picClothesTshirt3, filename: 'tshirt3.jpg')
+product16.images.attach(io: picClothesTshirt1, filename: 'tshirt1.jpg')
+product16.images.attach(io: picClothesTshirt2, filename: 'tshirt2.jpg')
+product16.images.attach(io: picClothesTshirt3, filename: 'tshirt3.jpg')
 
 # IronGlass
-product17.images.attach(io:picElectronicsIronglass1, filename: 'ironglass1.jpg')
-product17.images.attach(io:picElectronicsIronglass2, filename: 'ironglass2.jpg')
-product17.images.attach(io:picElectronicsIronglass3, filename: 'ironglass3.jpg')
-product17.images.attach(io:picElectronicsIronglass4, filename: 'ironglass4.jpg')
+product17.images.attach(io: picElectronicsIronglass1, filename: 'ironglass1.jpg')
+product17.images.attach(io: picElectronicsIronglass2, filename: 'ironglass2.jpg')
+product17.images.attach(io: picElectronicsIronglass3, filename: 'ironglass3.jpg')
+product17.images.attach(io: picElectronicsIronglass4, filename: 'ironglass4.jpg')
 
 # joystick
-product18.images.attach(io:picElectronicsIronglass1, filename: 'joystick1.jpg')
-product18.images.attach(io:picElectronicsIronglass2, filename: 'joystick2.jpg')
-product18.images.attach(io:picElectronicsIronglass3, filename: 'joystick3.jpg')
+product18.images.attach(io: picElectronicsJoystick1, filename: 'joystick1.jpg')
+product18.images.attach(io: picElectronicsJoystick2, filename: 'joystick2.jpg')
+product18.images.attach(io: picElectronicsJoystick3, filename: 'joystick3.jpg')
 
 # lightsaber
-product19.images.attach(io:picElectronicsLightsaber1, filename: 'lightsaber1.jpg')
-product19.images.attach(io:picElectronicsLightsaber2, filename: 'lightsaber2.jpg')
-product19.images.attach(io:picElectronicsLightsaber3, filename: 'lightsaber3.jpg')
-product19.images.attach(io:picElectronicsLightsaber4, filename: 'lightsaber4.jpg')
+product19.images.attach(io: picElectronicsLightsaber1, filename: 'lightsaber1.jpg')
+product19.images.attach(io: picElectronicsLightsaber2, filename: 'lightsaber2.jpg')
+product19.images.attach(io: picElectronicsLightsaber3, filename: 'lightsaber3.jpg')
+product19.images.attach(io: picElectronicsLightsaber4, filename: 'lightsaber4.jpg')
 
 # Pendrive
-product20.images.attach(io:picElectronicsPendrive1, filename: 'pendrive1.jpg')
-product20.images.attach(io:picElectronicsPendrive2, filename: 'pendrive2.jpg')
-product20.images.attach(io:picElectronicsPendrive3, filename: 'pendrive3.jpg')
-product20.images.attach(io:picElectronicsPendrive4, filename: 'pendrive4.jpg')
+product20.images.attach(io: picElectronicsPendrive1, filename: 'pendrive1.jpg')
+product20.images.attach(io: picElectronicsPendrive2, filename: 'pendrive2.jpg')
+product20.images.attach(io: picElectronicsPendrive3, filename: 'pendrive3.jpg')
+product20.images.attach(io: picElectronicsPendrive4, filename: 'pendrive4.jpg')
 
 # bluediamond
-product21.images.attach(io:picJewelryBluediamonds1 , filename: 'bluediamond1.jpg')
-product21.images.attach(io:picJewelryBluediamonds2 , filename: 'bluediamond2.jpg')
-product21.images.attach(io:picJewelryBluediamonds3, filename: 'bluediamond3.jpg')
-product21.images.attach(io:picJewelryBluediamonds4, filename: 'bluediamond4.jpg')
+product21.images.attach(io: picJewelryBluediamonds1 , filename: 'bluediamond1.jpg')
+product21.images.attach(io: picJewelryBluediamonds2 , filename: 'bluediamond2.jpg')
+product21.images.attach(io: picJewelryBluediamonds3, filename: 'bluediamond3.jpg')
+product21.images.attach(io: picJewelryBluediamonds4, filename: 'bluediamond4.jpg')
 
 
 # diamond
-product22.images.attach(io:picJewelryCrystaldiamonds1  , filename: 'diamond1.jpg')
-product22.images.attach(io:picJewelryCrystaldiamonds2, filename: 'diamond2.jpg')
-product22.images.attach(io:picJewelryCrystaldiamonds3, filename: 'diamond3.jpg')
-product22.images.attach(io:picJewelryCrystaldiamonds4, filename: 'diamond4.jpg')
+product22.images.attach(io: picJewelryCrystaldiamonds1  , filename: 'diamond1.jpg')
+product22.images.attach(io: picJewelryCrystaldiamonds2, filename: 'diamond2.jpg')
+product22.images.attach(io: picJewelryCrystaldiamonds3, filename: 'diamond3.jpg')
+product22.images.attach(io: picJewelryCrystaldiamonds4, filename: 'diamond4.jpg')
 
 # golddiamond
-product23.images.attach(io:picJewelryGoldDiamonds1, filename: 'golddiamond1.jpg')
-product23.images.attach(io:picJewelryGoldDiamonds2, filename: 'golddiamond2.jpg')
-product23.images.attach(io:picJewelryGoldDiamonds3, filename: 'golddiamond3.jpg')
-product23.images.attach(io:picJewelryGoldDiamonds4, filename: 'golddiamond4.jpg')
+product23.images.attach(io: picJewelryGoldDiamonds1, filename:'golddiamond1.jpg')
+product23.images.attach(io: picJewelryGoldDiamonds2, filename:'golddiamond2.jpg')
+product23.images.attach(io: picJewelryGoldDiamonds3, filename:'golddiamond3.jpg')
+product23.images.attach(io: picJewelryGoldDiamonds4, filename:'golddiamond4.jpg')
 
 # golddiamond
-product24.images.attach(io:picJewelryTopaz1, filename: 'topaz1.jpg')
-product24.images.attach(io:picJewelryTopaz2, filename: 'topaz2.jpg')
-product24.images.attach(io:picJewelryTopaz3, filename: 'topaz3.jpg')
-product24.images.attach(io:picJewelryTopaz4, filename: 'topaz4.jpg')
+product24.images.attach(io: picJewelryTopaz1, filename:'topaz1.jpg')
+product24.images.attach(io: picJewelryTopaz2, filename:'topaz2.jpg')
+product24.images.attach(io: picJewelryTopaz3, filename:'topaz3.jpg')
+product24.images.attach(io: picJewelryTopaz4, filename:'topaz4.jpg')
 # =====================================================================
 
 
