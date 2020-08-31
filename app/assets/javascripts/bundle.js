@@ -728,6 +728,10 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "image-holder-box",
         src: productItem.imageUrls[0]
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "rating"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "the "
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic-price-holder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "name-of-pic"
@@ -735,7 +739,7 @@ var ProductIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "price-of-pic"
       }, "  $", productItem.price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "below-the-iamge-holder-box"
-      }, " "));
+      }));
     }
   }]);
 
