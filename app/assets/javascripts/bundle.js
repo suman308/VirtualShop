@@ -787,24 +787,24 @@ var ProductImageList = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, ProductImageList);
 
     _this = _super.call(this, props);
-    _this.state = _this.props.images;
+    _this.state = {
+      photos: _this.props.images,
+      currentPhoto: 0
+    };
     return _this;
   }
 
   _createClass(ProductImageList, [{
     key: "render",
     value: function render() {
-      var photos = this.state;
-      var display = photos.map(function (image, k) {
+      var display = this.state.photos.map(function (image, k) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           key: k,
           className: "small-image",
           src: image
         });
       });
-      return {
-        display: display
-      };
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display);
     }
   }]);
 

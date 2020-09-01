@@ -3,13 +3,19 @@ import React from 'react';
 class ProductImageList extends React.Component {
     constructor(props){
         super(props)
-        this.state = this.props.images 
+        this.state = {
+            photos: this.props.images , 
+            currentPhoto:0
+        }
     }
     render() {
-        const photos = this.state 
-        const display = photos.map((image, k) => <img key={k} className="small-image" src={image} />) 
+        
+        const display = this.state.photos.map((image, k) => <img key={k} className="small-image" src={image} />) 
+
         return (
-            {display}
+            <div>
+                {display}
+            </div>
         )
     }
 
