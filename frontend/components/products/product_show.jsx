@@ -10,7 +10,7 @@ class productShow extends React.Component {
     }
     render(){
            const images = Array.from(this.props.product.imageUrls)
-            const display = images.map((image, k) => <img  key={k} className="small-image" src={image} />)
+            
 
         return (
            <div>

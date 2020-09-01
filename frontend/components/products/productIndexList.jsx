@@ -6,8 +6,10 @@ class ProductImageList extends React.Component {
         this.state = this.props.images 
     }
     render() {
+        const photos = this.state 
+        const display = photos.map((image, k) => <img key={k} className="small-image" src={image} />) 
         return (
-            this.state
+            {display}
         )
     }
 
