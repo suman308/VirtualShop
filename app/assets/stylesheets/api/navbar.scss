@@ -12,11 +12,16 @@
     height:24px;
     width:84px;
     color: rgb(7, 6, 7);
-    margin:8px;
+    margin-bottom:8px;
+    margin-top:8px;
+    font-size: 18px;
     text-align: center;
+    font-style: normal;
+    
+    
     
 }
 .Category:hover{ 
- 
+display: block;
  color: white;
 }

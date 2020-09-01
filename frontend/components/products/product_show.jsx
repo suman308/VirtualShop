@@ -1,24 +1,23 @@
 import React from 'react';
-class ProductShow extends React.Component {
+class productShow extends React.Component {
     constructor(props){
         super(props)
         
     }
     
     componentDidMount(){
-        this.props.getProducts();
+        this.props.getProduct(this.props.match.params.id);
     }
     render(){
-            const product1 = this.props.product
-            const images = product1.imageUrls
-            const display = images.map(image => <img className="small-image" src={image} />)
+           const images = Array.from(this.props.product.imageUrls)
+            const display = images.map((image, k) => <img  key={k} className="small-image" src={image} />)
 
         return (
            <div>
               
                 <div>
                         <div>
-                            {display}
+                            <ProductImagesList images = {images}/>
                         </div>
                         <div>
                                  <h1>Hello</h1>
@@ -26,17 +25,17 @@ class ProductShow extends React.Component {
                 </div>
 
 
-                <div>
+                {/* <div>
                     <h3>{product1.name}</h3>
 
                     <h3>{product1.price}</h3>
 
                     <h3>{product1.details}</h3>
-                </div>
+                </div> */}
 
            </div> 
         )
     }
 }
 
-export default ProductShow;
+export default productShow;

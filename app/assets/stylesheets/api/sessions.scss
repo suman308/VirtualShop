@@ -108,10 +108,10 @@
 
 .title {
   text-align: center;
-  color:rgb(238, 119, 9);
+  color:rgb(7, 7, 7);
   font-size: 20px;
   font-style: italic;
-  background-color: rgb(148, 205, 228);
+  
  
   
 }
@@ -237,7 +237,7 @@ font-style: bold;
   display:block ;
   height: 52px;
   width:4%;
-  background-color:rgb(206, 205, 205);
+  background-color:rgb(223, 222, 222);
   border:  rgb(177, 174, 174) solid 1px;
   outline: none  !important;
   border-right:none;
@@ -261,14 +261,14 @@ font-style: bold;
   display:block ;
   height: 50px;
   width:60%;
-  background-color:rgb(206, 205, 205);
+  background-color:rgb(223, 222, 222);
   
   border:  rgb(177, 174, 174) solid 1px;
   outline: none  !important;
   border-right:none;
   border-left:none;
-  box-shadow: inset 0px 0.5px 0.5px  rgb(141, 139, 139);
-
+  box-shadow: inset 0px 0.2px 0.3px  rgb(141, 139, 139);
+  font-size: 18px;
 }
 .submit-button {
   display:block; 
