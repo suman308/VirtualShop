@@ -14,6 +14,7 @@ return (
               <Modal/>
               <GreetingContainer className="greeting"/> 
               <NavBar/>
+              
            </header> 
               
              <Switch>

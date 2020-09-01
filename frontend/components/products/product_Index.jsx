@@ -17,11 +17,12 @@ class ProductIndex extends React.Component {
         return (
             <div>
             <div className="animation">
-                <h3 className="message"> Buy Or Sell anything you like in the most trusted online-shop </h3>
+                <h3 className="message"> Buy Or Sell exciting adn rare items  in the most trusted online-shop </h3>
             </div>
             <div className="fixed">
                 <ul className="all-products">
                     {display}
+                    
                 </ul>
                 
             </div>  

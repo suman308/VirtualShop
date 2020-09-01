@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductImagesList from './productImagesList';
 class productShow extends React.Component {
     constructor(props){
         super(props)
@@ -17,7 +18,7 @@ class productShow extends React.Component {
               
                 <div>
                         <div>
-                            <ProductImagesList images = {images}/>
+                            <ProductImagesList images={images}/>
                         </div>
                         <div>
                                  <h1>Hello</h1>
