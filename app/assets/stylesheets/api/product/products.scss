@@ -32,8 +32,11 @@
     display:block;
    height: 250px;
    width: 250px;
-    box-shadow: 0 0 10px rgba(179, 177, 177, 0.7);
+    box-shadow: 0 0 10px rgba(204, 200, 200, 0.7);
  
+}
+.image-holder-box:hover {
+     box-shadow: 0 0 10px rgba(73, 72, 72, 0.7);
 }
 //--------------------------------<rating>----------------------------------------
 .rating{

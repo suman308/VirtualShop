@@ -883,7 +883,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
         className: "animation"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "message"
-      }, " Buy Or Sell exciting adn rare items  in the most trusted online-shop ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Buy Or Sell exciting & rare items  in the most trusted online-shop ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fixed"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "all-products"
