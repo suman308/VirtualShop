@@ -12,3 +12,4 @@ class ProductImageList extends React.Component {
     }
 
 }
+export default ProductImageList; 
