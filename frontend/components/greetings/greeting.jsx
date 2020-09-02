@@ -1,7 +1,7 @@
 import React from  'react'; 
 import ProductIndexContainer from '../../components/products/product_Index_container'
-
-
+import {searchIcon} from '../../../app/assets/images/icons'
+import {withRouter} from 'react-router';
 class Greeting extends React.Component {
    constructor(props){
        super(props)
@@ -15,8 +15,9 @@ class Greeting extends React.Component {
                     <form className= "search" >
                         <div className="head-search"></div>
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
-                        <input type="submit" className="submit-button"> 
-                        </input>
+                        <div  className="submit-button"> 
+                                    {searchIcon}
+                        </div>
                      
                     </form >
 
@@ -50,4 +51,4 @@ class Greeting extends React.Component {
        
     }
 }
-export default Greeting;
+export default withRouter(Greeting);

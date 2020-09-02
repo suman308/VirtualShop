@@ -7,16 +7,22 @@ class ProductImageList extends React.Component {
             photos: this.props.images, 
             currentPhoto:0
         }
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(){
+        
     }
     render() {
         
-        const display = this.state.photos.map((image, k) => <img key={k} className="small-image" src={image} />) 
+        const display = this.state.photos.map((image, k) => <img key={k} className="small-image" src={image} onclick={this.handleClick}/>) 
         const num = this.state.photos.length
         return (
-            <div>
+            <div className="inline-images-holder">
                 <div className="small-image-holder">
-                {display}
+                    {display}
                 </div>
+
                 <div className="big-image-holder">
                     <img className="big-image" src={this.state.photos[this.state.currentPhoto]} />
                 </div>

@@ -15,27 +15,27 @@ class productShow extends React.Component {
          const pro = this.props.product
          const images = pro.imageUrls
         return (
-            <div>
+            <div className="inline-images-holder">
            
               
-                <div>
+                    <div>
+                            
+                                <ProductImagesList images={images}/>
+
                         
-                            <ProductImagesList images={images}/>
-
-                     
-                        <div>
-                                
-                        </div>
-                </div>
+                            <div>
+                                    
+                            </div>
+                    </div>
 
 
-                <div>
-                    <h3>{pro.name}</h3>
+                    <div>
+                        <h3>{pro.name}</h3>
 
-                    <h3>{pro.price}</h3>
+                        <h3>{pro.price}</h3>
 
-                    <h3>{pro.details}</h3>
-                </div>
+                        <h3>{pro.details}</h3>
+                    </div>
 
            </div> 
         )

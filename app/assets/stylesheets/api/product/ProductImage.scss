@@ -1,4 +1,22 @@
 .small-image{
-    height:60px;
-    width:60px;
+    height:100px;
+    width:100px;
+   margin:10px;
+  
+}
+.small-image:hover{
+    height:105px;
+    width:105px;
+     box-shadow: 1px 2px 4px 2px rgba(133, 133, 136, 0.6);
+}
+
+.big-image{
+    height:800px;
+    width:800px;
+
+}
+
+.inline-images-holder{
+    display:inline-flex;
+    margin-top: 10px;
 }
