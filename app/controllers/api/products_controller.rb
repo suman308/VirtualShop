@@ -11,7 +11,7 @@ class Api::ProductsController < ApplicationController
 
 
     def show 
-        @product = Product.find_by(id:params[:id]) 
+        @product = Product.with_attached_images.find_by(id:params[:id]) 
         if @product 
             render 'api/products/show'
         else 
@@ -52,9 +52,9 @@ class Api::ProductsController < ApplicationController
         params.permit(:product).require(:name, :details, :price, :category, :store_id, :image)
     end 
 
-    def require_login 
-        unless logged_in? 
-            render json:["you must login to have this action"], status: 422
-        end 
-    end 
+    # def require_login 
+    #     unless logged_in? 
+    #         render json:["you must login to have this action"], status: 422
+    #     end 
+    # end 
 end

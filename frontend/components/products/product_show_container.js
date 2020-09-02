@@ -1,7 +1,7 @@
 
 import {connect} from 'react-redux'; 
-import ProductShow from './product_show';
 import {getProducts, getProduct} from '../../actions/product_actions';
+import ProductShow from './product_show';
 
 
 const mpst = (state, ownProps) => {

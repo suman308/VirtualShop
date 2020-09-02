@@ -415,7 +415,9 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
           className: "submit-button"
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline-container"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          className: "offset"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline",
           onClick: function onClick() {
             return openModal('login');
@@ -432,7 +434,9 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
           className: "greeting"
         }, " Welcome home  ", currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline-container"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
+          className: "offset"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline",
           onClick: logout
         }, " Logout"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_products_product_Index_container__WEBPACK_IMPORTED_MODULE_1__["default"], null));
@@ -804,7 +808,15 @@ var ProductImageList = /*#__PURE__*/function (_React$Component) {
           src: image
         });
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display);
+      var num = this.state.photos.length;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "small-image-holder"
+      }, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "big-image-holder"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "big-image",
+        src: this.state.photos[this.state.currentPhoto]
+      })));
     }
   }]);
 
@@ -1071,15 +1083,17 @@ var productShow = /*#__PURE__*/function (_React$Component) {
   _createClass(productShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.getProduct(this.props.match.params.id);
+      // this.props.getProduct(this.props.match.params.id);
+      this.props.getProducts();
     }
   }, {
     key: "render",
     value: function render() {
-      var images = Array.from(this.props.product.imageUrls);
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_productImagesList__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      var pro = this.props.product;
+      var images = pro.imageUrls;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_productImagesList__WEBPACK_IMPORTED_MODULE_1__["default"], {
         images: images
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Hello"))));
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, pro.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, pro.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, pro.details)));
     }
   }]);
 
@@ -1100,8 +1114,8 @@ var productShow = /*#__PURE__*/function (_React$Component) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_show */ "./frontend/components/products/product_show.jsx");
-/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_show */ "./frontend/components/products/product_show.jsx");
 
 
 
@@ -1119,15 +1133,15 @@ var mpst = function mpst(state, ownProps) {
 var mapdt = function mapdt(dispatch) {
   return {
     getProducts: function getProducts() {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["getProducts"])());
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["getProducts"])());
     },
     getProduct: function getProduct(id) {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_2__["getProduct"])(id));
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["getProduct"])(id));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mpst, mapdt)(_product_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mpst, mapdt)(_product_show__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

@@ -7,32 +7,35 @@ class productShow extends React.Component {
     }
     
     componentDidMount(){
-        this.props.getProduct(this.props.match.params.id);
+        // this.props.getProduct(this.props.match.params.id);
+        this.props.getProducts()
     }
-    render(){
-           const images = Array.from(this.props.product.imageUrls)
-            
-
+        render(){
+       
+         const pro = this.props.product
+         const images = pro.imageUrls
         return (
-           <div>
+            <div>
+           
               
                 <div>
-                        <div>
+                        
                             <ProductImagesList images={images}/>
-                        </div>
+
+                     
                         <div>
-                                 <h1>Hello</h1>
+                                
                         </div>
                 </div>
 
 
-                {/* <div>
-                    <h3>{product1.name}</h3>
+                <div>
+                    <h3>{pro.name}</h3>
 
-                    <h3>{product1.price}</h3>
+                    <h3>{pro.price}</h3>
 
-                    <h3>{product1.details}</h3>
-                </div> */}
+                    <h3>{pro.details}</h3>
+                </div>
 
            </div> 
         )

@@ -21,6 +21,7 @@ class Greeting extends React.Component {
                     </form >
 
                     <div  className="ls-inline-container">
+                        <br className="offset" />
                         <div className="ls-inline" onClick={() => openModal('login')} > Sign in</div>
                     </div>
                 
@@ -34,7 +35,9 @@ class Greeting extends React.Component {
                     
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
                         <div className="ls-inline-container" >
-                            <div className="ls-inline" onClick={logout}> Logout</div>
+                            <br className="offset" />
+                                <div className="ls-inline" onClick={logout}> Logout</div>
+                           
                       </div>
                       
                 </div>
