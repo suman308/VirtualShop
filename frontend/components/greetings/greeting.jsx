@@ -1,5 +1,5 @@
 import React from  'react'; 
-import ProductIndexContainer from '../../components/products/product_Index_container'
+
 import {searchIcon} from '../../../app/assets/images/icons'
 import {withRouter} from 'react-router';
 class Greeting extends React.Component {
@@ -42,7 +42,7 @@ class Greeting extends React.Component {
                       </div>
                       
                 </div>
-                    <ProductIndexContainer />
+                   
                 </div>
             )
             return (

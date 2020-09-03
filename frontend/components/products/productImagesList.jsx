@@ -22,7 +22,7 @@ class ProductImageList extends React.Component {
                 <div className="small-image-holder">
                     {display}
                 </div>
-
+                     <br className="break"/>
                 <div className="big-image-holder">
                     <img className="big-image" src={this.state.photos[this.state.currentPhoto]} />
                 </div>

@@ -18,7 +18,7 @@ class productShow extends React.Component {
             <div className="inline-images-holder">
            
               
-                    <div>
+                <div className="productInformation"> 
                             
                                 <ProductImagesList images={images}/>
 
@@ -28,15 +28,19 @@ class productShow extends React.Component {
                             </div>
                     </div>
 
+                <div className="Outer-productInformation">
+                    <div className="productInformation">
+                        <h3 className="productName">{pro.name}</h3>
 
-                    <div>
-                        <h3>{pro.name}</h3>
+                        <h3 className="productPrice">${pro.price}</h3>
 
-                        <h3>{pro.price}</h3>
-
-                        <h3>{pro.details}</h3>
+                        <h3 className="productDetails">{pro.details}</h3>
                     </div>
 
+                    <div className="AddToCartContainer">
+                        <div className="AddToCart"> Add to Cart</div>
+                    </div>
+                </div>
            </div> 
         )
     }
