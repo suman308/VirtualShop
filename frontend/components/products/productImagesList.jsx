@@ -6,16 +6,22 @@ class ProductImageList extends React.Component {
         this.state = {
             photos: this.props.images, 
             currentPhoto:0
+           
+
         }
         this.handleClick = this.handleClick.bind(this)
     }
 
-    handleClick(){
+    handleClick(e){
+        
+        const num = (this.state.currentPhoto + e.currentTarget.dataset.value) % this.state.photos.length
+        this.setState({currentPhoto: num})
+
         
     }
     render() {
         
-        const display = this.state.photos.map((image, k) => <img key={k} className="small-image" src={image} onclick={this.handleClick}/>) 
+        const display = this.state.photos.map((image, k) => <img key={k} data-value={k} className="small-image" src={image} onClick={this.handleClick}/>) 
         const num = this.state.photos.length
         return (
             <div className="inline-images-holder">
@@ -23,8 +29,8 @@ class ProductImageList extends React.Component {
                     {display}
                 </div>
                      <br className="break"/>
-                <div className="big-image-holder">
-                    <img className="big-image" src={this.state.photos[this.state.currentPhoto]} />
+                <div className="big-image-holder" >
+                    <img className="big-image" src={this.state.photos[this.state.currentPhoto ]} />
                 </div>
             </div>
         )

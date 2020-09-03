@@ -1177,7 +1177,12 @@ var ProductImageList = /*#__PURE__*/function (_React$Component) {
 
   _createClass(ProductImageList, [{
     key: "handleClick",
-    value: function handleClick() {}
+    value: function handleClick(e) {
+      var num = (this.state.currentPhoto + e.currentTarget.dataset.value) % this.state.photos.length;
+      this.setState({
+        currentPhoto: num
+      });
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1186,9 +1191,10 @@ var ProductImageList = /*#__PURE__*/function (_React$Component) {
       var display = this.state.photos.map(function (image, k) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           key: k,
+          "data-value": k,
           className: "small-image",
           src: image,
-          onclick: _this2.handleClick
+          onClick: _this2.handleClick
         });
       });
       var num = this.state.photos.length;
