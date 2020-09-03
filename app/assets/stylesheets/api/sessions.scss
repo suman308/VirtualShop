@@ -272,8 +272,8 @@ font-style: bold;
 }
 .submit-button {
   display:block; 
-  height:54px;
-  width:60px;
+  height:52px;
+  width:63px;
    background-color:rgb(206, 205, 205);
   border-top-right-radius: 25px;
   border-bottom-right-radius:25px;
@@ -281,7 +281,8 @@ font-style: bold;
   outline: none  !important;
   box-shadow: inset 0px 0.5px 0.5px  rgb(141, 139, 139);
   border-left:none;
-  background: #538AC5;
+  background: #feffff;
+  font-size:40px;
   
   
 }
@@ -289,8 +290,8 @@ font-style: bold;
   background-color: gray;
 }
 .submit-button:active {
-  background-color: black;
-  color:white;
+  background-color: rgb(102, 98, 98);
+  color:rgb(168, 171, 175);
 }
 
 // ---------------------- the logo and the heading --------------------------------------
