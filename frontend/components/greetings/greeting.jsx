@@ -1,7 +1,8 @@
 import React from  'react'; 
 
 import {searchIcon} from '../../../app/assets/images/icons'
-import {withRouter} from 'react-router';
+import { Link} from 'react-router-dom';
+
 class Greeting extends React.Component {
    constructor(props){
        super(props)
@@ -11,7 +12,11 @@ class Greeting extends React.Component {
           const {currentUser, logout, openModal} = this.props
             const navigation = ()=> (
                 <nav className="login-signup">
-                    <div className="Virtual-logo"></div>
+                   
+                    <Link to='/' className="Virtual-logo">
+                     
+                    </Link>
+                    
                     <form className= "search" >
                         <div className="head-search"></div>
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
@@ -51,4 +56,4 @@ class Greeting extends React.Component {
        
     }
 }
-export default withRouter(Greeting);
+export default Greeting;
