@@ -1462,9 +1462,15 @@ var productShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(productShow);
 
   function productShow(props) {
+    var _this;
+
     _classCallCheck(this, productShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      quantity: " "
+    };
+    return _this;
   }
 
   _createClass(productShow, [{
@@ -1495,6 +1501,11 @@ var productShow = /*#__PURE__*/function (_React$Component) {
       }, "$", pro.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "productDetails"
       }, pro.details)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "quantityContainer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "quantity",
+        type: "integer"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "AddToCartContainer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "AddToCart"

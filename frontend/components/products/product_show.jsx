@@ -3,6 +3,9 @@ import ProductImagesList from './productImagesList';
 class productShow extends React.Component {
     constructor(props){
         super(props)
+        this.state ={
+            quantity:" "
+        }
         
     }
     
@@ -37,8 +40,13 @@ class productShow extends React.Component {
                         <h3 className="productDetails">{pro.details}</h3>
                     </div>
 
+                    <div className="quantityContainer">
+                        <input className="quantity" type="integer"/> 
+                    </div>
+
                     <div className="AddToCartContainer">
                         <div className="AddToCart"> Add to Cart</div>
+
                     </div>
                 </div>
            </div> 
