@@ -42,14 +42,16 @@ class productShow extends React.Component {
 
                     <div className="quantityContainer">
                         <label className="label-quantity"> Quantity
+                        <br className="break"/>
                         <input className="quantity" type="integer"/> 
                         </label>
                     </div>
+                    <div className="OuterBox-AddToCartContainer">
+                        <div className="AddToCartContainer">
 
-                    <div className="AddToCartContainer">
+                            <div className="AddToCart"> Add to Cart</div>
 
-                        <div className="AddToCart"> Add to Cart</div>
-
+                        </div>
                     </div>
                 </div>
            </div> 
