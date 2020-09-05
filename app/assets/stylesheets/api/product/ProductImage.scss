@@ -46,6 +46,7 @@
     font-size:40px;
     margin:8px;
     color:rgb(29, 28, 28);
+    background: chocolate;
 }
 .productDetails{
     font-size: 24px;
@@ -57,12 +58,31 @@
     color:rgb(29, 28, 28);
 }
 
+
+
+.Outer-productInformation{
+    margin:6px;
+}
+.OuterBox-AddToCartContainer{
+  display:block;
+
+  margin:3px;
+
+}
+.AddToCartContainer{
+
+    align-content: center;
+    margin:3px;
+    vertical-align: bottom;
+}
+
+
 .AddToCart{
  display:block;
  height:40px;
- width:460px;
+ width:468px;
  background-color: black;
- border-radius: 20px;
+ border-radius: 23px;
  color:white;
  font-size:20px;
  align-content: center;
@@ -72,25 +92,13 @@
 
 .AddToCart:hover{
 display:block;
- height:42px;
- width:460px;
+ height:44px;
+ width:472px;
  background-color: rgb(39, 38, 38);
  color:white;
 }
-
-.Outer-productInformation{
+.quantityContainer{
     margin:6px;
-}
-.OuterBox-AddToCartContainer{
-  display:block;
-  align-content: center;  
-  margin:3px;
-
-}
-.AddToCartContainer{
-    display:block;
-    align-content: center;
-    margin:3px;
 }
 .quantity{
     width:460px;
@@ -101,7 +109,7 @@ display:block;
 }
 
 .label-quantity {
-    font-size:25px; 
+    font-size:21px; 
     color:rgb(48, 47, 47);
     margin:14px;
 }

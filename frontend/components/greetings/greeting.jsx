@@ -18,10 +18,12 @@ class Greeting extends React.Component {
                     </Link>
                     
                     <form className= "search" >
-                        <div className="head-search"></div>
+                       
                         <input type="text" className="search-bar" placeholder ="Search for the items" /> 
                         <div  className="submit-button"> 
+                            <div className="searchIcon">
                                     {searchIcon}
+                            </div>
                         </div>
                      
                     </form >
