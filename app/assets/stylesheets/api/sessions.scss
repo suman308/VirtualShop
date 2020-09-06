@@ -243,6 +243,7 @@ font-style: bold;
 
 .search:focus {
   outline: none  !important;
+  
 }
 
 .search-bar{
@@ -260,6 +261,10 @@ font-style: bold;
   
 }
 .search-bar:focus{
+  background-color:white;
+}
+
+.search-bar:focus ~ .submit-button{
   background-color:white;
 }
 .submit-button {
