@@ -1,11 +1,16 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
-class productShow extends React.Component {
+import {createOrderList} from '../../actions/OrderList';
+
+class ProductShow extends React.Component {
     constructor(props){
         super()
         this.state ={
-            quantity:" "
+            quantity:" ", 
+
         }
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         
     }
     
@@ -13,11 +18,16 @@ class productShow extends React.Component {
         this.props.getProduct(this.props.match.params.id);
         this.props.getProducts();
     } 
-        render(){
+
+    handleChange() {
+        this.setState({})
+    }
+    render(){
        
          const pro = this.props.product
          const images = pro.imageUrls
         return (
+            <form onSubmit={this.handleSubmit}>
             <div className="inline-images-holder">
            
               
@@ -39,10 +49,12 @@ class productShow extends React.Component {
                         <h3 className="productDetails">{pro.details}</h3>
                     </div>
 
+
+
                     <div className="quantityContainer">
                         <label htmlFor="quantity" className="label-quantity"> Quantity</label>
                          <br/>
-                        <select className="quantity" type="select"> 
+                        <select className="quantity" type="select" onChange={this.handleChange}> 
                             <option value="1" >1 </option>
                             <option value="2" >2 </option>
                             <option value="3" >3 </option>
@@ -79,14 +91,15 @@ class productShow extends React.Component {
                     <div className="OuterBox-AddToCartContainer">
                         <div className="AddToCartContainer">
 
-                            <div className="AddToCart"> Add to Cart</div>
+                            <input type="submit" className="AddToCart"> Add to Cart</input>
 
                         </div>
                     </div>
                 </div>
            </div> 
+            </form>
         )
     }
 }
 
-export default productShow;
+export default ProductShow;

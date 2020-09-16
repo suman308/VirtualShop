@@ -1,6 +1,5 @@
 import React from  'react'; 
-
-import { searchIcon, cartIcon} from '../../../app/assets/images/icons'
+import { cartIcon} from '../../../app/assets/images/icons'
 import { Link} from 'react-router-dom';
 import Search from './search'
 class Greeting extends React.Component {
@@ -33,7 +32,10 @@ class Greeting extends React.Component {
                         <Link to='/' className="Virtual-logo">
 
                         </Link>
-                        <Search />
+                        <br/>
+                            <Search />
+                        
+                        
 
                       <h2 className="greeting">Hello !! {currentUser.username}</h2>
                       
@@ -48,7 +50,7 @@ class Greeting extends React.Component {
                                      </Link>
                                 
                                 </div>
-                            
+                            <div className="divider"></div>
                             <div className="ls-inline" onClick={logout}> Logout</div>
                            
                       </div>

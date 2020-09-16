@@ -207,18 +207,18 @@ font-style: bold;
   display: flex; 
   height:55px; 
   width: 220px;
-  margin:20px;
+  margin:10px;
   
  
 }
 .ls-inline{
-   height: 40px;
+   height: 33px;
   width: 80px;
   margin:5px;
-  font-size:20px;
+  font-size:17px;
   text-align:center;
-  border-radius: 20px;
-  outline-offset: 4px;
+  padding-top: 12px;
+  border-radius: 24px;
 }
 
 .ls-inline:hover{
@@ -228,7 +228,7 @@ font-style: bold;
 }
 
 .ls-inline:active{display:block;
-  background-color: rgb(73, 71, 71);
+  background-color: rgb(128, 124, 124);
   color:white;
   
 }
@@ -236,11 +236,13 @@ font-style: bold;
 ///--------------------------------------------//////////////-cart icon ---------------------------------------
 
 .ls-inlineCT{
-   height: 42px;
-  width: 42px;
-  margin:10px;
+   height: 50px;
+  width: 50px;
+  margin:6px;
   align-content: center;
-  outline-offset: 4px;
+  padding-left: 7px;
+  padding-top:6px;
+
   border-radius:50%;
 }
 
@@ -251,8 +253,9 @@ font-style: bold;
   
 }
 
-.ls-inlineCT:active{display:block;
-  background-color: rgb(75, 71, 71);
+.ls-inlineCT:active {
+  display:block;
+  background-color: rgb(107, 102, 102);
   color:white;
   
 }
@@ -262,7 +265,7 @@ font-style: bold;
 .search{
    display:inline-flex ;
   margin:10px;
-  width:85%; 
+  width:75%; 
   
 }
 
@@ -343,8 +346,19 @@ margin-top:2px;
 }
 
 .Cart-Icon {
-  height: 30px; 
-  width: 30px;
+  padding-left: 4px;
+  padding-top: 4px;
+  height: 32px; 
+  width: 32px;
 }
 
 
+.divider{
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 60px;
+    width: 2px;
+    background-color: rgb(255, 251, 251);
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
