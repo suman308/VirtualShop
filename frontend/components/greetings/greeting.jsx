@@ -42,8 +42,13 @@ class Greeting extends React.Component {
                     <div className="Virtual-logo" ></div> 
                     
                       <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
+                      
                         <div className="ls-inline-container" >
                             <br className="offset" />
+                                <div className="ls-inline">
+                                    <Link to='/cart' > cart </Link>
+                                </div>
+                            
                                 <div className="ls-inline" onClick={logout}> Logout</div>
                            
                       </div>

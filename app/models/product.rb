@@ -23,12 +23,7 @@ class Product < ApplicationRecord
     validates :category, presence:true, inclusion:{in:['Art', 'Electronics', 'Books', 'Food', 'Cloths', 'Shoes','Beverage','Jewelry','Others' ]}
      
     
-    belongs_to :cart, 
-    foreign_key: :cart_id, 
-    class_name: :Cart, 
-    optional: :true
-    
-    belongs_to :order_list, foreign_key: :order_list_id, class_name: :OrderList, optional: :true
+    has_many :order_lists, foreign_key: :product_id, class_name: :OrderList
     belongs_to :store, foreign_key: :store_id, class_name: :Store
     has_many_attached :images
 

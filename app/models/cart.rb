@@ -11,8 +11,8 @@
 #
 class Cart < ApplicationRecord
     validates :user_id, presence:true 
-    validates :checked_out, inclusion:{in:[false, true]}
     
     belongs_to :user, foreign_key: :user_id,  class_name: :User
-    has_many :products, foreign_key: :cart_id, class_name: :Product
+    belongs_to :product, optional: true, foreign_key: :product_id, class_name: :Product
+    has_many :order_lists, foreign_key: :product_id, class_name: :OrderList
 end

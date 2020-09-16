@@ -1,11 +1,11 @@
 class Api::UsersController < ApplicationController
     def create
     @user = User.new(user_params)
-
+       
     if @user.save
+     
       login(@user)
-      Cart.create(user_id: "#{@user.id}")
-      OrderList.create(user_id:"#{@user.id}")
+      Cart.create!(user_id: "#{@user.id}")
 
       render "api/users/show"
     else

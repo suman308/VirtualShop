@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :products, only:[:index, :create, :show, :edit, :update, :destroy]
     resources :stores, only:[:show, :edit, :update]
     resources :carts, only:[ :index, :create, :show, :edit, :update]
-    resources :orderlists, only:[:create, :show, :edit, :update]
+    resources :orderlists, only:[ :index, :create, :show, :edit, :update, :destroy]
   end
 
   root "static_pages#root"
