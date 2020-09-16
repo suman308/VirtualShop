@@ -3,7 +3,7 @@ import Order from './order.jsx';
 
 class OrderList extends React.Component {
     constructor(props){
-        super(props)
+        super()
 
     }
     componentDidMount(){
@@ -13,10 +13,15 @@ class OrderList extends React.Component {
     render(){
         const currentUser = this.props.currentUser
         const products = this.props.products(currentUser.cart_Id).filter(order=> order.checked_out == false)
-        const orderlist = products.map(product => <Order product={product} quantity= {product.quantity}/>)
+        const orderlists = products.map(product => <Order product={product} quantity= {product.quantity}/>)
+        const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
+        const output  = (products.length) ? orderlists : message
+       
         return (
+
             <div> 
-                    {orderlist}
+                  {output}  
+                    
             </div>
         )
     }

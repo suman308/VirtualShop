@@ -15,6 +15,7 @@ render() {
                 {image}
             </div>
             <div>
+                <h4>The total quantity {quantity}</h4>
                 <h4>The total price {price}</h4>
             </div>
 

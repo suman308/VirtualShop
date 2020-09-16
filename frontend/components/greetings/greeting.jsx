@@ -30,22 +30,26 @@ class Greeting extends React.Component {
             const personalGreeting = ()=> (
                 <div>
                 <div className="login-signup">
-                    <div className="Virtual-logo" ></div> 
+                        <Link to='/' className="Virtual-logo">
+
+                        </Link>
                         <Search />
-                      <h2 className="greeting"> {currentUser.username}</h2>
+
+                      <h2 className="greeting">Hello !! {currentUser.username}</h2>
                       
                         <div className="ls-inline-container" >
-                            <br className="offset" />
-                                <div className="ls-inline">
+                          
+                                <div className="ls-inlineCT">
                                     <Link to='/cart'  > 
                                         <div className="Cart-Icon">
                                             {cartIcon}
                                         </div>
                                            
                                      </Link>
+                                
                                 </div>
                             
-                                <div className="ls-inline" onClick={logout}> Logout</div>
+                            <div className="ls-inline" onClick={logout}> Logout</div>
                            
                       </div>
                       

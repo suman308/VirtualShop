@@ -1,4 +1,4 @@
-json.array! @OrderLists do |OrderList|
-    json.partial! "api/orderlists/orderList", OrderList:OrderList
+json.array! @orderlists do |orderlist|
+    json.partial! "api/orderlists/orderlist", orderlist:orderlist
     
 end 

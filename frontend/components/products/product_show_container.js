@@ -2,6 +2,7 @@
 import {connect} from 'react-redux'; 
 import {getProducts, getProduct} from '../../actions/product_actions';
 import ProductShow from './product_show';
+import {createOrderList} from '../../actions/OrderList'
 
 
 const mpst = (state, ownProps) => {
@@ -14,6 +15,7 @@ const mpst = (state, ownProps) => {
 
 const mapdt = dispatch => {
     return {
+      createOrderList: (orderlist)=> dispatch(createOrderList(orderlist)),
       getProducts: ()=> dispatch(getProducts()),
       getProduct: (id) => dispatch(getProduct(id))
     }

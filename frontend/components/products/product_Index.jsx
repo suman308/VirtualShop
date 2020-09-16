@@ -3,7 +3,7 @@ import ProductIndexItem from './product_Index_Item'
 
 class ProductIndex extends React.Component {
     constructor(props) {
-        super(props)
+        super()
 
     }
 

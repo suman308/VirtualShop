@@ -913,16 +913,15 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
       var personalGreeting = function personalGreeting() {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-signup"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/",
           className: "Virtual-logo"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_search__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
           className: "greeting"
-        }, " ", currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Hello !! ", currentUser.username), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline-container"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-          className: "offset"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "ls-inline"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "ls-inlineCT"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           to: "/cart"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1302,7 +1301,7 @@ var Order = /*#__PURE__*/function (_React$Component) {
         className: "image-holder-box",
         src: product.imageUrls[1]
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total quantity ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         action: ""
       }));
     }
@@ -1360,7 +1359,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
   function OrderList(props) {
     _classCallCheck(this, OrderList);
 
-    return _super.call(this, props);
+    return _super.call(this);
   }
 
   _createClass(OrderList, [{
@@ -1376,13 +1375,17 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
       var products = this.props.products(currentUser.cart_Id).filter(function (order) {
         return order.checked_out == false;
       });
-      var orderlist = products.map(function (product) {
+      var orderlists = products.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_order_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
           product: product,
           quantity: product.quantity
         });
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, orderlist);
+      var message = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "No-item"
+      }, " You do not  have items in the cart right now ");
+      var output = products.length ? orderlists : message;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, output);
     }
   }]);
 
@@ -1651,7 +1654,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   function ProductIndex(props) {
     _classCallCheck(this, ProductIndex);
 
-    return _super.call(this, props);
+    return _super.call(this);
   }
 
   _createClass(ProductIndex, [{
@@ -1868,7 +1871,7 @@ var productShow = /*#__PURE__*/function (_React$Component) {
   _createClass(productShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.getProduct(this.props.match.params.id);
+      this.props.getProduct(this.props.match.params.id);
       this.props.getProducts();
     }
   }, {
@@ -1895,7 +1898,7 @@ var productShow = /*#__PURE__*/function (_React$Component) {
       }, pro.details)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "quantityContainer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlfor: "quantity",
+        htmlFor: "quantity",
         className: "label-quantity"
       }, " Quantity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "quantity",
@@ -1989,6 +1992,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
 /* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_show */ "./frontend/components/products/product_show.jsx");
+/* harmony import */ var _actions_OrderList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/OrderList */ "./frontend/actions/OrderList.js");
+
 
 
 
@@ -2005,6 +2010,9 @@ var mpst = function mpst(state, ownProps) {
 
 var mapdt = function mapdt(dispatch) {
   return {
+    createOrderList: function createOrderList(orderlist) {
+      return dispatch(Object(_actions_OrderList__WEBPACK_IMPORTED_MODULE_3__["createOrderList"])(orderlist));
+    },
     getProducts: function getProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["getProducts"])());
     },

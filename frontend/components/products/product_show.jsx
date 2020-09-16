@@ -10,9 +10,9 @@ class productShow extends React.Component {
     }
     
     componentDidMount(){
-        // this.props.getProduct(this.props.match.params.id);
-        this.props.getProducts()
-    }
+        this.props.getProduct(this.props.match.params.id);
+        this.props.getProducts();
+    } 
         render(){
        
          const pro = this.props.product
@@ -25,7 +25,6 @@ class productShow extends React.Component {
                                     
                                         <ProductImagesList images={images}/>
 
-                                
                                     <div>
                                             
                                     </div>
@@ -41,7 +40,7 @@ class productShow extends React.Component {
                     </div>
 
                     <div className="quantityContainer">
-                        <label htmlfor="quantity" className="label-quantity"> Quantity</label>
+                        <label htmlFor="quantity" className="label-quantity"> Quantity</label>
                          <br/>
                         <select className="quantity" type="select"> 
                             <option value="1" >1 </option>

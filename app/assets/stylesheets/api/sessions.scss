@@ -201,21 +201,24 @@ font-style: bold;
   
 }
 // the sing in button on the top of the greeting or header of the page 
-.ls-inline{
-   height: 34px;
-  width: 70px;
-  border-radius: 45px;
-  
-  font-size:17px;
-   text-align:center;
-}
 
 
 .ls-inline-container {
-  display: block; 
-  height:45px; 
-  width: 80px;
+  display: flex; 
+  height:55px; 
+  width: 220px;
+  margin:20px;
+  
  
+}
+.ls-inline{
+   height: 40px;
+  width: 80px;
+  margin:5px;
+  font-size:20px;
+  text-align:center;
+  border-radius: 20px;
+  outline-offset: 4px;
 }
 
 .ls-inline:hover{
@@ -225,12 +228,34 @@ font-style: bold;
 }
 
 .ls-inline:active{display:block;
-  background-color: rgb(26, 20, 20);
+  background-color: rgb(73, 71, 71);
   color:white;
   
 }
 
+///--------------------------------------------//////////////-cart icon ---------------------------------------
 
+.ls-inlineCT{
+   height: 42px;
+  width: 42px;
+  margin:10px;
+  align-content: center;
+  outline-offset: 4px;
+  border-radius:50%;
+}
+
+
+.ls-inlineCT:hover{
+ 
+  background-color: rgb(214, 214, 214);
+  
+}
+
+.ls-inlineCT:active{display:block;
+  background-color: rgb(75, 71, 71);
+  color:white;
+  
+}
 // the search bar 
 
 
@@ -313,7 +338,6 @@ margin-top:2px;
 }
 
 .searchIcon{
- 
   height:52px;
   width:53px;
 }
