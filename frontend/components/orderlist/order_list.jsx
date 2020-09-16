@@ -8,7 +8,7 @@ class OrderList extends React.Component {
     }
     componentDidMount(){
         this.props.getProducts(); 
-        this.props.getOrderList();
+        this.props.getOrderLists();
     }
     render(){
         const currentUser = this.props.currentUser

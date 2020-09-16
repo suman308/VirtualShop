@@ -7,7 +7,7 @@ import SignUpFormContainer from '../../components/sessions/signup_container';
 
 class  Modal extends React.Component{
     constructor(props){
-        super(props)
+        super()
     }
     render(){
         const {modal, closeModal} = this.props 

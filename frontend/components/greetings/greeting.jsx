@@ -1,11 +1,11 @@
 import React from  'react'; 
 
-import {searchIcon} from '../../../app/assets/images/icons'
+import { searchIcon, cartIcon} from '../../../app/assets/images/icons'
 import { Link} from 'react-router-dom';
-
+import Search from './search'
 class Greeting extends React.Component {
    constructor(props){
-       super(props)
+       super()
    }
 
     render(){
@@ -17,16 +17,7 @@ class Greeting extends React.Component {
                      
                     </Link>
                     
-                    <form className= "search" >
-                       
-                        <input type="text" className="search-bar" placeholder ="Search for the items" /> 
-                        <div  className="submit-button"> 
-                            <div className="searchIcon">
-                                    {searchIcon}
-                            </div>
-                        </div>
-                     
-                    </form >
+                   <Search/>
 
                     <div  className="ls-inline-container">
                         <br className="offset" />
@@ -40,13 +31,18 @@ class Greeting extends React.Component {
                 <div>
                 <div className="login-signup">
                     <div className="Virtual-logo" ></div> 
-                    
-                      <h2 className="greeting"> Welcome home  {currentUser.username}</h2>
+                        <Search />
+                      <h2 className="greeting"> {currentUser.username}</h2>
                       
                         <div className="ls-inline-container" >
                             <br className="offset" />
                                 <div className="ls-inline">
-                                    <Link to='/cart' > cart </Link>
+                                    <Link to='/cart'  > 
+                                        <div className="Cart-Icon">
+                                            {cartIcon}
+                                        </div>
+                                           
+                                     </Link>
                                 </div>
                             
                                 <div className="ls-inline" onClick={logout}> Logout</div>

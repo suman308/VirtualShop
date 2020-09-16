@@ -2,7 +2,7 @@ import React from 'react';
 
 class Order extends React.Component {
 constructor(props){
-    super(props)
+    super()
 }
 render() {
     const product = this.props.product

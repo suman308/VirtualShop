@@ -2,7 +2,7 @@ import React from 'react';
 import ProductImagesList from './productImagesList';
 class productShow extends React.Component {
     constructor(props){
-        super(props)
+        super()
         this.state ={
             quantity:" "
         }
