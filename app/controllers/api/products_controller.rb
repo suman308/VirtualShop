@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-    before_action :require_login, only:[:show, :update, :create]
+    before_action :require_login, only:[ :update, :create]
     def index 
         @products = Product.all
         if @products 

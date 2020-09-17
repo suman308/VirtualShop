@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
-import {createOrderList} from '../../actions/OrderList';
+// import {createOrderList} from '../../actions/OrderList';
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -19,8 +19,14 @@ class ProductShow extends React.Component {
         this.props.getProducts();
     } 
 
-    handleChange() {
-        this.setState({})
+    handleChange(e) {
+        this.setState({quantity : e.currentTarget.value })
+    }
+    handleSubmit(){
+        const  product_id  = this.props.product.id 
+        
+        const cart_id = this.props.product
+
     }
     render(){
        
@@ -91,7 +97,7 @@ class ProductShow extends React.Component {
                     <div className="OuterBox-AddToCartContainer">
                         <div className="AddToCartContainer">
 
-                            <input type="submit" className="AddToCart"> Add to Cart</input>
+                            <input type="submit" className="AddToCart" value="Add to Cart"/>
 
                         </div>
                     </div>

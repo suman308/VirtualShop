@@ -1,1 +1,1 @@
-json.partial! "api/orderlists/orderList", OrderList: OrderList
+json.partial! "api/orderlists/orderlist", orderlist: orderlist
