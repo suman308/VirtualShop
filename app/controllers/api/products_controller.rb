@@ -11,7 +11,7 @@ class Api::ProductsController < ApplicationController
 
 
     def show 
-        @product = Product.with_attached_images.find_by(id:params[:id]) 
+        @product = Product.find_by(id:params[:id]) 
         if @product 
             render 'api/products/show'
         else 
@@ -31,7 +31,7 @@ class Api::ProductsController < ApplicationController
     def edit 
         @product = Product.find_by(id: params[:id])
         if @product 
-               render 'api/product/show'
+               render 'api/products/show'
         else 
             render json: @product.errorrs.full_messages, status: 422
         end 
@@ -40,7 +40,7 @@ class Api::ProductsController < ApplicationController
     def update 
            @product = Product.create(product_params) 
            if @product.save 
-              render 'api/product/show'
+              render 'api/products/show'
            else 
                render json: @product.errors.full_messages, status: 422
            end 

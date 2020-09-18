@@ -36,6 +36,6 @@ class Api::OrderlistsController < ApplicationController
 
     private 
     def OrderListParams 
-        params.premit(:orderlist).require(:product_id, :cart_id)
+        params.premit(:orderlist).require(:product_id, :cart_id, :quantity)
     end 
 end

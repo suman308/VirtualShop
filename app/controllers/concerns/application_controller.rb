@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     helper_method :current_user, :logged_in?
-     # Disables CSRF protection
+     #Disables CSRF protection
    skip_before_action :verify_authenticity_token
 
   private

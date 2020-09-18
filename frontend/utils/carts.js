@@ -13,18 +13,19 @@ export const getCart = (cartId) => {
 
     })
 }
-export const getCartProducts = (cartId, userId) => {
+export const createCart = (cart) => {
     return $.ajax({
-        url:'/api/products',
-        method: 'GET', 
-        data: {cartId: cartId, userId: userId }
+        url:'/api/carts',
+        method: 'POST', 
+        data: {cart}
     })
 }
 
-export const createProduct = (product) => {
+
+export const deleteCart = (cartId) => {
     return $.ajax({
-        url: `/api/products`,
-        method: 'POST',
-        data: { product }
+        url: `/api/carts/${cartId}`,
+        method: 'POST'
+       
     })
 }

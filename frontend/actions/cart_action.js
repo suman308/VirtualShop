@@ -56,10 +56,6 @@ export const getCart = (cartId) => dispatch => {
     return AllUtil.getCart(cartId).then(cart => dispatch(removeCart(cart)), errors => dispatch(removeErrors(errors)))
 }
 
-export const updateProduct = (product) => dispatch => {
-    return AllUtil.updateProduct(product).then(product => dispatch(receiveProduct(product)), errors => dispatch(removeErrors(errors)))
-}
-
-export const deleteProduct = (productId) => dispatch => {
-    return AllUtil.deleteProduct(productId).then(() => dispatch(removeProduct(productId)), errors => receiveErrors(errors))
+export const deleteCart = (cartId) => dispatch => {
+    return AllUtil.deleteCart(cartId).then(() => dispatch(removeCart(cartId)), errors => receiveErrors(errors))
 }
