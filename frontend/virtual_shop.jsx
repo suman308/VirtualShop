@@ -4,6 +4,7 @@ import Root  from './components/root'
 import configureStore from './store/store'
 import {getOrderLists} from './utils/OrderList'
 import {getCart} from './utils/carts'
+import {getProduct, getProducts} from './utils/products'
 document.addEventListener("DOMContentLoaded", () => {
     let store;
     let preloadedState = undefined;
@@ -22,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getOrderLists = getOrderLists
     window.store = store;
     window.getCart = getCart
+    window.getProduct = getProduct
+    window.getProducts = getProducts
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 });

@@ -4,7 +4,7 @@ import {createOrderList} from '../../actions/OrderList';
 
 class ProductShow extends React.Component {
     constructor(props){
-        super(props)
+        super()
         this.state ={
             quantity:" ", 
 
@@ -15,8 +15,9 @@ class ProductShow extends React.Component {
     }
     
     componentDidMount(){
-        // this.props.getProduct(this.props.match.params.id);
+        this.props.getProduct(this.props.match.params.id);
         this.props.getProducts();
+        console.log(this.props)
        
     } 
 
@@ -40,8 +41,6 @@ class ProductShow extends React.Component {
     render(){
        
          const pro = this.props.product
-        console.log("helo")
-         console.log(pro)
          const images = pro.imageUrls
         return (
             <div>

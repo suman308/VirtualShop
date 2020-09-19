@@ -5,7 +5,7 @@ class Api::ProductsController < ApplicationController
         if @products 
             render :index 
         else 
-            render json: @products.errorrs.full_messages, status:422
+            render json: @products.errorrs.full_messages, status: 422
         end 
     end     
 
@@ -33,7 +33,7 @@ class Api::ProductsController < ApplicationController
         if @product 
                render 'api/products/show'
         else 
-            render json: @product.errorrs.full_messages, status: 422
+            render json: @product.errors.full_messages, status: 422
         end 
     end 
 

@@ -14,7 +14,6 @@ class Api::CartsController < ApplicationController
         if @cart 
             render 'api/carts/show'
         else 
-            
          render json: @cart.errors.full_messages, status: 422
         end 
     end 

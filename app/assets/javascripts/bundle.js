@@ -1678,7 +1678,6 @@ var ProductImageList = /*#__PURE__*/function (_React$Component) {
           onClick: _this2.handleClick
         });
       });
-      var num = this.state.photos.length;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inline-images-holder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1955,7 +1954,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, ProductShow);
 
-    _this = _super.call(this, props);
+    _this = _super.call(this);
     _this.state = {
       quantity: " "
     };
@@ -1967,8 +1966,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   _createClass(ProductShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      // this.props.getProduct(this.props.match.params.id);
+      this.props.getProduct(this.props.match.params.id);
       this.props.getProducts();
+      console.log(this.props);
     }
   }, {
     key: "handleChange",
@@ -1995,8 +1995,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var pro = this.props.product;
-      console.log("helo");
-      console.log(pro);
       var images = pro.imageUrls;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
@@ -3034,6 +3032,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/store */ "./frontend/store/store.js");
 /* harmony import */ var _utils_OrderList__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/OrderList */ "./frontend/utils/OrderList.js");
 /* harmony import */ var _utils_carts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/carts */ "./frontend/utils/carts.js");
+/* harmony import */ var _utils_products__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./utils/products */ "./frontend/utils/products.js");
+
 
 
 
@@ -3059,6 +3059,8 @@ document.addEventListener("DOMContentLoaded", function () {
   window.getOrderLists = _utils_OrderList__WEBPACK_IMPORTED_MODULE_4__["getOrderLists"];
   window.store = store;
   window.getCart = _utils_carts__WEBPACK_IMPORTED_MODULE_5__["getCart"];
+  window.getProduct = _utils_products__WEBPACK_IMPORTED_MODULE_6__["getProduct"];
+  window.getProducts = _utils_products__WEBPACK_IMPORTED_MODULE_6__["getProducts"];
   var root = document.getElementById('root');
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
     store: store
