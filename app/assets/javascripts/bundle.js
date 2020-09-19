@@ -756,7 +756,7 @@ var getProducts = function getProducts() {
     return _utils_products__WEBPACK_IMPORTED_MODULE_0__["getProducts"]().then(function (products) {
       return dispatch(receiveProducts(products));
     }, function (errors) {
-      return dispatch(receiveErrors(errors));
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -765,7 +765,7 @@ var getProduct = function getProduct(productId) {
     return _utils_products__WEBPACK_IMPORTED_MODULE_0__["getProduct"](productId).then(function (product) {
       return dispatch(receiveProduct(product));
     }, function (errors) {
-      return dispatch(removeErrors(errors));
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -774,7 +774,7 @@ var updateProduct = function updateProduct(product) {
     return _utils_products__WEBPACK_IMPORTED_MODULE_0__["updateProduct"](product).then(function (product) {
       return dispatch(receiveProduct(product));
     }, function (errors) {
-      return dispatch(removeErrors(errors));
+      return dispatch(receiveErrors(errors.responseJSON));
     });
   };
 };
@@ -783,7 +783,7 @@ var deleteProduct = function deleteProduct(productId) {
     return _utils_products__WEBPACK_IMPORTED_MODULE_0__["deleteProduct"](productId).then(function () {
       return dispatch(removeProduct(productId));
     }, function (errors) {
-      return receiveErrors(errors);
+      return receiveErrors(errors.responseJSON);
     });
   };
 };
@@ -1968,7 +1968,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.getProduct(this.props.match.params.id);
       this.props.getProducts();
-      console.log(this.props);
     }
   }, {
     key: "handleChange",

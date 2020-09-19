@@ -49,17 +49,17 @@ export const removeErrors =()=>{
 
 export const getProducts = ()=> dispatch=>{
     return AllUtil.getProducts()
-.then(products=> dispatch(receiveProducts(products)), errors=> dispatch(receiveErrors(errors)))
+        .then(products => dispatch(receiveProducts(products)), errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const getProduct = (productId)=> dispatch=> {
-    return AllUtil.getProduct(productId).then(product=> dispatch(receiveProduct(product)), errors=> dispatch(removeErrors(errors)))
+    return AllUtil.getProduct(productId).then(product => dispatch(receiveProduct(product)), errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const updateProduct = (product)=> dispatch => {
-    return AllUtil.updateProduct(product).then(product=> dispatch(receiveProduct(product)), errors=> dispatch(removeErrors(errors)))
+    return AllUtil.updateProduct(product).then(product => dispatch(receiveProduct(product)), errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const deleteProduct = (productId)=> dispatch=> {
-    return AllUtil.deleteProduct(productId).then(()=> dispatch(removeProduct(productId)), errors=> receiveErrors(errors))
+    return AllUtil.deleteProduct(productId).then(() => dispatch(removeProduct(productId)), errors => receiveErrors(errors.responseJSON))
 }

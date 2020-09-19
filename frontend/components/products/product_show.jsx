@@ -15,9 +15,10 @@ class ProductShow extends React.Component {
     }
     
     componentDidMount(){
-        this.props.getProduct(this.props.match.params.id);
-        this.props.getProducts();
-        console.log(this.props)
+        
+        this.props.getProduct(this.props.match.params.id)
+        this.props.getProducts()
+    
        
     } 
 
