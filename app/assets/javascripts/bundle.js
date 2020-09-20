@@ -1953,7 +1953,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, ProductShow);
 
-    _this = _super.call(this, props);
+    _this = _super.call(this);
     _this.state = {
       quantity: " "
     };
@@ -1966,8 +1966,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.getProduct(this.props.match.params.id);
-      console.log("printing the props");
-      console.log(this.props.getProduct(this.props.match.params.id));
     }
   }, {
     key: "handleChange",
@@ -1994,8 +1992,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var pro = this.props.product;
-      console.log("now printing props");
-      console.log(pro);
+      console.log("printing the product");
+      console.log(this.props.product);
+      console.log("printing the products");
+      console.log(this.props.products);
 
       if (pro) {
         var images = pro.imageUrls;
@@ -2129,20 +2129,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mpst = function mpst(state, ownProps) {
-  var pros = Array.from(state.entities.products);
-  var pro = pros.find(function (pro) {
-    return pro.id == ownProps.match.params.id;
-  });
   var carts = Array.from(state.entities.carts);
   var currentUser = state.session.currentUser;
+  var products = state.entities.products;
+  var product = products[ownProps.match.params.id];
   var cart = currentUser ? carts.find(function (cart) {
     return cart.id = currentUser.id;
   }) : null;
   return {
-    product: pro,
-    products: Array.from(state.entities.products).find(function (pro) {
-      return pro.id == ownProps.match.params.id;
-    }),
+    products: Array.from(state.entities.products),
+    product: product,
     currentUser: state.session.currentUser,
     cart: cart
   };
