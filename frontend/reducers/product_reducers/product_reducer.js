@@ -2,6 +2,7 @@ import {RECEIVE_ALL_PRODUCTS,  RECEIVE_PRODUCT, REMOVE_PRODUCT, RECEIVE_ERRORS, 
 
 
 const productReducer = (state={}, action)=> {
+      Object.freeze(state);
        const nextState = Object.assign({},state)
        switch(action.type){
            case RECEIVE_ALL_PRODUCTS: 

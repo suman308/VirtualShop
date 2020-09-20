@@ -1954,7 +1954,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, ProductShow);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
       quantity: " "
     };
@@ -1964,10 +1964,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(ProductShow, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.getProduct(this.props.match.params.id);
-      this.props.getProducts();
+    key: "componentdidMount",
+    value: function componentdidMount() {
+      this.props.getProducts(); // this.props.getProduct(this.props.match.params.id)   
     }
   }, {
     key: "handleChange",
@@ -1993,7 +1992,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var pro = this.props.product;
+      var pro = this.props.products;
+      console.log(this.props);
+      console.log("below the render");
       var images = pro.imageUrls;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit
@@ -2133,6 +2134,9 @@ var mpst = function mpst(state, ownProps) {
   }) : null;
   return {
     product: pro,
+    products: Array.from(state.entities.products).find(function (pro) {
+      return pro.id == ownProps.match.params.id;
+    }),
     currentUser: state.session.currentUser,
     cart: cart
   };
@@ -2647,6 +2651,7 @@ __webpack_require__.r(__webpack_exports__);
 var productReducer = function productReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
   var nextState = Object.assign({}, state);
 
   switch (action.type) {

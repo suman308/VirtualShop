@@ -16,6 +16,7 @@ const mpst = (state, ownProps) => {
    
   return { 
      product: pro,
+    products: Array.from(state.entities.products).find(pro => pro.id == ownProps.match.params.id),
       currentUser: state.session.currentUser,
       cart: cart
   }

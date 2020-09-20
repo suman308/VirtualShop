@@ -53,7 +53,8 @@ export const getProducts = ()=> dispatch=>{
 }
 
 export const getProduct = (productId)=> dispatch=> {
-    return AllUtil.getProduct(productId).then(product => dispatch(receiveProduct(product)), errors => dispatch(receiveErrors(errors.responseJSON)))
+    return AllUtil.getProduct(productId)
+    .then(product => dispatch(receiveProduct(product)), errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
 export const updateProduct = (product)=> dispatch => {
