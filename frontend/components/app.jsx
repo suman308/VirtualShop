@@ -20,7 +20,7 @@ return (
               
              <Switch>
                <Route path='/' exact component={ProductIndexContainer}/>
-               <Route path='/product/show/:id' exact component={ProductShowContainer}/>
+               <Route path='/product/show/:id'  component={ProductShowContainer}/>
                <Route path='/cart' exact component={OrderListContainer}/>
                <Route path="*"  component={PageNotFound}/>
              </Switch>

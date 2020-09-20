@@ -14,12 +14,11 @@ class ProductShow extends React.Component {
         
     }
     
-    componentdidMount(){
+    componentDidMount(){
         
-        this.props.getProducts()
-        
-        // this.props.getProduct(this.props.match.params.id)   
-     
+    this.props.getProduct(this.props.match.params.id) 
+    console.log("printing the props")
+     console.log(this.props.getProduct(this.props.match.params.id))
        
        
     } 
@@ -44,10 +43,11 @@ class ProductShow extends React.Component {
     }
     render(){
        
-         const pro = this.props.products
-        console.log(this.props)
-        console.log("below the render")
-         const images = pro.imageUrls
+         const pro = this.props.product
+         console.log("now printing props")
+         console.log(pro)
+         if (pro) {
+            const images = pro.imageUrls
         return (
             <div>
                     <form onSubmit={this.handleSubmit}>
@@ -122,7 +122,10 @@ class ProductShow extends React.Component {
                     </div> 
                     </form>
             </div>
-        )
+        ) }
+        else {
+            return null
+        }
     }
 }
 
