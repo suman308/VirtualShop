@@ -2,9 +2,8 @@
 import {connect} from 'react-redux'; 
 import {getProducts, getProduct} from '../../actions/product_actions';
 import ProductShow from './product_show';
-import {createOrderList} from '../../actions/OrderList'
-import {getCart, createOrderList} from '../../actions/cart_action'
-
+import { createOrderList} from '../../actions/OrderList'
+import { getCarts} from '../../actions/cart_action'
 
 const mpst = (state, ownProps) => {
  
@@ -15,8 +14,8 @@ const mpst = (state, ownProps) => {
   const cart = currentUser ? carts.find(cart=> cart.id = currentUser.id) : null
   
   return { 
-    products: Array.from(state.entities.products),
-    product: product,
+      products: Array.from(state.entities.products),
+      product: product,
       currentUser: state.session.currentUser,
       cart: cart
   }
@@ -24,11 +23,10 @@ const mpst = (state, ownProps) => {
 
 const mapdt = dispatch => {
     return {
-      createOrderList: (orderlist)=> dispatch(createOrderList(orderlist)),
+      getCarts : ()=> dispatch(getCarts()),
       getProducts: ()=> dispatch(getProducts()),
       getProduct: (id) => dispatch(getProduct(id)),
-      getCart: (id)=> dispatch(getCart(id)),
-      createOrderList : (orderList)=> dispatch(createOrderList(orderList))
+      addToCart : (orderList)=> dispatch(createOrderList(orderList))
     }
 }
    

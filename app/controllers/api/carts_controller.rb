@@ -1,6 +1,6 @@
 class Api::CartsController < ApplicationController
     def index 
-        @carts = Cart.all.select{ |cart| cart.user_id == current_user.id}
+        @carts = Cart.all
         if @carts 
             render 'api/carts/index'
         
@@ -16,5 +16,18 @@ class Api::CartsController < ApplicationController
         else 
          render json: @cart.errors.full_messages, status: 422
         end 
+    end 
+
+    def create 
+        @cart = Cart.new(cart_params)
+        if @cart.save 
+            render 'api/carts/show'
+        else 
+            render json: @cart.errors.full_messages, status: 422
+        end 
+
+    end 
+    def cart_params 
+        params.require(:cart).permit(:user_id)
     end 
 end

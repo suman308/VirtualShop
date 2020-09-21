@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Root  from './components/root'
 import configureStore from './store/store'
 import {getOrderLists} from './utils/OrderList'
-import {getCart} from './utils/carts'
+import {getCarts} from './actions/cart_action'
 import {getProduct, getProducts} from './utils/products'
 document.addEventListener("DOMContentLoaded", () => {
     let store;
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.getOrderLists = getOrderLists
     window.store = store;
-    window.getCart = getCart
+    window.getCarts = getCarts
     window.getProduct = getProduct
     window.getProducts = getProducts
     const root = document.getElementById('root');
