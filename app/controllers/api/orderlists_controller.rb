@@ -1,7 +1,7 @@
 class Api::OrderlistsController < ApplicationController
     before_action :logged_in?, only:[:show, :update, :create]
     def index 
-        @orderlists = OrderList.all.select{|order_item| order_item.cart_id == params[:cart_id]}
+        @orderlists = OrderList.all
         if @orderlists 
             render :index
         else  

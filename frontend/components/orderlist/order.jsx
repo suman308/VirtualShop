@@ -8,8 +8,10 @@ render() {
     const product = this.props.product
     const quantity = this.props.quantity
     const price = product.price * quantity
+    console.log("ram")
     const image = <img className="image-holder-box" src={product.imageUrls[1]} />
     return (
+        
         <div> 
             <div>
                 {image}

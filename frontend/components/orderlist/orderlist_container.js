@@ -1,15 +1,19 @@
-import { getOrderLists, createOrderList, updateOrderList} from '../../actions/OrderList'
+import { getOrderLists, updateOrderList} from '../../actions/OrderList'
 import { getProducts} from "../../actions/product_actions"
+import {getCarts} from '../../actions/cart_action'
 import {connect} from 'react-redux'; 
 import OrderList from './order_list'
 
 const mapst = state => {
-    const orderlists = Object.values(state.entities.orderlists)
-    
+    const orderlists = Array.from(state.entities.orderlists)
+    const products = Array.from(state.entities.products)
+    const currentUser = state.session.currentUser
+    const carts = Array.from(state.entities.carts)
     return {
         orderlists: orderlists, 
-        products: (cart_Id) => orderlists.filter(orderlist => orderlist.cart_Id == cart_Id),
-        currentUser: state.session.currentUser
+        products: products,
+        currentUser: currentUser,
+        carts: carts
 
     }
 }
@@ -18,9 +22,8 @@ const mapdt = dispatch => {
     return {
         getOrderLists : ()=> dispatch(getOrderLists()),
         getProducts : ()=> dispatch(getProducts()), 
-        createOrderList: (orderlist)=> dispatch(createOrderList(orderlist)),
-        updateOrderList: (orderlist)=> dispatch(updateOrderList(orderlist))
-
+        updateOrderList: (orderlist)=> dispatch(updateOrderList(orderlist)),
+        getCarts: ()=> dispatch(getCarts())
     }
 }
 
