@@ -14,7 +14,7 @@ const mapst= state=> {
 const mapdt = dispatch => {
     return {
         processForm:(user)=> dispatch(signup(user)), 
-
+       
         otherForm:(
             <button className="session-submit3" onClick={() => dispatch(openModal('login'))}>
                 Sign in

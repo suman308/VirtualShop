@@ -5,8 +5,9 @@ class Api::UsersController < ApplicationController
     if @user.save
      
       login(@user)
-      Cart.create!(user_id: "#{@user.id}")
 
+      Cart.create!(user_id: "#{@user.id}")
+   
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status: 422

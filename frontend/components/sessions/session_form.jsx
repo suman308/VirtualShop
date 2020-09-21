@@ -4,7 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props){
-        super(props)
+        super()
         this.state ={
             username:'',
             password:'', 
@@ -27,8 +27,7 @@ class SessionForm extends React.Component {
        e.preventDefault()
         const user = Object.assign({}, this.state)
         this.props.processForm(user).then(this.props.closeModal)
-        
-    
+
       
     }
 

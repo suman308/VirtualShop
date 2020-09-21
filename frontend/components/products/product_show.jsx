@@ -30,7 +30,7 @@ class ProductShow extends React.Component {
         if (this.props.currentUser){
         this.setState({quantity : e.currentTarget.value })
         console.log(this.state.quantity)
-        this.props.getCart(this.props.currentUser.id);
+        
         }else {
             this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -57,8 +57,11 @@ class ProductShow extends React.Component {
             cart_id : cart_id, 
             quantity : this.state.quantity
         }
-        createOrderList(orderlist); 
-
+        console.log(orderlist)
+        console.log(cart)
+        console.log(order_id)
+        // createOrderList(orderlist); 
+  
     }
     render(){
        
@@ -97,6 +100,7 @@ class ProductShow extends React.Component {
                                 <label htmlFor="quantity" className="label-quantity"> Quantity</label>
                                 <br/>
                                 <select className="quantity" type="select" onChange={this.handleChange}> 
+                                    <option value="0" >0 </option>
                                     <option value="1" >1 </option>
                                     <option value="2" >2 </option>
                                     <option value="3" >3 </option>

@@ -59,3 +59,7 @@ export const getCart = (cartId) => dispatch => {
 export const deleteCart = (cartId) => dispatch => {
     return AllUtil.deleteCart(cartId).then(() => dispatch(removeCart(cartId)), errors => receiveErrors(errors))
 }
+
+export const createCart = (cart) => dispatch => {
+    return AllUtil.createCart(cart).then((cart)=> dispatch(receiveCart(cart)), errors=> receiveErrors(errors))
+}
