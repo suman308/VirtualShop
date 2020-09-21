@@ -28,7 +28,7 @@ const mapdt = dispatch => {
       getProducts: ()=> dispatch(getProducts()),
       getProduct: (id) => dispatch(getProduct(id)),
       getCart: (id)=> dispatch(getCart(id)),
-      createOrderList : (orderList)=> dispatch(createOrderList)
+      createOrderList : (orderList)=> dispatch(createOrderList(orderList))
     }
 }
    
