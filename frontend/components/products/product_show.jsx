@@ -7,11 +7,12 @@ class ProductShow extends React.Component {
         super()
         this.state ={
             quantity:" ", 
+            modal: " "
 
         }
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        
+        this.closeAlert = this.closeAlert.bind(this)
     }
     
     componentDidMount(){
@@ -21,12 +22,28 @@ class ProductShow extends React.Component {
     
        
     } 
+    closeAlert(){
+        this.setState({modal:""})
+    }
 
     handleChange(e) {
-        
+        if (this.props.currentUser){
         this.setState({quantity : e.currentTarget.value })
         this.props.getCart(this.props.currentUser.id);
-        
+        }else {
+            this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
+                <div className="modal-child" onClick={e => e.stopPropagation()}>
+                    <div className="alert-box"> 
+                     ! Alert !
+                        <div className="alert-message">
+                            you need to sign up to put the product to the cart
+                        </div>
+                    </div>
+                   
+                    
+                </div>
+        </div> })
+        }
     }
     handleSubmit(e){
         e.preventDefault();
@@ -43,15 +60,12 @@ class ProductShow extends React.Component {
     render(){
        
          const pro = this.props.product
-         console.log("printing the product")
-         console.log(this.props.product)
-         console.log("printing the products")
-         console.log(this.props.products)
-         
+        
          if (pro) {
             const images = pro.imageUrls
         return (
             <div>
+               {this.state.modal}
                     <form onSubmit={this.handleSubmit}>
                     <div className="inline-images-holder">
                 

@@ -65,8 +65,8 @@ class SessionForm extends React.Component {
                     
             const form = this.props.formType
             const display = (form === 'signup' ? emailInput : null)
-            const name = (form === 'signup' ? "Sign up" : "Sign in" )
-            const actionType = (form === 'signup' ? "Register" : "Sign in")
+            const name = (form === 'signup' ? "Sign Up" : "Sign In" )
+            const actionType = (form === 'signup' ? "Register" : "Sign In")
             const titleText  = <h2>{name}</h2>
             
         return (

@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getProducts, getProduct} from '../../actions/product_actions';
 import ProductShow from './product_show';
 import {createOrderList} from '../../actions/OrderList'
-import {getCart} from '../../actions/cart_action'
+import {getCart, createOrderList} from '../../actions/cart_action'
 
 
 const mpst = (state, ownProps) => {
@@ -27,7 +27,8 @@ const mapdt = dispatch => {
       createOrderList: (orderlist)=> dispatch(createOrderList(orderlist)),
       getProducts: ()=> dispatch(getProducts()),
       getProduct: (id) => dispatch(getProduct(id)),
-      getCart: (id)=> dispatch(getCart(id))
+      getCart: (id)=> dispatch(getCart(id)),
+      createOrderList : (orderList)=> dispatch(createOrderList)
     }
 }
    
