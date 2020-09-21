@@ -1994,8 +1994,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         this.setState({
           quantity: e.currentTarget.value
         });
-        console.log(this.state.quantity);
-        this.props.getCart(this.props.currentUser.id);
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2017,20 +2015,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this2 = this;
-
       e.preventDefault();
       var product_id = this.props.product.id;
-      var cart = this.props.carts.find(function (cart) {
-        return cart.user_id == _this2.props.currentUser.id;
-      });
+      var cart = this.props.cart;
       var cart_id = cart.id;
       var orderlist = {
         product_id: product_id,
         cart_id: cart_id,
         quantity: this.state.quantity
-      };
-      Object(_actions_OrderList__WEBPACK_IMPORTED_MODULE_2__["createOrderList"])(orderlist);
+      }; // createOrderList(orderlist); 
     }
   }, {
     key: "render",
@@ -2171,7 +2164,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mpst = function mpst(state, ownProps) {
-  var carts = Array.from(state.entities.carts);
+  var carts = state.entities.carts;
   var currentUser = state.session.currentUser;
   var products = state.entities.products;
   var product = products[ownProps.match.params.id];
@@ -2179,7 +2172,6 @@ var mpst = function mpst(state, ownProps) {
     return cart.id = currentUser.id;
   }) : null;
   return {
-    products: Array.from(state.entities.products),
     product: product,
     currentUser: state.session.currentUser,
     cart: cart

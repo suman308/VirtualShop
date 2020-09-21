@@ -29,7 +29,6 @@ class ProductShow extends React.Component {
     handleChange(e) {
         if (this.props.currentUser){
         this.setState({quantity : e.currentTarget.value })
-        console.log(this.state.quantity)
         
         }else {
             this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
@@ -50,16 +49,14 @@ class ProductShow extends React.Component {
         e.preventDefault();
        
         const  product_id  = this.props.product.id 
-        const cart = this.props.carts.find(cart=> cart.user_id == this.props.currentUser.id)
+        const cart = this.props.cart
         const cart_id = cart.id 
         const orderlist = {
             product_id : product_id, 
             cart_id : cart_id, 
             quantity : this.state.quantity
         }
-        console.log(orderlist)
-        console.log(cart)
-        console.log(order_id)
+        
         // createOrderList(orderlist); 
   
     }
