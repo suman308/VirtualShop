@@ -1,15 +1,18 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
-import {createOrderList} from '../../actions/OrderList';
+
 
 class ProductShow extends React.Component {
     constructor(props){
         super()
         this.state ={
             quantity:" ", 
-            modal: " "
-
+            modal: " ",
+            cart_id:"", 
+            product_id:"", 
+            checked_out: false 
         }
+
         this.handleChange = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.closeAlert = this.closeAlert.bind(this)
@@ -27,9 +30,19 @@ class ProductShow extends React.Component {
     }
 
     handleChange(e) {
-        if (this.props.currentUser){
-        this.setState({quantity : e.currentTarget.value })
-        
+        if (this.props.currentUser ){
+            const product_id = this.props.product.id
+            const Id = this.props.currentUser.id
+            const carts = Array.from(this.props.carts)
+            const cart = carts.find(car => car.user_id == Id)
+            console.log(cart)
+            const cart_id = cart.id
+            const q = parseInt(e.currentTarget.value)
+            this.setState({quantity : q })
+            this.setState({cart_id : cart_id})
+            this.setState({product_id : product_id})
+            console.log(this.state)
+
         }else {
             this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -49,22 +62,27 @@ class ProductShow extends React.Component {
         e.preventDefault();
        
         const  product_id  = this.props.product.id 
-        const cart = this.props.cart
-        const cart_id = cart.id 
+        const Id = this.props.currentUser.id
+        const carts = Array.from(this.props.carts)
+        const cart = carts.find(car=> car.user_id ==  Id)
+        console.log(cart)
+        const cart_id = cart.id
+        const q = parseInt(this.state.quantity)
         const orderlist = {
             product_id : product_id, 
             cart_id : cart_id, 
-            quantity : this.state.quantity
+            quantity : q,
+            checked_out : false 
         }
         
-        // createOrderList(orderlist); 
+        this.props.addToCart(orderlist); 
   
     }
     render(){
        
          const pro = this.props.product
-        
-         if (pro) {
+         const carts = this.props.carts
+         if (pro && carts) {
             const images = pro.imageUrls
         return (
             <div>

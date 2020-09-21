@@ -1926,7 +1926,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _productImagesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImagesList */ "./frontend/components/products/productImagesList.jsx");
-/* harmony import */ var _actions_OrderList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/OrderList */ "./frontend/actions/OrderList.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1952,7 +1951,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var ProductShow = /*#__PURE__*/function (_React$Component) {
   _inherits(ProductShow, _React$Component);
 
@@ -1966,7 +1964,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this);
     _this.state = {
       quantity: " ",
-      modal: " "
+      modal: " ",
+      cart_id: "",
+      product_id: "",
+      checked_out: false
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -1991,9 +1992,25 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "handleChange",
     value: function handleChange(e) {
       if (this.props.currentUser) {
-        this.setState({
-          quantity: e.currentTarget.value
+        var product_id = this.props.product.id;
+        var Id = this.props.currentUser.id;
+        var carts = Array.from(this.props.carts);
+        var cart = carts.find(function (car) {
+          return car.user_id == Id;
         });
+        console.log(cart);
+        var cart_id = cart.id;
+        var q = parseInt(e.currentTarget.value);
+        this.setState({
+          quantity: q
+        });
+        this.setState({
+          cart_id: cart_id
+        });
+        this.setState({
+          product_id: product_id
+        });
+        console.log(this.state);
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2017,20 +2034,29 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var product_id = this.props.product.id;
-      var cart = this.props.cart;
+      var Id = this.props.currentUser.id;
+      var carts = Array.from(this.props.carts);
+      var cart = carts.find(function (car) {
+        return car.user_id == Id;
+      });
+      console.log(cart);
       var cart_id = cart.id;
+      var q = parseInt(this.state.quantity);
       var orderlist = {
         product_id: product_id,
         cart_id: cart_id,
-        quantity: this.state.quantity
-      }; // createOrderList(orderlist); 
+        quantity: q,
+        checked_out: false
+      };
+      this.props.addToCart(orderlist);
     }
   }, {
     key: "render",
     value: function render() {
       var pro = this.props.product;
+      var carts = this.props.carts;
 
-      if (pro) {
+      if (pro && carts) {
         var images = pro.imageUrls;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.modal, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit
@@ -2168,13 +2194,10 @@ var mpst = function mpst(state, ownProps) {
   var currentUser = state.session.currentUser;
   var products = state.entities.products;
   var product = products[ownProps.match.params.id];
-  var cart = currentUser ? carts.find(function (cart) {
-    return cart.id = currentUser.id;
-  }) : null;
   return {
     product: product,
-    currentUser: state.session.currentUser,
-    cart: cart
+    currentUser: currentUser,
+    carts: carts
   };
 };
 

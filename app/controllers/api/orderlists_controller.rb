@@ -1,5 +1,5 @@
 class Api::OrderlistsController < ApplicationController
-    before_action :require_login, only:[:show, :update, :create]
+    before_action :logged_in?, only:[:show, :update, :create]
     def index 
         @orderlists = OrderList.all.select{|order_item| order_item.cart_id == params[:cart_id]}
         if @orderlists 
@@ -16,7 +16,9 @@ class Api::OrderlistsController < ApplicationController
     end 
 
     def create 
-        @orderlist= OrderList.create!(OrderListParams)
+        debugger
+        @orderlist= OrderList.new(orderlistParams)
+        debugger
        if  @orderlist.save!
             render 'api/orderlists/show'
        else 
@@ -35,7 +37,9 @@ class Api::OrderlistsController < ApplicationController
     end 
 
     private 
-    def OrderListParams 
-        params.premit(:orderlist).require(:product_id, :cart_id, :quantity)
+    def orderlistParams 
+        debugger 
+        params.permit(:OrderList).require(:product_id, :cart_id, :quantity, :checked_out)
+        debugger 
     end 
 end
