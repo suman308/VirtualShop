@@ -16,10 +16,10 @@ class Api::OrderlistsController < ApplicationController
     end 
 
     def create 
-        debugger
-        @orderlist= OrderList.new(orderlistParams)
-        debugger
-       if  @orderlist.save!
+        
+        @orderlist= OrderList.create!(orderlistParams)
+       
+       if  @orderlist
             render 'api/orderlists/show'
        else 
             render json: @orderlist.errorrs.full_messages, status: 422
@@ -38,8 +38,8 @@ class Api::OrderlistsController < ApplicationController
 
     private 
     def orderlistParams 
-        debugger 
-        params.permit(:OrderList).require(:product_id, :cart_id, :quantity, :checked_out)
-        debugger 
+        
+        params.require(:OrderList).permit(:product_id, :cart_id, :quantity, :checked_out)
+       
     end 
 end
