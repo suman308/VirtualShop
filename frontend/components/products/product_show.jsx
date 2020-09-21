@@ -40,7 +40,7 @@ class ProductShow extends React.Component {
             const q = parseInt(e.currentTarget.value)
             this.setState({quantity : q })
             this.setState({cart_id : cart_id})
-            this.setState({product_id : product_id})
+            this.setState({ product_id: product_id})
             console.log(this.state)
 
         }else {
@@ -60,22 +60,8 @@ class ProductShow extends React.Component {
     }
     handleSubmit(e){
         e.preventDefault();
-       
-        const  product_id  = this.props.product.id 
-        const Id = this.props.currentUser.id
-        const carts = Array.from(this.props.carts)
-        const cart = carts.find(car=> car.user_id ==  Id)
-        console.log(cart)
-        const cart_id = cart.id
-        const q = parseInt(this.state.quantity)
-        const orderlist = {
-            product_id : product_id, 
-            cart_id : cart_id, 
-            quantity : q,
-            checked_out : false 
-        }
         
-        this.props.addToCart(orderlist); 
+        this.props.addToCart(this.state); 
   
     }
     render(){

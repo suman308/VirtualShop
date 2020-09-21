@@ -2033,22 +2033,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var product_id = this.props.product.id;
-      var Id = this.props.currentUser.id;
-      var carts = Array.from(this.props.carts);
-      var cart = carts.find(function (car) {
-        return car.user_id == Id;
-      });
-      console.log(cart);
-      var cart_id = cart.id;
-      var q = parseInt(this.state.quantity);
-      var orderlist = {
-        product_id: product_id,
-        cart_id: cart_id,
-        quantity: q,
-        checked_out: false
-      };
-      this.props.addToCart(orderlist);
+      this.props.addToCart(this.state);
     }
   }, {
     key: "render",
