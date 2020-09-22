@@ -8,23 +8,20 @@ render() {
     const product = this.props.product
     const quantity = this.props.quantity
     const price = product.price * quantity
-    console.log("ram")
-    const image = <img className="image-holder-box" src={product.imageUrls[1]} />
+    
+    const image = <img className="image-order" src={product.imageUrls[1]} />
     return (
         
-        <div> 
+        <div className="outer-box-order"> 
             <div>
                 {image}
             </div>
-            <div>
+            <div className="order-quantity">
                 <h4>The total quantity {quantity}</h4>
                 <h4>The total price {price}</h4>
             </div>
 
-            <form onSubmit={this.handleSubmit }>
-            
-             
-            </form>
+           
         </div>
     )
 }

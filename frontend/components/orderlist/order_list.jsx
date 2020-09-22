@@ -44,9 +44,9 @@ class OrderList extends React.Component {
                   })
             return result 
         }
-        const Ram = finalObj(products, prods)();
-        console.log(Ram)
-        const lists = Ram.map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
+    
+           
+        const lists = finalObj(products, prods).map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
         const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
         const output  = (products.length) ? lists : message
        

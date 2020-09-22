@@ -1398,14 +1398,15 @@ var Order = /*#__PURE__*/function (_React$Component) {
       var product = this.props.product;
       var quantity = this.props.quantity;
       var price = product.price * quantity;
-      console.log("ram");
       var image = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "image-holder-box",
+        className: "image-order",
         src: product.imageUrls[1]
       });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total quantity ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "outer-box-order"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "order-quantity"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total quantity ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)));
     }
   }]);
 
@@ -1489,7 +1490,6 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
       });
 
       if (cart) {
-        console.log(orderlists);
         var productIds = orderlists.map(function (order) {
           return order.product_id;
         });
@@ -1507,16 +1507,17 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
 
         var finalObj = function finalObj(products, prods) {
           var result = prods.map(function (order) {
-            return order.product = products.find(function (prod) {
-              return prod.id == order.productId;
+            var Id = order.productId;
+            var product = products.find(function (product) {
+              return product.id == Id;
             });
+            prods["product"] = product;
+            return prods;
           });
           return result;
         };
 
-        var Ram = finalObj(products, prods);
-        console.log(Ram);
-        var lists = Ram.map(function (obj, idx) {
+        var lists = finalObj(products, prods).map(function (obj, idx) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_order_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
             product: obj.product,
             quantity: obj.quantity,
