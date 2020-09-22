@@ -21,7 +21,7 @@ render() {
                 <h4>The total price {price}</h4>
             </div>
 
-            <form action="">
+            <form onSubmit={this.handleSubmit }>
             
              
             </form>

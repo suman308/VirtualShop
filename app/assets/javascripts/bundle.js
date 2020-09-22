@@ -1404,7 +1404,7 @@ var Order = /*#__PURE__*/function (_React$Component) {
         src: product.imageUrls[1]
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total quantity ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        action: ""
+        onSubmit: this.handleSubmit
       }));
     }
   }]);
@@ -1484,13 +1484,6 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
       if (cart) {
         var cart_Id = cart.id;
         var orderlists = this.props.orderlists;
-        var pam = Object.assign({});
-        var productIds = orderlists.map(function (order) {
-          pam.productId = order.product_id;
-          pam.Q = order.quantity;
-          return pam;
-        });
-        console.log(pam);
         var prods = products.filter(function (pro) {
           return productIds.includes(pro.id.toString());
         });

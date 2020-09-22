@@ -21,12 +21,7 @@ class OrderList extends React.Component {
 
         const cart_Id = cart.id 
         const orderlists = this.props.orderlists
-        const pam = Object.assign({})
-        const productIds = orderlists.map(order=> {
-            pam.productId = order.product_id; 
-            pam.Q = order.quantity
-            return pam})
-            console.log(pam)
+       
         const prods = products.filter(pro=> productIds.includes(pro.id.toString()))
         const lists = prods.map(product => <Order product={product} quantity= {product.quantity} key={product.id}/>)
         const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
