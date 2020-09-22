@@ -4,6 +4,10 @@ import Order from './order.jsx';
 class OrderList extends React.Component {
     constructor(props){
         super()
+        this.state  = {
+            productId : "", 
+
+        }
 
     }
     componentDidMount(){
@@ -27,13 +31,19 @@ class OrderList extends React.Component {
             ind["productId"] = order.product_id
             ind["quantity"] = order.quantity
             ind["checked_out"] = order.checked_out
+            ind["product"] = " "
             return ind
         });
 
-            console.log(productIds)
+    
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
-        const prods = 
-        const lists = prods.map((product, idx) => <Order product={product.} quantity= {product.quantity} key={idx}/>)
+        const finalObj = function(products, prods) {
+            const result = prods.map(order =>  { return order.product = products.find(prod => prod.id == order.productId)})
+            return result 
+        }
+        const Ram = finalObj(products, prods)
+        console.log(Ram)
+        const lists = Ram.map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
         const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
         const output  = (products.length) ? lists : message
        
