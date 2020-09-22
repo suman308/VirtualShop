@@ -23,8 +23,6 @@ class OrderList extends React.Component {
         const Id = this.props.currentUser.id
         const cart = carts.find(cart => cart.user_id == Id)
         if (cart ){
-
-        console.log(orderlists)
         const productIds = orderlists.map(order=> order.product_id)
         const orderProducts = orderlists.map((order, ind)=> {
             var ind = {}
@@ -38,10 +36,15 @@ class OrderList extends React.Component {
     
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
         const finalObj = function(products, prods) {
-            const result = prods.map(order =>  { return order.product = products.find(prod => prod.id == order.productId)})
+            let result = prods.map(order =>  {
+                 let Id = order.productId;
+                  let product = products.find(product=> product.id == Id);
+                  prods["product"] = product; 
+                  return prods
+                  })
             return result 
         }
-        const Ram = finalObj(products, prods)
+        const Ram = finalObj(products, prods)();
         console.log(Ram)
         const lists = Ram.map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
         const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
