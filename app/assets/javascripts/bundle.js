@@ -1027,10 +1027,12 @@ var Greeting = /*#__PURE__*/function (_React$Component) {
           className: "Cart-Icon"
         }, _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_1__["cartIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "divider"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          to: "/"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "ls-inline",
           onClick: logout
-        }, " Logout"))));
+        }, " Logout")))));
       };
 
       return currentUser ? personalGreeting() : navigation();
@@ -1397,16 +1399,25 @@ var Order = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var product = this.props.product;
       var quantity = this.props.quantity;
-      var price = product.price * quantity;
+      var price = (product.price * quantity).toFixed(2);
+      var name = product.name;
       var image = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "image-order",
         src: product.imageUrls[1]
       });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "outer-box-order"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "order-image-holder"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-name"
+      }, " ", name), image), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "order-quantity"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total quantity ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "The total price ", price)));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "text-quantity"
+      }, " Quantity = ", quantity), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "text-price"
+      }, " Amount = $", price)));
     }
   }]);
 
@@ -1511,8 +1522,8 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
             var product = products.find(function (product) {
               return product.id == Id;
             });
-            prods["product"] = product;
-            return prods;
+            order.product = product;
+            return order;
           });
           return result;
         };
@@ -1529,7 +1540,15 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           className: "No-item"
         }, " You do not  have items in the cart right now ");
         var output = products.length ? lists : message;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, output);
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "main-cart-page"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "under-main-cart"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "items-in-cart"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), output)));
       } else {
         return null;
       }

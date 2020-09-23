@@ -39,22 +39,26 @@ class OrderList extends React.Component {
             let result = prods.map(order =>  {
                  let Id = order.productId;
                   let product = products.find(product=> product.id == Id);
-                  prods["product"] = product; 
-                  return prods
+                  order.product = product; 
+                  return order
                   })
             return result 
         }
     
            
-        const lists = finalObj(products, prods).map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
-        const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
-        const output  = (products.length) ? lists : message
-       
+            const lists = (finalObj(products, prods)).map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
+            const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
+            const output  = (products.length) ? lists : message
         return (
-
-            <div> 
-                  {output}  
-                    
+              <div className="main-cart-page" >
+                  <div className="under-main-cart">
+                    <h1 className="items-in-cart"></h1>
+                        <div className="cart"> 
+                        <br/>
+                            {output}  
+                                
+                        </div>
+                </div>
             </div>
         )
         } else {

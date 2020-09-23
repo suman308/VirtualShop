@@ -51,8 +51,9 @@ class Greeting extends React.Component {
                                 
                                 </div>
                             <div className="divider"></div>
-                            <div className="ls-inline" onClick={logout}> Logout</div>
-                           
+                            <Link to='/'>
+                                    <div className="ls-inline" onClick={logout}> Logout</div>
+                            </Link>
                       </div>
                       
                 </div>
