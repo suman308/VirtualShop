@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :carts, only:[ :index, :create, :show, :edit, :update, :destroy]
     resources :orderlists, only:[ :index, :create, :show, :edit, :update, :destroy]
   end
+  get '/search' => 'products#index', :as => 'search_page'
 
   root "static_pages#root"
 end

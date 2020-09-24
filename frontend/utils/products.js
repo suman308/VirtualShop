@@ -36,4 +36,8 @@ export const createProduct = (product)=> {
     })
 }
 
-export 
+export const queryProducts = (query) => {
+    return $.ajax({
+        url:`/`
+    })
+}
