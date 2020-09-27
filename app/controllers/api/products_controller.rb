@@ -1,6 +1,7 @@
 class Api::ProductsController < ApplicationController
     before_action :logged_in?, only:[ :update, :create]
     def index 
+     
         @products = Product.all
         if @products 
             render :index 
@@ -11,6 +12,7 @@ class Api::ProductsController < ApplicationController
 
 
     def show 
+        
         @product = Product.find(params[:id]) 
         if @product 
             render 'api/products/show'
@@ -54,7 +56,7 @@ class Api::ProductsController < ApplicationController
 
     private 
     def product_params 
-        debugger
+        
         params.permit(:product).require(:name, :details, :price, :category, :store_id, :image, :search)
     end 
 

@@ -1,24 +1,24 @@
 class Api::SearchsController < ApplicationController
     def index 
-        if product_params.name 
-            @products = Product.search_name(product_params[:name]) 
-        elsif product_params.category 
-            @products = Product.search_category(product_params[:category]) 
+        if params_params[:name]
+           
+            @products = Product.search_name(params_params[:name]) 
+        elsif params_params[:category] 
+           
+            @products = Product.search_category(params_params[:category]) 
         else 
+             
             @products = Product.all 
         end 
 
-        render :index 
+        render 'api/products/index'
     end
 
 
 
-
-
-def product_params
- 
-    params.require(:search).require(:name, :category)
-end 
-
+     private 
+     def params_params 
+        params.require(:search).permit(:name, :category)
+     end 
 
 end

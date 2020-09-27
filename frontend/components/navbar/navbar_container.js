@@ -10,8 +10,9 @@ const mapst = state => {
 }
 const mapdt = dispatch => {
     return {
-        searchProducts: () => dispatch(searchProducts()),
-        clearProducts: () => dispatch(clearProducts())
+        searchProducts: (query) => dispatch(searchProducts(query)),
+        clearProducts: () => dispatch(clearProducts()),
+        
     }
 }
 

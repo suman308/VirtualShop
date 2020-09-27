@@ -1423,8 +1423,8 @@ var mapst = function mapst(state) {
 
 var mapdt = function mapdt(dispatch) {
   return {
-    searchProducts: function searchProducts() {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["searchProducts"])());
+    searchProducts: function searchProducts(query) {
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["searchProducts"])(query));
     },
     clearProducts: function clearProducts() {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["clearProducts"])());

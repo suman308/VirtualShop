@@ -40,6 +40,6 @@ export const queryProducts = (query) => {
     return $.ajax({
         url:`/api/search`, 
         method: 'GET', 
-        data : {search: query}
+        data :  {search: query}
     })
 }
