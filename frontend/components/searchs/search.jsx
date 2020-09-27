@@ -9,11 +9,13 @@ class Search extends React.Component {
         this.handleSubmit= this.handleSubmit.bind(this)
     }
     handleChange(e){
-
+       this.setState({
+           name : e.target.value
+       })
     }
     handleSubmit(e){
-        this.props.clearProducts();
         e.preventDefault()
+        this.props.clearProducts();
        this.props.searchProducts(this.state)
     }
     render() {

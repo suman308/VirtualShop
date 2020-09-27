@@ -2394,12 +2394,16 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
   _createClass(Search, [{
     key: "handleChange",
-    value: function handleChange(e) {}
+    value: function handleChange(e) {
+      this.setState({
+        name: e.target.value
+      });
+    }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      this.props.clearProducts();
       e.preventDefault();
+      this.props.clearProducts();
       this.props.searchProducts(this.state);
     }
   }, {
