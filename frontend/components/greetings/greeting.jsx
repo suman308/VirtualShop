@@ -1,7 +1,7 @@
 import React from  'react'; 
 import { cartIcon} from '../../../app/assets/images/icons'
 import { Link} from 'react-router-dom';
-import Search from './search'
+import Search from '../searchs/search_container'
 class Greeting extends React.Component {
    constructor(props){
        super()
