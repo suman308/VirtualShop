@@ -5,7 +5,8 @@ export const UPDATE_PRODUCT = 'UPDATE_PRODUCT';
 export const REMOVE_PRODUCT =  'REMOVE_PRODUCT';
 export const REMOVE_ERRORS = 'REMOVE_ERRORS';
 export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const CLEAR_PRODUCTS = "CLEAR_PRODUCTS"
+export const CLEAR_PRODUCTS = "CLEAR_PRODUCTS";
+
 export const receiveProducts =(products) =>{
     
     return {
@@ -68,9 +69,8 @@ export const updateProduct = (product)=> dispatch => {
 }
 
 export const deleteProduct = (productId)=> dispatch=> {
-    return AllUtil.deleteProduct(productId).then(() => dispatch(removeProduct(productId)), errors => receiveErrors(errors.responseJSON))
+    return AllUtil.deleteProduct(productId).then(() => dispatch(removeProduct(productId)), errors => dispatch(receiveErrors(errors.responseJSON)))
 }
 
-export const searchProducts = (query) => dispatch => queryProducts(query)
-    .then(products => dispatch(receiveProducts(products)),
-        error => dispatch(receiveErrors(error.responseJSON)))
+export const searchProducts = (query) => dispatch => {
+    return AllUtil.queryProducts(query).then( products => dispatch(receiveProducts(products)), errors => dispatch(receiveErrors(errors.responseJSON))) }

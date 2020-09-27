@@ -27,4 +27,23 @@ class Product < ApplicationRecord
     belongs_to :store, foreign_key: :store_id, class_name: :Store
     has_many_attached :images
 
+    def self.search_name(input)
+        searched = self.where("name like ?", "%" + input + "%")
+        if searched != []
+            searched
+        else
+            Product.all
+        end
+    end
+    def self.search_category(input)
+        searched = self.where("category like ?", "%" + input + "%")
+        if searched != []
+            searched
+        else
+            Product.all
+        end
+    end
+
+
+
 end

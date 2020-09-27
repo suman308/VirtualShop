@@ -2,20 +2,33 @@ import React from 'react';
 
 class Navbar extends React.Component {
 constructor(props){
-super()
+    super()
+    this.state = {
+        category: ""
+    }
+    this.handleClick = this.handleClick.bind(this)
+    
 }
-
+handleClick(e){
+    this.props.clearProducts();
+    const val = e.currentTarget.attributes[1] 
+    const category = (val.value)
+    const query = new Object()
+     query["category"]= category
+  
+    this.props.searchProducts(query)
+}
 render(){
     return (
         <div className="Navbar">
-            <h4 className="Category">Art</h4>
-            <h4 className="Category">Electronics</h4>
-            <h4 className="Category">Books</h4>
-            <h4 className="Category">Foods</h4>
-            <h4 className="Category">Clothes</h4>
-            <h4 className="Category">Shoes</h4>
-            <h4 className="Category">Jewelry</h4>
-            <h4 className="Category">Other</h4>
+            <h4 className="Category" value='Art' onClick={this.handleClick}>Art</h4>
+            <h4 className="Category" value='Electronics' onClick={this.handleClick}>Electronics</h4>
+            <h4 className="Category" value='Books' onClick={this.handleClick}>Books</h4>
+            <h4 className="Category" value='Foods' onClick={this.handleClick}>Foods</h4>
+            <h4 className="Category" value='Clothes' onClick={this.handleClick}>Clothes</h4>
+            <h4 className="Category" value='Shoes' onClick={this.handleClick}>Shoes</h4>
+            <h4 className="Category" value='Jewelry' onClick={this.handleClick}>Jewelry</h4>
+            <h4 className="Category" value='Other' onClick={this.handleClick}>Other</h4>
         </div>
     )
 

@@ -45,11 +45,17 @@ class Api::ProductsController < ApplicationController
                render json: @product.errors.full_messages, status: 422
            end 
     end 
-
+   
+    def search 
+        @products = Product.search(params[:search])
+        
+        render :index 
+    end 
 
     private 
     def product_params 
-        params.permit(:product).require(:name, :details, :price, :category, :store_id, :image)
+        debugger
+        params.permit(:product).require(:name, :details, :price, :category, :store_id, :image, :search)
     end 
 
     # def require_login 

@@ -38,6 +38,8 @@ export const createProduct = (product)=> {
 
 export const queryProducts = (query) => {
     return $.ajax({
-        url:`/`
+        url:`/api/search`, 
+        method: 'GET', 
+        data : {search: query}
     })
 }
