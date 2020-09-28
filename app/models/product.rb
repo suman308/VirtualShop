@@ -28,8 +28,7 @@ class Product < ApplicationRecord
     has_many_attached :images
 
     def self.search_name(input)
-       
-        searched = self.where("name like ?", "%" + input + "%")
+        searched = self.where("lower(name) like ?", "%"+input.downcase+"%")
         if searched != []
             searched
         else

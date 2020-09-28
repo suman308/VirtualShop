@@ -3,7 +3,7 @@ import { searchProducts, clearProducts } from '../../actions/product_actions';
 import Navbar from './navbar'
 const mapst = state => {
     return {
-        products: state.entities.products
+        products: state.entities.productsc 
 
     }
 

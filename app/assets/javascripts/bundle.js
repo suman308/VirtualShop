@@ -1345,7 +1345,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapst = function mapst(state) {
   return {
-    products: state.entities.products
+    products: state.entities.productsc
   };
 };
 

@@ -11,6 +11,7 @@ class Search extends React.Component {
     handleChange(e){
        this.setState({
            name : e.target.value
+           
        })
     }
     handleSubmit(e){
