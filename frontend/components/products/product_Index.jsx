@@ -8,7 +8,7 @@ class ProductIndex extends React.Component {
     }
 
     componentDidMount(){
-
+     
      this.props.getProducts()
     }
     render() {

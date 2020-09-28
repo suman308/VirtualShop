@@ -7,13 +7,15 @@ class Greeting extends React.Component {
        super()
    }
 
+   
+
     render(){
           const {currentUser, logout, openModal} = this.props
             const navigation = ()=> (
                 <nav className="login-signup">
                    
                     <Link to='/' className="Virtual-logo">
-                     
+                     <div onclick={this.handleClick} />
                     </Link>
                     
                    <Search/>
@@ -30,7 +32,7 @@ class Greeting extends React.Component {
                 <div>
                 <div className="login-signup">
                         <Link to='/' className="Virtual-logo">
-
+                            <div onclick={this.handleClick} />
                         </Link>
                         <br/>
                             <Search />
