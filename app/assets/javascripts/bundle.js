@@ -2389,14 +2389,16 @@ var Search = /*#__PURE__*/function (_React$Component) {
       name: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Search, [{
     key: "handleChange",
     value: function handleChange(e) {
+      var query = e.target.value.trim();
       this.setState({
-        name: e.target.value
+        name: query
       });
     }
   }, {
@@ -2405,6 +2407,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       this.props.clearProducts();
       this.props.searchProducts(this.state);
+      this.setState({
+        name: " "
+      });
     }
   }, {
     key: "render",
@@ -2414,7 +2419,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "search-bar",
-        placeholder: "Search for the items"
+        placeholder: "Search for the items",
+        onChange: this.handleChange
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "submit-button",
         onClick: this.handleSubmit

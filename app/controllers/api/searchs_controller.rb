@@ -1,7 +1,7 @@
 class Api::SearchsController < ApplicationController
     def index 
         if params_params[:name]
-           debugger 
+          
             @products = Product.search_name(params_params[:name]) 
         elsif params_params[:category] 
            
