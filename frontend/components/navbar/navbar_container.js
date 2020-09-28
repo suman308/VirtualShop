@@ -1,4 +1,4 @@
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { searchProducts, clearProducts } from '../../actions/product_actions';
 import Navbar from './navbar'
 const mapst = state => {
@@ -16,4 +16,4 @@ const mapdt = dispatch => {
     }
 }
 
-export default connect(mapst, mapdt)(Navbar)
+export default withRouter(mapst, mapdt)(Navbar)
