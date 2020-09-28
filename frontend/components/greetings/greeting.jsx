@@ -5,9 +5,14 @@ import Search from '../searchs/search_container'
 class Greeting extends React.Component {
    constructor(props){
        super()
+       this.handleClick = this.handleClick.bind(this)
    }
+  
+  handleClick(){
+      this.clearProducts()
+      this.props.getProducts()
+  }
 
-   
 
     render(){
           const {currentUser, logout, openModal} = this.props
