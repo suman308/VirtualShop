@@ -21,6 +21,7 @@ class Search extends React.Component {
         this.props.clearProducts();
        this.props.searchProducts(this.state)
        this.setState({name: " "})
+       this.props.history.push('/')
     }
     render() {
         return (

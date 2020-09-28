@@ -1277,7 +1277,9 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       var category = val.value;
       var query = new Object();
       query["category"] = category;
+      console.log(this.props);
       this.props.searchProducts(query);
+      this.props.history.push('/');
     }
   }, {
     key: "render",
@@ -2410,6 +2412,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
       this.setState({
         name: " "
       });
+      this.props.history.push('/');
     }
   }, {
     key: "render",
@@ -2446,8 +2449,8 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var _actions_product_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/product_actions */ "./frontend/actions/product_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search */ "./frontend/components/searchs/search.jsx");
 
 
@@ -2462,15 +2465,15 @@ var mapst = function mapst(state) {
 var mapdt = function mapdt(dispatch) {
   return {
     searchProducts: function searchProducts(query) {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["searchProducts"])(query));
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["searchProducts"])(query));
     },
     clearProducts: function clearProducts() {
-      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["clearProducts"])());
+      return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_0__["clearProducts"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapst, mapdt)(_search__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(mapst, mapdt)(_search__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

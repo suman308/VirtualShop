@@ -15,8 +15,10 @@ handleClick(e){
     const category = (val.value)
     const query = new Object()
      query["category"]= category
-  
+    console.log(this.props)
     this.props.searchProducts(query)
+    this.props.history.push('/')
+
 }
 render(){
     return (
