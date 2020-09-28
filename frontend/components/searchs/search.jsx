@@ -1,5 +1,7 @@
 import React from 'react'
 import { searchIcon } from '../../../app/assets/images/icons'
+import { withRouter } from 'react-router-dom'
+
 class Search extends React.Component {
     constructor(props) {
         super()
@@ -39,4 +41,4 @@ class Search extends React.Component {
         )
     }
 }
-export default Search;
+export default withRouter(Search);

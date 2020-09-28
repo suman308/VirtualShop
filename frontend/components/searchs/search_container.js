@@ -1,6 +1,5 @@
-
+import {connect} from 'react-redux'
 import {searchProducts, clearProducts} from '../../actions/product_actions';
-import {withRouter} from 'react-router-dom'
 import Search from './search'; 
 
 const mapst = state => {
@@ -15,4 +14,4 @@ const mapdt = dispatch => {
         clearProducts: ()=> dispatch(clearProducts())
     }
 }
-export default withRouter(mapst, mapdt)(Search)
+export default connect(mapst, mapdt)(Search)
