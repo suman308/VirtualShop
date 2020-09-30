@@ -1,6 +1,6 @@
 import React from 'react';
 import Order from './order.jsx';
-
+import {paypalIcon, visaIcon, discoverIcon, amexIcon, mastercardIcon} from '../../../app/assets/images/icons'
 class OrderList extends React.Component {
     constructor(props){
         super()
@@ -8,7 +8,7 @@ class OrderList extends React.Component {
             product1 : {}
 
         }
-       this.handleClick = this.handleClick.bind(this)
+       
     }
     componentDidMount(){
         this.props.getProducts(); 
@@ -62,10 +62,24 @@ class OrderList extends React.Component {
                             {output}  
                              
                         </div>
+                 </div>
+                <div className="checkout-container">
+                    <div className="paying-method">
+                        <div className="icon-holder">{paypalIcon}<input type="radio" /></div>
+                        <div className="icon-holder">{discoverIcon}<input type="radio" /></div>
+                        <div className="icon-holder">{amexIcon}<input type="radio" /></div>
+                        <div className="icon-holder">{visaIcon}<input type="radio" /></div>
+                        <div className="icon-holder">{mastercardIcon}<input type="radio" /></div>
+
+                    </div>
+
+
+                    <div className="check-out" onClick={this.handleClick}>
+
+                    </div>
                 </div>
-                <div className="check-out" onClick={this.handleClick}>  
-                   
-                </div>
+
+               
             </div>
         )
         } else {
