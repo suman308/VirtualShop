@@ -5,10 +5,10 @@ class OrderList extends React.Component {
     constructor(props){
         super()
         this.state  = {
-            productId : "", 
+            product1 : {}
 
         }
-
+       this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount(){
         this.props.getProducts(); 
@@ -47,7 +47,10 @@ class OrderList extends React.Component {
         }
     
             
-            const lists = (finalObj(products, prods)).map((obj, idx) => <Order product={obj.product} quantity={obj.quantity} checkedOut={obj.checked_out} key={idx}/>)
+            const lists = (finalObj(products, prods)).map((obj, idx) => <Order 
+            product={obj.product} 
+            quantity={obj.quantity} 
+            checkedOut={obj.checked_out} key={idx}/>)
             const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
             const output  = (products.length) ? lists : message
         return (
@@ -60,7 +63,9 @@ class OrderList extends React.Component {
                              
                         </div>
                 </div>
-                <div className="check-out">  </div>
+                <div className="check-out" onClick={this.handleClick}>  
+                   
+                </div>
             </div>
         )
         } else {

@@ -10,6 +10,7 @@ class Search extends React.Component {
         }
         this.handleSubmit= this.handleSubmit.bind(this)
         this.handleChange= this.handleChange.bind(this)
+        this.handleFocus = this.handleFocus.bind(this)
     }
     handleChange(e){
        const query = (e.target.value).trim()
@@ -18,19 +19,26 @@ class Search extends React.Component {
            
        })
     }
+    handleFocus(){
+      this.setState({name: " "})
+    }
     handleSubmit(e){
         e.preventDefault()
         this.props.clearProducts();
        this.props.searchProducts(this.state)
-       this.setState({name: " "})
        this.props.history.push('/')
+      
     }
     render() {
         return (
 
             <div className="search" >
 
-                <input type="text" className="search-bar" placeholder="Search for the items"  onChange={this.handleChange}/>
+                <input type="text" className="search-bar" 
+                 placeholder="Search for the items" 
+                 onChange={this.handleChange} onBlur={this.handleFocus} 
+                 value={this.state.name}/>
+
                 <div className="submit-button" onClick={this.handleSubmit}>
                     <div className="searchIcon">
                         {searchIcon}

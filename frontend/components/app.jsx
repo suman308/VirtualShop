@@ -1,6 +1,7 @@
 import React from 'react'
 import ProductIndexContainer from './products/product_Index_container'
 import {Route, Switch} from 'react-router-dom';
+import {Redirect} from 'react-router'
 import Modal from './modals/modal'
 import GreetingContainer from './greetings/greeting_container'
 import ProductShowContainer from './products/product_show_container'
@@ -20,6 +21,7 @@ return (
               
              <Switch>
                <Route path='/' exact component={ProductIndexContainer}/>
+               <Redirect exact from="/reload" to="/" />
                <Route path='/product/show/:id'  component={ProductShowContainer}/>
                <Route path='/cart' exact component={OrderListContainer}/>
                <Route path="*"  component={PageNotFound}/>

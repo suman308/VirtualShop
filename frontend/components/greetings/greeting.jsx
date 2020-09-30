@@ -9,7 +9,7 @@ class Greeting extends React.Component {
    }
   
   handleClick(){
-      this.clearProducts()
+      this.props.clearProducts()
       this.props.getProducts()
   }
 
@@ -19,10 +19,10 @@ class Greeting extends React.Component {
             const navigation = ()=> (
                 <nav className="login-signup">
                    
-                    <Link to='/' className="Virtual-logo">
-                     <div onclick={this.handleClick} />
-                    </Link>
+                        <Link to='/reload' replace className="Virtual-logo" >
+                        </Link>
                     
+                   
                    <Search/>
 
                     <div  className="ls-inline-container">
@@ -36,9 +36,9 @@ class Greeting extends React.Component {
             const personalGreeting = ()=> (
                 <div>
                 <div className="login-signup">
-                        <Link to='/' className="Virtual-logo">
-                            <div onclick={this.handleClick} />
-                        </Link>
+                        
+                            <Link to='/reload'  className="Virtual-logo" >
+                            </Link>
                         <br/>
                             <Search />
                         
@@ -48,9 +48,9 @@ class Greeting extends React.Component {
                       
                         <div className="ls-inline-container" >
                           
-                                <div className="ls-inlineCT">
+                                <div className="ls-inlineCT" >
                                     <Link to='/cart'  > 
-                                        <div className="Cart-Icon">
+                                    <div className="Cart-Icon" onClick={this.handleClick}>
                                             {cartIcon}
                                         </div>
                                            

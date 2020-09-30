@@ -5,12 +5,15 @@ constructor(props){
     super()
 }
 render() {
+    if (this.props) {
+       
     const product = this.props.product
     const quantity = this.props.quantity
     const price = (product.price * quantity).toFixed(2)
     const name = product.name 
     const image = <img className="image-order" src={product.imageUrls[1]} />
     const image1 = <img className="image-order1" src={product.imageUrls[2]} />
+   
     return (
         <div className="outer-outer-box-order">
             <div className="outer-box-order"> 
@@ -29,6 +32,10 @@ render() {
             <h1 className="line"></h1>  
         </div>
     )
+    
+}else {
+    return null;
+}
 }
 }
 export default Order

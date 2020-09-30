@@ -11,6 +11,7 @@ constructor(props){
     
 }
 handleClick(e){
+    this.props.history.push("/")
     this.props.clearProducts();
     const val = e.currentTarget.attributes[1] 
     const category = (val.value)
@@ -18,8 +19,7 @@ handleClick(e){
      query["category"]= category
     console.log(this.props)
     this.props.searchProducts(query)
-    this.props.history.push('/')
-
+  
 }
 render(){
     return (
