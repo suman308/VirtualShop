@@ -92,7 +92,8 @@ class OrderList extends React.Component {
                         </div>
                     </div>
 
-
+                     <h1 className="total-price"> Item(s) total  </h1>
+                     <div className="line"></div>
                     <div className="check-out" onClick={this.handleClick}>
                          Check-Out
                     </div>
