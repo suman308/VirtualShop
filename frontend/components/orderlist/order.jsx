@@ -29,7 +29,7 @@ render() {
                     <h4 className="text-price" > Amount = ${price}</h4>
                 </div>
             </div>
-            <h1 className="line"></h1>  
+           
         </div>
     )
     

@@ -19,6 +19,7 @@ class OrderList extends React.Component {
     render(){
         const carts = this.props.carts
         const products = this.props.products
+        const count = products.length;
         const orderlists = this.props.orderlists
         const Id = this.props.currentUser.id
         const cart = carts.find(cart => cart.user_id == Id)
@@ -55,31 +56,48 @@ class OrderList extends React.Component {
             const output  = (products.length) ? lists : message
         return (
               <div className="main-cart-page" >
+                  <div className="just-under-main-cart">
                   <div className="under-main-cart">
-                    <h1 className="items-in-cart"></h1>
-                        <div className="cart"> 
-                        <br/>
-                            {output}  
+                    <h1 className="items-in-cart">You have {count} item(s) in the cart</h1>
+                        <div className="cart-outer"> 
+                            <div className="cart">
+                            {output} 
+                        </div>  
                              
+                        
+                       
                         </div>
+                 
+                    
                  </div>
-                <div className="checkout-container">
+                
+                <form className="checkout-container">
+                    <h1 className="how-pay"> How You'll Pay</h1>
                     <div className="paying-method">
-                        <div className="icon-holder">{paypalIcon}<input type="radio" /></div>
-                        <div className="icon-holder">{discoverIcon}<input type="radio" /></div>
-                        <div className="icon-holder">{amexIcon}<input type="radio" /></div>
-                        <div className="icon-holder">{visaIcon}<input type="radio" /></div>
-                        <div className="icon-holder">{mastercardIcon}<input type="radio" /></div>
-
+                        <div className="icon-holder-container">
+                        <div className="icon-holder">
+                            <input type="radio" name="one"   />
+                            <br />
+                            {paypalIcon}</div>
+                        <div className="icon-holder"><input type="radio" name="one" className="radio-button" />
+                            <br />
+                            {discoverIcon}</div>
+                        <div className="icon-holder"><input type="radio" name="one" className="radio-button" />
+                            <br />{amexIcon}</div>
+                        <div className="icon-holder"><input type="radio" name="one" className="radio-button" />
+                            <br />{visaIcon}</div>
+                        {/* <div className="icon-holder"><input type="radio" value="one" className="radio-button" />
+                            <br />
+                            {mastercardIcon}</div> */}
+                        </div>
                     </div>
 
 
                     <div className="check-out" onClick={this.handleClick}>
-
+                         Check-Out
                     </div>
+                </form>
                 </div>
-
-               
             </div>
         )
         } else {
