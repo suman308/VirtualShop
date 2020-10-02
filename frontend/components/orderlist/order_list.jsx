@@ -19,11 +19,12 @@ class OrderList extends React.Component {
     render(){
         const carts = this.props.carts
         const products = this.props.products
+        
         const count = products.length;
         const orderlists = this.props.orderlists
         const Id = this.props.currentUser.id
         const cart = carts.find(cart => cart.user_id == Id)
-        if (cart ){
+        if (this.props !== [] && this.props){
         const productIds = orderlists.map(order=> order.product_id)
         const orderProducts = orderlists.map((order, ind)=> {
             var ind = {}
@@ -34,7 +35,8 @@ class OrderList extends React.Component {
             ind["product"] = " "
             return ind
         });
-
+            console.log(products)
+        //  const totalPrice = prices(products);
     
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
         const finalObj = function(products, prods) {
@@ -92,10 +94,10 @@ class OrderList extends React.Component {
                         </div>
                     </div>
 
-                     <h1 className="total-price"> Item(s) total  </h1>
+                     {/* <h1 className="total-price"> Item(s) total        ${totalPrice} </h1> */}
                      <div className="line"></div>
                     <div className="check-out" onClick={this.handleClick}>
-                         Check-Out
+                          Check-Out
                     </div>
                 </form>
                 </div>

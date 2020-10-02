@@ -1563,7 +1563,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
         return cart.user_id == Id;
       });
 
-      if (cart) {
+      if (this.props !== [] && this.props) {
         var productIds = orderlists.map(function (order) {
           return order.product_id;
         });
@@ -1576,6 +1576,8 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           ind["product"] = " ";
           return ind;
         });
+        console.log(products); //  const totalPrice = prices(products);
+
         var prods = orderProducts.filter(function (pro) {
           return productIds.includes(pro.productId.toString());
         });
@@ -1647,9 +1649,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           type: "radio",
           name: "one",
           className: "radio-button"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-          className: "total-price"
-        }, " Item(s) total  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "line"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-out",
