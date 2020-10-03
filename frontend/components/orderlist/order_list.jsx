@@ -24,7 +24,7 @@ class OrderList extends React.Component {
         const orderlists = this.props.orderlists
         const Id = this.props.currentUser.id
         const cart = carts.find(cart => cart.user_id == Id)
-        if (this.props !== [] && this.props){
+        if (this.props !== [] && !!this.props){
         const productIds = orderlists.map(order=> order.product_id)
         const orderProducts = orderlists.map((order, ind)=> {
             var ind = {}
@@ -35,7 +35,7 @@ class OrderList extends React.Component {
             ind["product"] = " "
             return ind
         });
-            console.log(products)
+            // console.log(products)
         //  const totalPrice = prices(products);
     
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
@@ -48,12 +48,19 @@ class OrderList extends React.Component {
                   })
             return result 
         }
-    
-            
+            const Prices = function(products) {
+                let totalPrices = 0
+                for (let i =0; i <products.length; i++) {
+                    totalPrices = totalPrices + (products[i].product.price * products[i].quantity)
+                }
+            }
+             
+            const TotalPrices = Prices(prods)
             const lists = (finalObj(products, prods)).map((obj, idx) => <Order 
             product={obj.product} 
             quantity={obj.quantity} 
             checkedOut={obj.checked_out} key={idx}/>)
+           
             const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
             const output  = (products.length) ? lists : message
         return (
@@ -94,7 +101,7 @@ class OrderList extends React.Component {
                         </div>
                     </div>
 
-                     {/* <h1 className="total-price"> Item(s) total        ${totalPrice} </h1> */}
+                     <h1 className="total-price"> Item(s) Total  {TotalPrices}  </h1>
                      <div className="line"></div>
                     <div className="check-out" onClick={this.handleClick}>
                           Check-Out

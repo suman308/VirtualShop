@@ -1563,7 +1563,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
         return cart.user_id == Id;
       });
 
-      if (this.props !== [] && this.props) {
+      if (this.props !== [] && !!this.props) {
         var productIds = orderlists.map(function (order) {
           return order.product_id;
         });
@@ -1575,8 +1575,8 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           ind["Id"] = order.id;
           ind["product"] = " ";
           return ind;
-        });
-        console.log(products); //  const totalPrice = prices(products);
+        }); // console.log(products)
+        //  const totalPrice = prices(products);
 
         var prods = orderProducts.filter(function (pro) {
           return productIds.includes(pro.productId.toString());
@@ -1594,6 +1594,15 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           return result;
         };
 
+        var Prices = function Prices(products) {
+          var totalPrices = 0;
+
+          for (var i = 0; i < products.length; i++) {
+            totalPrices = totalPrices + products[i].product.price * products[i].quantity;
+          }
+        };
+
+        var TotalPrices = Prices(prods);
         var lists = finalObj(products, prods).map(function (obj, idx) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_order_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
             product: obj.product,
@@ -1649,7 +1658,9 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           type: "radio",
           name: "one",
           className: "radio-button"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "total-price"
+        }, " Item(s) Total  ", TotalPrices, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "line"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-out",

@@ -3,7 +3,7 @@ import { getProducts} from "../../actions/product_actions"
 import {getCarts} from '../../actions/cart_action'
 import {deleteOrderList} from '../../actions/OrderList'
 import {connect} from 'react-redux'; 
-import OrderList from './order_list'
+import orderList from './order_list'
 
 const mapst = state => {
     const orderlists = Array.from(state.entities.orderlists)
@@ -29,4 +29,4 @@ const mapdt = dispatch => {
     }
 }
 
-export default connect(mapst, mapdt)(OrderList)
+export default connect(mapst, mapdt)(orderList)
