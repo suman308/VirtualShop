@@ -1439,7 +1439,7 @@ var Order = /*#__PURE__*/function (_React$Component) {
   function Order(props) {
     _classCallCheck(this, Order);
 
-    return _super.call(this);
+    return _super.call(this, props);
   }
 
   _createClass(Order, [{
@@ -1537,10 +1537,12 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, OrderList);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
-      product1: {}
+      price: 0
     };
+    _this.totalPrices = _this.totalPrices.bind(_assertThisInitialized(_this)); //    this.doThis = this.doThis.bind(this)
+
     return _this;
   }
 
@@ -1552,18 +1554,61 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
       this.props.getCarts();
     }
   }, {
+    key: "doThis",
+    value: function doThis() {
+      if (this.props) {
+        var p = this.totalPrices();
+        this.setState({
+          price: p
+        });
+      } else {
+        null;
+      }
+    } // totalPrices(){
+    //    const orders = this.props.orderLists
+    //    const productIds = orders.map(order=> order.product_id)
+    //    const prods = (this.props.products)
+    //    console.log("printing the prods")
+    //    console.log(this.props.orderLists)
+    //    const products = prods.filter(product=> productIds.includes(product.Id))
+    //    const lists = orders.map(order=> {
+    //         let obj = new Object();
+    //         const productId = order.product_id;
+    //         const quantity = order.quantity;   
+    //         obj.productId = productId 
+    //         obj.quantity = quantity
+    //         return obj;
+    //    })
+    //      console.log("printing the products")
+    //      console.log(products)
+    //     function fun (products, lists) {
+    //         const  obj = Object.assign({},lists)
+    //        for(let i= 0; i< products.length; i++){
+    //         let pro = products.find(product=> product.Id == lists[i].productId)
+    //          obj.product = pro; 
+    //         }
+    //         return obj
+    //     }
+    //    const productLists = fun(products, lists)
+    //    function ram(productLists){
+    //     let prices = 0
+    //     productLists.forEach(order=> {
+    //          prices = prices + (order.product.price * product.quantity)
+    //     });
+    //        return prices;
+    //     }
+    //     const prices = ram(productLists);
+    //     return prices 
+    // }
+
+  }, {
     key: "render",
     value: function render() {
-      var carts = this.props.carts;
       var products = this.props.products;
       var count = products.length;
-      var orderlists = this.props.orderlists;
-      var Id = this.props.currentUser.id;
-      var cart = carts.find(function (cart) {
-        return cart.user_id == Id;
-      });
+      var orderlists = this.props.orderLists;
 
-      if (this.props !== [] && !!this.props) {
+      if (this.props !== [] && this.props) {
         var productIds = orderlists.map(function (order) {
           return order.product_id;
         });
@@ -1575,9 +1620,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           ind["Id"] = order.id;
           ind["product"] = " ";
           return ind;
-        }); // console.log(products)
-        //  const totalPrice = prices(products);
-
+        });
         var prods = orderProducts.filter(function (pro) {
           return productIds.includes(pro.productId.toString());
         });
@@ -1594,15 +1637,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           return result;
         };
 
-        var Prices = function Prices(products) {
-          var totalPrices = 0;
-
-          for (var i = 0; i < products.length; i++) {
-            totalPrices = totalPrices + products[i].product.price * products[i].quantity;
-          }
-        };
-
-        var TotalPrices = Prices(prods);
+        console.log(finalObj(products, prods));
         var lists = finalObj(products, prods).map(function (obj, idx) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_order_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
             product: obj.product,
@@ -1660,12 +1695,10 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           className: "radio-button"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "total-price"
-        }, " Item(s) Total  ", TotalPrices, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "line"
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, " Item(s) Total  ", this.state.price, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-out",
           onClick: this.handleClick
-        }, "Check-Out"))));
+        }, "Check-Out"))), this.doThis());
       } else {
         return null;
       }
@@ -1701,12 +1734,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mapst = function mapst(state) {
-  var orderlists = Array.from(state.entities.orderlists);
+  var orderLists = Array.from(state.entities.orderlists);
   var products = Array.from(state.entities.products);
   var currentUser = state.session.currentUser;
   var carts = Array.from(state.entities.carts);
   return {
-    orderlists: orderlists,
+    orderLists: orderLists,
     products: products,
     currentUser: currentUser,
     carts: carts

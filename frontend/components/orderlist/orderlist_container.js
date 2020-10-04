@@ -6,12 +6,12 @@ import {connect} from 'react-redux';
 import orderList from './order_list'
 
 const mapst = state => {
-    const orderlists = Array.from(state.entities.orderlists)
+    const orderLists = Array.from(state.entities.orderlists)
     const products = Array.from(state.entities.products)
     const currentUser = state.session.currentUser
     const carts = Array.from(state.entities.carts)
     return {
-        orderlists: orderlists, 
+        orderLists: orderLists, 
         products: products,
         currentUser: currentUser,
         carts: carts

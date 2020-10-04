@@ -3,28 +3,78 @@ import Order from './order.jsx';
 import {paypalIcon, visaIcon, discoverIcon, amexIcon, mastercardIcon} from '../../../app/assets/images/icons'
 class OrderList extends React.Component {
     constructor(props){
-        super()
+        super(props)
         this.state  = {
-            product1 : {}
+            price : 0
 
         }
-       
+       this.totalPrices = this.totalPrices.bind(this)
+    //    this.doThis = this.doThis.bind(this)
     }
     componentDidMount(){
         this.props.getProducts(); 
         this.props.getOrderLists();
         this.props.getCarts();
-       
+      
     }
-    render(){
-        const carts = this.props.carts
-        const products = this.props.products
+     doThis(){
+         if (this.props){
+             let p = this.totalPrices();
+            this.setState({price:p})
+         }else {
+             null;
+         }
+     }
+    // totalPrices(){
+    //    const orders = this.props.orderLists
+    //    const productIds = orders.map(order=> order.product_id)
+    //    const prods = (this.props.products)
+    //    console.log("printing the prods")
+    //    console.log(this.props.orderLists)
+    //    const products = prods.filter(product=> productIds.includes(product.Id))
+    //    const lists = orders.map(order=> {
+    //         let obj = new Object();
+    //         const productId = order.product_id;
+    //         const quantity = order.quantity;   
+    //         obj.productId = productId 
+    //         obj.quantity = quantity
+    //         return obj;
+    //    })
+    //      console.log("printing the products")
+    //      console.log(products)
+    //     function fun (products, lists) {
+    //         const  obj = Object.assign({},lists)
+    //        for(let i= 0; i< products.length; i++){
+    //         let pro = products.find(product=> product.Id == lists[i].productId)
+    //          obj.product = pro; 
+             
+    //         }
+            
+    //         return obj
+    //     }
         
+        
+    //    const productLists = fun(products, lists)
+        
+    //    function ram(productLists){
+    //     let prices = 0
+    //     productLists.forEach(order=> {
+    //          prices = prices + (order.product.price * product.quantity)
+             
+    //     });
+    //        return prices;
+    //     }
+    //     const prices = ram(productLists);
+    //     return prices 
+         
+    // }
+    
+    render(){
+        const products = this.props.products
         const count = products.length;
-        const orderlists = this.props.orderlists
-        const Id = this.props.currentUser.id
-        const cart = carts.find(cart => cart.user_id == Id)
-        if (this.props !== [] && !!this.props){
+        const orderlists = this.props.orderLists
+
+        if (this.props !== [] && this.props ){
         const productIds = orderlists.map(order=> order.product_id)
         const orderProducts = orderlists.map((order, ind)=> {
             var ind = {}
@@ -33,11 +83,10 @@ class OrderList extends React.Component {
             ind["checked_out"] = order.checked_out
             ind["Id"] = order.id
             ind["product"] = " "
-            return ind
+            return ind 
         });
-            // console.log(products)
-        //  const totalPrice = prices(products);
     
+         
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
         const finalObj = function(products, prods) {
             let result = prods.map(order =>  {
@@ -48,21 +97,17 @@ class OrderList extends React.Component {
                   })
             return result 
         }
-            const Prices = function(products) {
-                let totalPrices = 0
-                for (let i =0; i <products.length; i++) {
-                    totalPrices = totalPrices + (products[i].product.price * products[i].quantity)
-                }
-            }
-             
-            const TotalPrices = Prices(prods)
+            
+            console.log(finalObj(products, prods))
             const lists = (finalObj(products, prods)).map((obj, idx) => <Order 
             product={obj.product} 
             quantity={obj.quantity} 
             checkedOut={obj.checked_out} key={idx}/>)
            
             const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
-            const output  = (products.length) ? lists : message
+            const output  = (products.length) ? lists : message;
+            
+            
         return (
               <div className="main-cart-page" >
                   <div className="just-under-main-cart">
@@ -100,15 +145,15 @@ class OrderList extends React.Component {
                             {mastercardIcon}</div> */}
                         </div>
                     </div>
-
-                     <h1 className="total-price"> Item(s) Total  {TotalPrices}  </h1>
-                     <div className="line"></div>
+                        <h1 className="total-price"> Item(s) Total  {this.state.price}  </h1> 
                     <div className="check-out" onClick={this.handleClick}>
                           Check-Out
                     </div>
                 </form>
                 </div>
+                {this.doThis()}
             </div>
+            
         )
         } else {
             return null;
