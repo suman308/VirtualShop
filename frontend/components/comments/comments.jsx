@@ -10,8 +10,9 @@ componentDidMount(){
 }
 render() {
     const comments = this.props.comments 
+    let display = ""
     if (comments) {
-        comments.map
+        comments.map(comment=> <h1> {comment.body}</h1>)
     }
 }
 }

@@ -3066,7 +3066,7 @@ var commentReducer = function commentReducer() {
       nextState[action.comment.Id] = action.comment;
       return nextState;
 
-    case CLEAR_COMMENT:
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["CLEAR_COMMENTS"]:
       return {};
 
     case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
