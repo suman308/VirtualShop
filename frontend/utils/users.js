@@ -11,3 +11,4 @@ export const getUser = (userId)=> {
         method: 'GET'
     })
 }
+
