@@ -671,6 +671,103 @@ var createCart = function createCart(cart) {
 
 /***/ }),
 
+/***/ "./frontend/actions/comment_action.js":
+/*!********************************************!*\
+  !*** ./frontend/actions/comment_action.js ***!
+  \********************************************/
+/*! exports provided: RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, UPDATE_COMMENT, REMOVE_COMMENT, REMOVE_ERRORS, RECEIVE_ERRORS, CLEAR_COMMENTS, receiveComments, receiveComment, removeComment, clearComments, getComments, getComment, updateComment, deleteComment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_COMMENTS", function() { return RECEIVE_ALL_COMMENTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_COMMENT", function() { return RECEIVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UPDATE_COMMENT", function() { return UPDATE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_COMMENT", function() { return REMOVE_COMMENT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_ERRORS", function() { return REMOVE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ERRORS", function() { return RECEIVE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_COMMENTS", function() { return CLEAR_COMMENTS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveComments", function() { return receiveComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveComment", function() { return receiveComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeComment", function() { return removeComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearComments", function() { return clearComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComments", function() { return getComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComment", function() { return getComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+/* harmony import */ var _utils_comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/comments */ "./frontend/utils/comments.js");
+/* harmony import */ var _product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_actions */ "./frontend/actions/product_actions.js");
+
+
+var RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
+var RECEIVE_COMMENT = 'RECEIVE_COMMENT';
+var UPDATE_COMMENT = 'UPDATE_COMMENT';
+var REMOVE_COMMENT = 'REMOVE_COMMENT';
+var REMOVE_ERRORS = 'REMOVE_ERRORS';
+var RECEIVE_ERRORS = 'RECEIVE_ERRORS';
+var CLEAR_COMMENTS = "CLEAR_COMMENTS";
+var receiveComments = function receiveComments(comments) {
+  return {
+    type: RECEIVE_ALL_COMMENTS,
+    comments: comments
+  };
+};
+var receiveComment = function receiveComment(comment) {
+  return {
+    type: RECEIVE_COMMENT,
+    comment: comment
+  };
+};
+var removeComment = function removeComment(commentId) {
+  return {
+    type: REMOVE_COMMENT,
+    commentId: commentId
+  };
+};
+var clearComments = function clearComments() {
+  return {
+    type: CLEAR_COMMENTS
+  };
+};
+var getComments = function getComments() {
+  return function (dispatch) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["getAllComments"]().then(function (comments) {
+      return dispatch(receiveComments(comments));
+    }, function (errors) {
+      return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
+    });
+  };
+};
+var getComment = function getComment(commentId) {
+  return function (dispatch) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["getComment"](commentId).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    }, function (errors) {
+      return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
+    });
+  };
+};
+var updateComment = function updateComment(comment) {
+  return function (dispatch) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["updateComment"](comment).then(function (comment) {
+      return dispatch(receiveComment(comment));
+    }, function (errors) {
+      return dispatch(recieveErrors(errors.responseJSON));
+    });
+  };
+};
+var deleteComment = function deleteComment(commentId) {
+  return function (dispatch) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](commentId).then(function () {
+      return dispatch(removeComment(commentId));
+    }, function (errors) {
+      return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
+    });
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/modal_actions.js":
 /*!*******************************************!*\
   !*** ./frontend/actions/modal_actions.js ***!
@@ -2943,6 +3040,48 @@ var cartReducer = function cartReducer() {
 
 /***/ }),
 
+/***/ "./frontend/reducers/comments/comment_reducer.js":
+/*!*******************************************************!*\
+  !*** ./frontend/reducers/comments/comment_reducer.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+
+
+var commentReducer = function commentReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_COMMENTS"]:
+      return action.comments;
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_COMMENT"]:
+      nextState[action.comment.Id] = action.comment;
+      return nextState;
+
+    case CLEAR_COMMENT:
+      return {};
+
+    case _actions_comment_action__WEBPACK_IMPORTED_MODULE_0__["REMOVE_COMMENT"]:
+      delete nextState[action.commentId];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (commentReducer);
+
+/***/ }),
+
 /***/ "./frontend/reducers/entities_reducer.js":
 /*!***********************************************!*\
   !*** ./frontend/reducers/entities_reducer.js ***!
@@ -2956,6 +3095,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_reducers_product_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_reducers/product_reducer */ "./frontend/reducers/product_reducers/product_reducer.js");
 /* harmony import */ var _order_list_reducer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order_list_reducer.js */ "./frontend/reducers/order_list_reducer.js");
 /* harmony import */ var _carts_cart_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carts/cart_reducer */ "./frontend/reducers/carts/cart_reducer.js");
+/* harmony import */ var _comments_comment_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./comments/comment_reducer */ "./frontend/reducers/comments/comment_reducer.js");
+
 
 
 
@@ -2963,7 +3104,8 @@ __webpack_require__.r(__webpack_exports__);
 var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   products: _product_reducers_product_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   orderlists: _order_list_reducer_js__WEBPACK_IMPORTED_MODULE_2__["default"],
-  carts: _carts_cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"]
+  carts: _carts_cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
+  comments: _comments_comment_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -3349,6 +3491,59 @@ var deleteCart = function deleteCart(cartId) {
   return $.ajax({
     url: "/api/carts/".concat(cartId),
     method: 'POST'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/utils/comments.js":
+/*!************************************!*\
+  !*** ./frontend/utils/comments.js ***!
+  \************************************/
+/*! exports provided: getAllComments, getComment, createComment, deleteComment, updateComment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAllComments", function() { return getAllComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComment", function() { return getComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
+var getAllComments = function getAllComments() {
+  return $.ajax({
+    url: '/api/comments',
+    method: 'GET'
+  });
+};
+var getComment = function getComment(commentId) {
+  return $.ajax({
+    url: "/api/comments/".concat(commentId),
+    method: 'GET'
+  });
+};
+var createComment = function createComment(comment) {
+  return $.ajax({
+    url: '/api/comments',
+    method: 'POST',
+    data: {
+      comment: comment
+    }
+  });
+};
+var deleteComment = function deleteComment(commentId) {
+  return $.ajax({
+    url: "/api/comments/".concat(commentId),
+    method: 'POST'
+  });
+};
+var updateComment = function updateComment(comment) {
+  return $.ajax({
+    url: "/api/comments/".concat(comment.Id),
+    method: 'PATCH',
+    data: {
+      comment: comment
+    }
   });
 };
 
