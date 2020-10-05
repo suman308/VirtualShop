@@ -3,11 +3,13 @@ import productReducer from './product_reducers/product_reducer'
 import orderlistReducer from './order_list_reducer.js'
  import cartReducer from "./carts/cart_reducer"
 import commentReducer from "./comments/comment_reducer"
+import userReducer from './users/user_reducer'
 const entitiesReducer = combineReducers({
     products: productReducer, 
     orderlists: orderlistReducer, 
     carts: cartReducer,
-    comments :commentReducer
+    comments :commentReducer, 
+    users: userReducer
 })
 
 export default entitiesReducer;

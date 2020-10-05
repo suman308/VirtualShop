@@ -991,6 +991,17 @@ var removeErrors = function removeErrors() {
 
 /***/ }),
 
+/***/ "./frontend/actions/user_action.js":
+/*!*****************************************!*\
+  !*** ./frontend/actions/user_action.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/skyhawk/Desktop/App-Academy/VirtualShop/frontend/actions/user_action.js: Identifier 'receiveErrors' has already been declared (29:13)\n\n\u001b[0m \u001b[90m 27 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 28 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m receiveErrors \u001b[33m=\u001b[39m (errors) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 | \u001b[39m    \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 31 | \u001b[39m        type\u001b[33m:\u001b[39m \u001b[33mRECEIVE_ERRORS\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 | \u001b[39m        errors\u001b[0m\n    at Object._raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:754:17)\n    at Object.raiseWithData (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:747:17)\n    at Object.raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:741:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4813:12)\n    at ScopeHandler.declareName (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4779:12)\n    at Object.checkLVal (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9298:22)\n    at Object.parseVarId (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11874:10)\n    at Object.parseVar (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11849:12)\n    at Object.parseVarStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11661:10)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11260:21)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Object.parseExportDeclaration (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12402:17)\n    at Object.maybeParseExportDeclaration (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12358:31)\n    at Object.parseExport (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12288:29)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11297:27)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Object.parseBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Object.parseTopLevel (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11124:10)\n    at Object.parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12826:10)\n    at parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12879:38)\n    at parser (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/gensync/index.js:254:32)");
+
+/***/ }),
+
 /***/ "./frontend/components/app.jsx":
 /*!*************************************!*\
   !*** ./frontend/components/app.jsx ***!
@@ -3096,6 +3107,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _order_list_reducer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./order_list_reducer.js */ "./frontend/reducers/order_list_reducer.js");
 /* harmony import */ var _carts_cart_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./carts/cart_reducer */ "./frontend/reducers/carts/cart_reducer.js");
 /* harmony import */ var _comments_comment_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./comments/comment_reducer */ "./frontend/reducers/comments/comment_reducer.js");
+/* harmony import */ var _users_user_reducer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./users/user_reducer */ "./frontend/reducers/users/user_reducer.js");
+
 
 
 
@@ -3105,7 +3118,8 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   products: _product_reducers_product_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   orderlists: _order_list_reducer_js__WEBPACK_IMPORTED_MODULE_2__["default"],
   carts: _carts_cart_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  comments: _comments_comment_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
+  comments: _comments_comment_reducer__WEBPACK_IMPORTED_MODULE_4__["default"],
+  users: _users_user_reducer__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
@@ -3369,6 +3383,49 @@ var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
   modal: _modal_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (uiReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/users/user_reducer.js":
+/*!*************************************************!*\
+  !*** ./frontend/reducers/users/user_reducer.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
+/* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_user_action__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var userReducer = function userReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+  Object.freeze(state);
+  var nextState = Object.assign({}, state);
+
+  switch (action.type) {
+    case _actions_user_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_USERS"]:
+      return action.users;
+
+    case _actions_user_action__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_USER"]:
+      nextState[action.user.id] = action.user;
+      return nextState;
+
+    case _actions_user_action__WEBPACK_IMPORTED_MODULE_0__["REMOVE_USERS"]:
+      return {};
+
+    case _actions_user_action__WEBPACK_IMPORTED_MODULE_0__["REMOVE_USER"]:
+      delete nextState[action.userId];
+      return nextState;
+
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (userReducer);
 
 /***/ }),
 
