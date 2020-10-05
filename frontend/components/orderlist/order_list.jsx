@@ -4,27 +4,26 @@ import {paypalIcon, visaIcon, discoverIcon, amexIcon, mastercardIcon} from '../.
 class OrderList extends React.Component {
     constructor(props){
         super(props)
-        this.state  = {
-            price : 0
-
-        }
-       this.totalPrices = this.totalPrices.bind(this)
+        this.state  = { price : 0 }
+    //    this.totalPrices = this.totalPrices.bind(this)
     //    this.doThis = this.doThis.bind(this)
+           
     }
-    componentDidMount(){
+   componentDidMount(){
         this.props.getProducts(); 
         this.props.getOrderLists();
         this.props.getCarts();
-      
+        console.log("about to print")
+        console.log(this.props.products)
     }
-     doThis(){
-         if (this.props){
-             let p = this.totalPrices();
-            this.setState({price:p})
-         }else {
-             null;
-         }
-     }
+    //  doThis(){
+    //      if (this.props){
+    //          let p = this.totalPrices();
+    //         this.setState({price:p})
+    //      }else {
+    //          null;
+    //      }
+    //  }
     // totalPrices(){
     //    const orders = this.props.orderLists
     //    const productIds = orders.map(order=> order.product_id)
@@ -74,9 +73,12 @@ class OrderList extends React.Component {
         const count = products.length;
         const orderlists = this.props.orderLists
 
-        if (this.props !== [] && this.props ){
+        if (this.props !== [] && this.props ) {
+
         const productIds = orderlists.map(order=> order.product_id)
+
         const orderProducts = orderlists.map((order, ind)=> {
+
             var ind = {}
             ind["productId"] = order.product_id
             ind["quantity"] = order.quantity
@@ -84,12 +86,12 @@ class OrderList extends React.Component {
             ind["Id"] = order.id
             ind["product"] = " "
             return ind 
-        });
+                });
     
          
         const prods = orderProducts.filter(pro=> productIds.includes(pro.productId.toString()))
         const finalObj = function(products, prods) {
-            let result = prods.map(order =>  {
+            const  result = prods.map(order =>  {
                  let Id = order.productId;
                   let product = products.find(product=> product.id == Id);
                   order.product = product; 
@@ -98,7 +100,7 @@ class OrderList extends React.Component {
             return result 
         }
             
-            console.log(finalObj(products, prods))
+            let ram = finalObj(products, prods)
             const lists = (finalObj(products, prods)).map((obj, idx) => <Order 
             product={obj.product} 
             quantity={obj.quantity} 
@@ -106,8 +108,19 @@ class OrderList extends React.Component {
            
             const message = <h1 className="No-item"> You do not  have items in the cart right now </h1>
             const output  = (products.length) ? lists : message;
+            let pric = 0;
             
-            
+           console.log(ram)
+            if (ram[0] && ram[0].product){
+                for(let i= 0; i< ram.length; i++){
+                    console.log(ram[i])
+                    console.log(ram[i].quantity)
+                    pric = (pric + (ram[i].product.price * ram[i].quantity))
+                   
+            }
+
+        }
+        const p = pric.toFixed(2)
         return (
               <div className="main-cart-page" >
                   <div className="just-under-main-cart">
@@ -145,13 +158,14 @@ class OrderList extends React.Component {
                             {mastercardIcon}</div> */}
                         </div>
                     </div>
-                        <h1 className="total-price"> Item(s) Total  {this.state.price}  </h1> 
+                        <h1 className="total-price"> Item(s) Total  ${p}  </h1> 
+                        <h1 className="line"></h1>
                     <div className="check-out" onClick={this.handleClick}>
                           Check-Out
                     </div>
                 </form>
                 </div>
-                {this.doThis()}
+                {/* {this.doThis()} */}
             </div>
             
         )
@@ -160,5 +174,6 @@ class OrderList extends React.Component {
         }
     }
 }
+
 
 export default OrderList; 

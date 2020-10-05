@@ -1540,8 +1540,8 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       price: 0
-    };
-    _this.totalPrices = _this.totalPrices.bind(_assertThisInitialized(_this)); //    this.doThis = this.doThis.bind(this)
+    }; //    this.totalPrices = this.totalPrices.bind(this)
+    //    this.doThis = this.doThis.bind(this)
 
     return _this;
   }
@@ -1552,19 +1552,17 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
       this.props.getProducts();
       this.props.getOrderLists();
       this.props.getCarts();
-    }
-  }, {
-    key: "doThis",
-    value: function doThis() {
-      if (this.props) {
-        var p = this.totalPrices();
-        this.setState({
-          price: p
-        });
-      } else {
-        null;
-      }
-    } // totalPrices(){
+      console.log("about to print");
+      console.log(this.props.products);
+    } //  doThis(){
+    //      if (this.props){
+    //          let p = this.totalPrices();
+    //         this.setState({price:p})
+    //      }else {
+    //          null;
+    //      }
+    //  }
+    // totalPrices(){
     //    const orders = this.props.orderLists
     //    const productIds = orders.map(order=> order.product_id)
     //    const prods = (this.props.products)
@@ -1637,7 +1635,7 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           return result;
         };
 
-        console.log(finalObj(products, prods));
+        var ram = finalObj(products, prods);
         var lists = finalObj(products, prods).map(function (obj, idx) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_order_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {
             product: obj.product,
@@ -1650,6 +1648,18 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           className: "No-item"
         }, " You do not  have items in the cart right now ");
         var output = products.length ? lists : message;
+        var pric = 0;
+        console.log(ram);
+
+        if (ram[0] && ram[0].product) {
+          for (var i = 0; i < ram.length; i++) {
+            console.log(ram[i]);
+            console.log(ram[i].quantity);
+            pric = pric + ram[i].product.price * ram[i].quantity;
+          }
+        }
+
+        var p = pric.toFixed(2);
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "main-cart-page"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1695,10 +1705,12 @@ var OrderList = /*#__PURE__*/function (_React$Component) {
           className: "radio-button"
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), _app_assets_images_icons__WEBPACK_IMPORTED_MODULE_2__["visaIcon"]))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "total-price"
-        }, " Item(s) Total  ", this.state.price, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, " Item(s) Total  $", p, "  "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "line"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "check-out",
           onClick: this.handleClick
-        }, "Check-Out"))), this.doThis());
+        }, "Check-Out"))));
       } else {
         return null;
       }
