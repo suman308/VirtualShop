@@ -1,5 +1,5 @@
 import React from 'react'; 
-
+import CommentIndex from './comment'
 
 class Comment extends React.Component {
     constructor(props){
@@ -27,12 +27,13 @@ render() {
     })
     
 
-    let display = da.map(d => { <div>
-         <h1 className="commentor"> {d.name} ::</h1>
-        <h1 className="comment-body"> {d.body}</h1> 
-        <input className="comment-section" placeholder="comments.." />
-        </div>}
-        )
+    // let display = da.map(d => { <div>
+    //      <h1 className="commentor"> {d.name} ::</h1>
+    //     <h1 className="comment-body"> {d.body}</h1> 
+    //     <input className="comment-section" placeholder="comments.." />
+    //     </div>}
+    //     )
+    let display = 
     
     return  (
         {display}
