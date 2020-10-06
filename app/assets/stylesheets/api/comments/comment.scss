@@ -1,0 +1,31 @@
+.comment-name {
+    display: flex; 
+    height:40px; 
+    width:500px;
+}
+
+.input-comment {
+    display:block; 
+    height:50px; 
+    width:600px;
+    margin:10px;
+
+}
+.name {
+    font-size:20px; 
+    font-style: italic solid;
+    color:black;
+}
+.comment{
+  font-size: 14px; 
+  
+}
+
+.form {
+    display: flex; 
+}
+.submit {
+    height:34px; 
+    width:100px;
+    margin-top: 20px;
+}

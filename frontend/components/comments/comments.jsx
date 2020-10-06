@@ -32,7 +32,12 @@ render() {
     return  (
         <div>
             {display}
-          <input type="text" className="/>
+        <form className="form">
+            
+                <input type="text" className="input-comment" placeholder="Write  comment"/>
+            
+          <button type="submit" className="submit"> Add comment</button>
+            </form>
         </div>
         
     )

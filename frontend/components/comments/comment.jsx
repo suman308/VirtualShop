@@ -10,8 +10,10 @@ class CommentIndex extends React.Component {
         const comment = this.props.body
         return (
             <div>
-                <h1> {name}</h1>
-                <h1> {comment}</h1>
+                <div className="comment-name">
+                    <h1 className="name"> {name}:</h1>
+                    <h1 className="comment"> {comment}</h1>
+                </div>
             </div>
         )
     }

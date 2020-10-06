@@ -1128,6 +1128,74 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/components/comments/comment.jsx":
+/*!**************************************************!*\
+  !*** ./frontend/components/comments/comment.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+var CommentIndex = /*#__PURE__*/function (_React$Component) {
+  _inherits(CommentIndex, _React$Component);
+
+  var _super = _createSuper(CommentIndex);
+
+  function CommentIndex(props) {
+    _classCallCheck(this, CommentIndex);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(CommentIndex, [{
+    key: "render",
+    value: function render() {
+      var name = this.props.name;
+      var comment = this.props.body;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "comment-name"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "name"
+      }, " ", name, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "comment"
+      }, " ", comment)));
+    }
+  }]);
+
+  return CommentIndex;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (CommentIndex);
+
+/***/ }),
+
 /***/ "./frontend/components/comments/commentContainer.js":
 /*!**********************************************************!*\
   !*** ./frontend/components/comments/commentContainer.js ***!
@@ -1179,9 +1247,103 @@ var mapdt = function mapdt(dispatch) {
   !*** ./frontend/components/comments/comments.jsx ***!
   \***************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/skyhawk/Desktop/App-Academy/VirtualShop/frontend/components/comments/comments.jsx: Unterminated string constant (35:39)\n\n\u001b[0m \u001b[90m 33 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 | \u001b[39m            {display}\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 | \u001b[39m          \u001b[33m<\u001b[39m\u001b[33minput\u001b[39m type\u001b[33m=\u001b[39m\u001b[32m\"text\"\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"/>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 37 | \u001b[39m        \u001b[0m\n\u001b[0m \u001b[90m 38 | \u001b[39m    )\u001b[0m\n    at Object._raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:754:17)\n    at Object.raiseWithData (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:747:17)\n    at Object.raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.jsxReadString (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4347:20)\n    at Object.getTokenFromCode (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4681:21)\n    at Object.nextToken (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:7635:12)\n    at Object.next (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:7560:10)\n    at Object.eat (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:7565:12)\n    at Object.jsxParseAttribute (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4527:23)\n    at Object.jsxParseOpeningElementAfterName (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4547:28)\n    at Object.jsxParseOpeningElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4540:17)\n    at Object.jsxParseElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4572:33)\n    at Object.jsxParseElementAt (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4588:32)\n    at Object.jsxParseElement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4646:17)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4653:19)\n    at Object.parseExprSubscripts (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Object.parseMaybeUnary (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Object.parseExprOps (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Object.parseMaybeConditional (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Object.parseMaybeAssign (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Object.parseParenAndDistinguishExpression (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:10304:28)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:10044:21)\n    at Object.parseExprAtom (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4658:20)\n    at Object.parseExprSubscripts (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9693:23)\n    at Object.parseMaybeUnary (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9673:21)\n    at Object.parseExprOps (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9543:23)\n    at Object.parseMaybeConditional (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9516:23)\n    at Object.parseMaybeAssign (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9471:21)\n    at Object.parseExpression (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9423:23)\n    at Object.parseReturnStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11560:28)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _comment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment */ "./frontend/components/comments/comment.jsx");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Comment = /*#__PURE__*/function (_React$Component) {
+  _inherits(Comment, _React$Component);
+
+  var _super = _createSuper(Comment);
+
+  function Comment(props) {
+    var _this;
+
+    _classCallCheck(this, Comment);
+
+    _this = _super.call(this, props);
+    _this.state = _defineProperty({
+      user_id: "",
+      product_id: ""
+    }, "user_id", "");
+    return _this;
+  }
+
+  _createClass(Comment, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.getComments();
+      this.props.getUsers();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.props) {
+        var comments = this.props.comments;
+        var users = this.props.users;
+        var da = comments.map(function (comment) {
+          var data = new Object();
+          data.body = comment.body;
+          var user = users.filter(user.id == comment.user_id);
+          data.name = user.name;
+          return data;
+        });
+        var display = da.map(function (d) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            name: d.name,
+            body: d.body
+          });
+        });
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "form"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          className: "input-comment",
+          placeholder: "Write  comment"
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "submit",
+          className: "submit"
+        }, " Add comment")));
+      } else {
+        return null;
+      }
+    }
+  }]);
+
+  return Comment;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Comment);
 
 /***/ }),
 
@@ -2217,7 +2379,7 @@ var ProductIndex = /*#__PURE__*/function (_React$Component) {
   function ProductIndex(props) {
     _classCallCheck(this, ProductIndex);
 
-    return _super.call(this);
+    return _super.call(this, props);
   }
 
   _createClass(ProductIndex, [{
