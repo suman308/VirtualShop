@@ -34,7 +34,7 @@ render() {
         </div>}
         )
     
-    render (
+    return  (
         {display}
     )
 } else {

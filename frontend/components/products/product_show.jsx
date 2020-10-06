@@ -1,6 +1,6 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
-import 
+import Comment from '../comments/commentContainer'
 
 class ProductShow extends React.Component {
     constructor(props){
@@ -82,7 +82,7 @@ class ProductShow extends React.Component {
                                                 <ProductImagesList images={images}/>
 
                                             <div>
-                                                    
+                                                  <Comment/>  
                                             </div>
                                     </div>
 
