@@ -1,12 +1,12 @@
 import * as AllUtil from '../utils/users'; 
-export const RECIEVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 export const RECEIVE_USER = 'RECEIVE_USER'; 
 export const REMOVE_USERS = 'REMOVE_USERS'; 
 export const REMOVE_USER = 'REMOVE_USER'
 
 export const receiveUsers = (users)=> {
     return {
-        type: RECIEVE_ALL_USERS, 
+        type: RECEIVE_ALL_USERS, 
         users
     }
 }
@@ -48,3 +48,4 @@ export const getUser = (userId)=> dispatch=>{
     return AllUtil.getUser(userId)
     .then(user=>dispatch(receiveUser(user)), errors=> dispatch(receiveErrors(errors)))
 }
+

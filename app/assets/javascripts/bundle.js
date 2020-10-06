@@ -675,7 +675,7 @@ var createCart = function createCart(cart) {
 /*!********************************************!*\
   !*** ./frontend/actions/comment_action.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, UPDATE_COMMENT, REMOVE_COMMENT, REMOVE_ERRORS, RECEIVE_ERRORS, CLEAR_COMMENTS, receiveComments, receiveComment, removeComment, clearComments, getComments, getComment, updateComment, deleteComment */
+/*! exports provided: RECEIVE_ALL_COMMENTS, RECEIVE_COMMENT, UPDATE_COMMENT, REMOVE_COMMENT, REMOVE_ERRORS, RECEIVE_ERRORS, CLEAR_COMMENTS, receiveComments, receiveComment, removeComment, clearComments, getComments, getComment, updateComment, deleteComment, createComment */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -695,6 +695,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComment", function() { return getComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony import */ var _utils_comments__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/comments */ "./frontend/utils/comments.js");
 /* harmony import */ var _product_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./product_actions */ "./frontend/actions/product_actions.js");
 
@@ -760,6 +761,15 @@ var deleteComment = function deleteComment(commentId) {
   return function (dispatch) {
     return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["deleteComment"](commentId).then(function () {
       return dispatch(removeComment(commentId));
+    }, function (errors) {
+      return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
+    });
+  };
+};
+var createComment = function createComment(comment) {
+  return function (dispatch) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["createComment"](comment).then(function (comment) {
+      return dispatch(receiveComment(comment));
     }, function (errors) {
       return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
     });
@@ -995,12 +1005,12 @@ var removeErrors = function removeErrors() {
 /*!*****************************************!*\
   !*** ./frontend/actions/user_action.js ***!
   \*****************************************/
-/*! exports provided: RECIEVE_ALL_USERS, RECEIVE_USER, REMOVE_USERS, REMOVE_USER, receiveUsers, receiveUser, removeUser, receiveErrors, removeErrors, getUsers, getUser */
+/*! exports provided: RECEIVE_ALL_USERS, RECEIVE_USER, REMOVE_USERS, REMOVE_USER, receiveUsers, receiveUser, removeUser, receiveErrors, removeErrors, getUsers, getUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECIEVE_ALL_USERS", function() { return RECIEVE_ALL_USERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_USERS", function() { return RECEIVE_ALL_USERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USERS", function() { return REMOVE_USERS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USER", function() { return REMOVE_USER; });
@@ -1013,13 +1023,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
 /* harmony import */ var _utils_users__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/users */ "./frontend/utils/users.js");
 
-var RECIEVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+var RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 var RECEIVE_USER = 'RECEIVE_USER';
 var REMOVE_USERS = 'REMOVE_USERS';
 var REMOVE_USER = 'REMOVE_USER';
 var receiveUsers = function receiveUsers(users) {
   return {
-    type: RECIEVE_ALL_USERS,
+    type: RECEIVE_ALL_USERS,
     users: users
   };
 };
@@ -1329,7 +1339,7 @@ var Comment = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           className: "input-comment",
-          placeholder: "Write  comment"
+          placeholder: "Write  comment...."
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "submit",
           className: "submit"
@@ -2795,6 +2805,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _product_show__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./product_show */ "./frontend/components/products/product_show.jsx");
 /* harmony import */ var _actions_OrderList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/OrderList */ "./frontend/actions/OrderList.js");
 /* harmony import */ var _actions_cart_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/cart_action */ "./frontend/actions/cart_action.js");
+/* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+
 
 
 
@@ -2806,10 +2818,12 @@ var mpst = function mpst(state, ownProps) {
   var currentUser = state.session.currentUser;
   var products = state.entities.products;
   var product = products[ownProps.match.params.id];
+  var comments = state.entities.comments;
   return {
     product: product,
     currentUser: currentUser,
-    carts: carts
+    carts: carts,
+    comments: comments
   };
 };
 
@@ -2826,6 +2840,9 @@ var mapdt = function mapdt(dispatch) {
     },
     addToCart: function addToCart(orderList) {
       return dispatch(Object(_actions_OrderList__WEBPACK_IMPORTED_MODULE_3__["createOrderList"])(orderList));
+    },
+    getComments: function getComments(Id) {
+      return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_5__["getComments"])(Id));
     }
   };
 };

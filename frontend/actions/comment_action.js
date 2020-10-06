@@ -55,3 +55,8 @@ export const deleteComment = (commentId)=> dispatch=>{
  return AllUtil.deleteComment(commentId)
  .then(()=> dispatch(removeComment(commentId)), errors=> dispatch(receiveErrors(errors.responseJSON)))
 }
+
+export const createComment = (comment)=> dispatch=> {
+    return AllUtil.createComment(comment) 
+    .then ((comment)=> dispatch(receiveComment(comment)), errors=>dispatch(receiveErrors(errors.responseJSON)))
+}
