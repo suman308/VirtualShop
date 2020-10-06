@@ -27,10 +27,14 @@ render() {
     })
     
 
-    const display = da.map(d => <CommentIndex name = {d.name} body={d.body} />)
+    const display = da.map(d => <CommentIndex name = {d.name} body={d.body}  />)
     
     return  (
-        {display}
+        <div>
+            {display}
+          <input type="text" className="/>
+        </div>
+        
     )
 } else {
     return null;
