@@ -34,7 +34,7 @@ render() {
             {display}
         <form className="form">
             
-                <input type="text" className="input-comment" placeholder="Write  comment"/>
+                <input type="text" className="input-comment" placeholder= "Write  comment...."/>
             
           <button type="submit" className="submit"> Add comment</button>
             </form>
