@@ -1219,15 +1219,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
 /* harmony import */ var _comments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comments */ "./frontend/components/comments/comments.jsx");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../actions/'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
 
 
 
 
 
 var mpst = function mpst(state) {
+  var currentUser = state.session.currentUser;
   return {
     comments: Object.values(state.entities.comments),
-    users: Object.values(state.entities.users)
+    users: Object.values(state.entities.users),
+    currentUser: currentUser
   };
 };
 
@@ -1266,8 +1270,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _comment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./comment */ "./frontend/components/comments/comment.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1302,18 +1304,40 @@ var Comment = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Comment);
 
     _this = _super.call(this, props);
-    _this.state = _defineProperty({
-      user_id: "",
-      product_id: ""
-    }, "user_id", "");
+    _this.state = {
+      body: "",
+      product_id: "",
+      user_id: ""
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Comment, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.getComments();
+      var productId = this.props.match.params.id;
+      this.props.getComments(productId);
       this.props.getUsers();
+    }
+  }, {
+    key: "handleChange",
+    value: function handleChange(e) {
+      var user_id = this.props.curreUser;
+      var product_id = this.props.product.id;
+      var body = e.currentTarget.value;
+      this.setState({
+        user_id: user_id,
+        product_id: product_id,
+        body: body
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.createComment(this.state);
     }
   }, {
     key: "render",
@@ -1335,9 +1359,11 @@ var Comment = /*#__PURE__*/function (_React$Component) {
           });
         });
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "form"
+          className: "form",
+          onSubmit: this.handleSubmit
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
+          onChange: this.handleChange,
           className: "input-comment",
           placeholder: "Write  comment...."
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2806,6 +2832,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_OrderList__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/OrderList */ "./frontend/actions/OrderList.js");
 /* harmony import */ var _actions_cart_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/cart_action */ "./frontend/actions/cart_action.js");
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
+/* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
+
 
 
 
@@ -2819,11 +2847,13 @@ var mpst = function mpst(state, ownProps) {
   var products = state.entities.products;
   var product = products[ownProps.match.params.id];
   var comments = state.entities.comments;
+  var users = state.entities.users;
   return {
     product: product,
     currentUser: currentUser,
     carts: carts,
-    comments: comments
+    comments: comments,
+    users: users
   };
 };
 
@@ -2843,6 +2873,9 @@ var mapdt = function mapdt(dispatch) {
     },
     getComments: function getComments(Id) {
       return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_5__["getComments"])(Id));
+    },
+    getUsers: function getUsers() {
+      return dispatch(Object(_actions_user_action__WEBPACK_IMPORTED_MODULE_6__["getUsers"])());
     }
   };
 };

@@ -2,11 +2,14 @@ import {connect} from 'react-redux';
 import {getComment, getComments, createComment} from '../../actions/comment_action'; 
 import {getUsers} from '../../actions/user_action'
 import Comment from './comments';
+import {} from '../../actions/'
 
-const mpst = state => {
+const mpst = (state) => {
+    const currentUser = state.session.currentUser
     return {
         comments : Object.values(state.entities.comments),
-        users: Object.values(state.entities.users)
+        users: Object.values(state.entities.users),
+        currentUser: currentUser
     }
     
 }

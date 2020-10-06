@@ -5,7 +5,7 @@ import ProductShow from './product_show';
 import { createOrderList} from '../../actions/OrderList'
 import { getCarts} from '../../actions/cart_action'
 import {getComments} from '../../actions/comment_action'
-
+import {getUsers} from '../../actions/user_action'
 const mpst = (state, ownProps) => {
  
   const carts = state.entities.carts
@@ -13,6 +13,7 @@ const mpst = (state, ownProps) => {
   const products = (state.entities.products)
   const product = products[ownProps.match.params.id]
   const comments = state.entities.comments
+  const users = state.entities.users
  
   
   return { 
@@ -20,7 +21,8 @@ const mpst = (state, ownProps) => {
       product: product,
       currentUser: currentUser,
       carts: carts, 
-      comments: comments
+      comments: comments, 
+      users: users
   }
 }
 
@@ -30,7 +32,8 @@ const mapdt = dispatch => {
       getProducts: ()=> dispatch(getProducts()),
       getProduct: (id) => dispatch(getProduct(id)),
       addToCart : (orderList)=> dispatch(createOrderList(orderList)),
-      getComments: (Id)=>dispatch(getComments(Id)) 
+      getComments: (Id)=>dispatch(getComments(Id)), 
+      getUsers: ()=> dispatch(getUsers())
     }
 }
    
