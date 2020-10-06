@@ -27,13 +27,7 @@ render() {
     })
     
 
-    // let display = da.map(d => { <div>
-    //      <h1 className="commentor"> {d.name} ::</h1>
-    //     <h1 className="comment-body"> {d.body}</h1> 
-    //     <input className="comment-section" placeholder="comments.." />
-    //     </div>}
-    //     )
-    let display = 
+    const display = da.map(d => <CommentIndex name = {d.name} body={d.body} />)
     
     return  (
         {display}
