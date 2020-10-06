@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
     def index 
-        @comments = Comment.all 
+        @comments = Comment.where(product_id: params[:product_id])
         if @comments 
             render :index 
         else 
@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
     end 
 
     def show 
-        @comment = Comment.find(params[:id])
+        @comment = Comment.find(params[:Id])
         if @comment 
             render :show 
         else 
@@ -21,4 +21,8 @@ class Api::CommentsController < ApplicationController
     def edit 
         @comment 
     end 
+    def params_params 
+        params.require(:comment).permit(:product_Id, :body, :user_id, :Id)
+    end 
 end
+

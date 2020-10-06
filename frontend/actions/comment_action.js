@@ -36,8 +36,8 @@ export const clearComments = ()=> {
     }
 }
 
-export const getComments = ()=> dispatch=> {
-    return AllUtil.getAllComments()
+export const getComments = (product_id)=> dispatch=> {
+    return AllUtil.getAllComments(product_id)
     .then( comments  => dispatch(receiveComments(comments)), errors=> dispatch(receiveErrors(errors.responseJSON)))
 }
 

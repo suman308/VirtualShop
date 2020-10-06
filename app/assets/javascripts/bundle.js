@@ -729,9 +729,9 @@ var clearComments = function clearComments() {
     type: CLEAR_COMMENTS
   };
 };
-var getComments = function getComments() {
+var getComments = function getComments(product_id) {
   return function (dispatch) {
-    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["getAllComments"]().then(function (comments) {
+    return _utils_comments__WEBPACK_IMPORTED_MODULE_0__["getAllComments"](product_id).then(function (comments) {
       return dispatch(receiveComments(comments));
     }, function (errors) {
       return dispatch(Object(_product_actions__WEBPACK_IMPORTED_MODULE_1__["receiveErrors"])(errors.responseJSON));
@@ -995,10 +995,75 @@ var removeErrors = function removeErrors() {
 /*!*****************************************!*\
   !*** ./frontend/actions/user_action.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: RECIEVE_ALL_USERS, RECEIVE_USER, REMOVE_USERS, REMOVE_USER, receiveUsers, receiveUser, removeUser, receiveErrors, removeErrors, getUsers, getUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/skyhawk/Desktop/App-Academy/VirtualShop/frontend/actions/user_action.js: Identifier 'receiveErrors' has already been declared (29:13)\n\n\u001b[0m \u001b[90m 27 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 28 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 | \u001b[39m\u001b[36mexport\u001b[39m \u001b[36mconst\u001b[39m receiveErrors \u001b[33m=\u001b[39m (errors) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 | \u001b[39m    \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 31 | \u001b[39m        type\u001b[33m:\u001b[39m \u001b[33mRECEIVE_ERRORS\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 | \u001b[39m        errors\u001b[0m\n    at Object._raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:754:17)\n    at Object.raiseWithData (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:747:17)\n    at Object.raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:741:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4813:12)\n    at ScopeHandler.declareName (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:4779:12)\n    at Object.checkLVal (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:9298:22)\n    at Object.parseVarId (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11874:10)\n    at Object.parseVar (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11849:12)\n    at Object.parseVarStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11661:10)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11260:21)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Object.parseExportDeclaration (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12402:17)\n    at Object.maybeParseExportDeclaration (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12358:31)\n    at Object.parseExport (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12288:29)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11297:27)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Object.parseBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Object.parseTopLevel (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11124:10)\n    at Object.parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12826:10)\n    at parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12879:38)\n    at parser (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/gensync/index.js:254:32)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECIEVE_ALL_USERS", function() { return RECIEVE_ALL_USERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USER", function() { return RECEIVE_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USERS", function() { return REMOVE_USERS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_USER", function() { return REMOVE_USER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUsers", function() { return receiveUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUser", function() { return receiveUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeUser", function() { return removeUser; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeErrors", function() { return removeErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUsers", function() { return getUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
+/* harmony import */ var _utils_users__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/users */ "./frontend/utils/users.js");
+
+var RECIEVE_ALL_USERS = 'RECEIVE_ALL_USERS';
+var RECEIVE_USER = 'RECEIVE_USER';
+var REMOVE_USERS = 'REMOVE_USERS';
+var REMOVE_USER = 'REMOVE_USER';
+var receiveUsers = function receiveUsers(users) {
+  return {
+    type: RECIEVE_ALL_USERS,
+    users: users
+  };
+};
+var receiveUser = function receiveUser(user) {
+  return {
+    type: RECEIVE_USER,
+    user: user
+  };
+};
+var removeUser = function removeUser(userId) {
+  return {
+    type: REMOVE_USER,
+    userId: userId
+  };
+};
+var receiveErrors = function receiveErrors(errors) {
+  return {
+    type: RECEIVE_ERRORS,
+    errors: errors
+  };
+};
+var removeErrors = function removeErrors() {
+  return {
+    type: RECEIVE_ERRORS
+  };
+};
+var getUsers = function getUsers() {
+  return function (dispatch) {
+    return _utils_users__WEBPACK_IMPORTED_MODULE_0__["getUsers"]().then(function (users) {
+      return dispatch(receiveUsers(users));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors));
+    });
+  };
+};
+var getUser = function getUser(userId) {
+  return function (dispatch) {
+    return _utils_users__WEBPACK_IMPORTED_MODULE_0__["getUser"](userId).then(function (user) {
+      return dispatch(receiveUser(user));
+    }, function (errors) {
+      return dispatch(receiveErrors(errors));
+    });
+  };
+};
 
 /***/ }),
 
@@ -1952,104 +2017,6 @@ var PageNotFound = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
-/***/ "./frontend/components/products/productImagesList.jsx":
-/*!************************************************************!*\
-  !*** ./frontend/components/products/productImagesList.jsx ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-var ProductImageList = /*#__PURE__*/function (_React$Component) {
-  _inherits(ProductImageList, _React$Component);
-
-  var _super = _createSuper(ProductImageList);
-
-  function ProductImageList(props) {
-    var _this;
-
-    _classCallCheck(this, ProductImageList);
-
-    _this = _super.call(this, props);
-    _this.state = {
-      photos: _this.props.images,
-      currentPhoto: 0
-    };
-    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(ProductImageList, [{
-    key: "handleClick",
-    value: function handleClick(e) {
-      var num = (this.state.currentPhoto + e.currentTarget.dataset.value) % this.state.photos.length;
-      this.setState({
-        currentPhoto: num
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this2 = this;
-
-      var display = this.state.photos.map(function (image, k) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-          key: k,
-          "data-value": k,
-          className: "small-image",
-          src: image,
-          onClick: _this2.handleClick
-        });
-      });
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "inline-images-holder"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "small-image-holder"
-      }, display), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
-        className: "break"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "big-image-holder"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "big-image",
-        src: this.state.photos[this.state.currentPhoto]
-      })));
-    }
-  }]);
-
-  return ProductImageList;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (ProductImageList);
-
-/***/ }),
-
 /***/ "./frontend/components/products/product_Index.jsx":
 /*!********************************************************!*\
   !*** ./frontend/components/products/product_Index.jsx ***!
@@ -2260,238 +2227,9 @@ var mapdt = function mapdt(dispatch) {
   !*** ./frontend/components/products/product_show.jsx ***!
   \*******************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _productImagesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImagesList */ "./frontend/components/products/productImagesList.jsx");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var ProductShow = /*#__PURE__*/function (_React$Component) {
-  _inherits(ProductShow, _React$Component);
-
-  var _super = _createSuper(ProductShow);
-
-  function ProductShow(props) {
-    var _this;
-
-    _classCallCheck(this, ProductShow);
-
-    _this = _super.call(this);
-    _this.state = {
-      quantity: " ",
-      modal: " ",
-      cart_id: "",
-      product_id: "",
-      checked_out: false
-    };
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.closeAlert = _this.closeAlert.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(ProductShow, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.getProduct(this.props.match.params.id);
-      this.props.getCarts();
-    }
-  }, {
-    key: "closeAlert",
-    value: function closeAlert() {
-      this.setState({
-        modal: ""
-      });
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(e) {
-      if (this.props.currentUser) {
-        var product_id = this.props.product.id;
-        var Id = this.props.currentUser.id;
-        var carts = Array.from(this.props.carts);
-        var cart = carts.find(function (car) {
-          return car.user_id == Id;
-        });
-        console.log(cart);
-        var cart_id = cart.id;
-        var q = parseInt(e.currentTarget.value);
-        this.setState({
-          quantity: q
-        });
-        this.setState({
-          cart_id: cart_id
-        });
-        this.setState({
-          product_id: product_id
-        });
-        console.log(this.state);
-      } else {
-        this.setState({
-          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-background",
-            onClick: this.closeAlert
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-child",
-            onClick: function onClick(e) {
-              return e.stopPropagation();
-            }
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "alert-box"
-          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "alert-message"
-          }, "you need to sign up to put the product to the cart"))))
-        });
-      }
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.addToCart(this.state);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var pro = this.props.product;
-      var carts = this.props.carts;
-
-      if (pro && carts) {
-        var images = pro.imageUrls;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.state.modal, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          onSubmit: this.handleSubmit
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "inline-images-holder"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "productInformation"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_productImagesList__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          images: images
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "Outer-productInformation"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "productInformation"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "productName"
-        }, pro.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "productPrice"
-        }, "$", pro.price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-          className: "productDetails"
-        }, pro.details)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "quantityContainer"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-          htmlFor: "quantity",
-          className: "label-quantity"
-        }, " Quantity"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-          className: "quantity",
-          type: "select",
-          onChange: this.handleChange
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "0"
-        }, "0 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "1"
-        }, "1 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "2"
-        }, "2 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "3"
-        }, "3 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "4"
-        }, "4 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "5"
-        }, "5 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "6"
-        }, "6"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "7"
-        }, "7 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "8"
-        }, "8"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "9"
-        }, "9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "10"
-        }, "10"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "11"
-        }, "11 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "12"
-        }, "12 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "13"
-        }, "13 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "14"
-        }, "14"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "15"
-        }, "15"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "16"
-        }, "16"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "17"
-        }, "17"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "18"
-        }, "18"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "19"
-        }, "19 "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "20"
-        }, "20"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "21"
-        }, "21"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "22"
-        }, "22"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "23"
-        }, "23"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "24"
-        }, "24"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "25"
-        }, "25"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "26"
-        }, "26"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "27"
-        }, "27"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "28"
-        }, "28"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "29"
-        }, "29"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-          value: "30"
-        }, "30"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "OuterBox-AddToCartContainer"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "AddToCartContainer"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "submit",
-          className: "AddToCart",
-          value: "Add to Cart"
-        })))))));
-      } else {
-        return null;
-      }
-    }
-  }]);
-
-  return ProductShow;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (ProductShow);
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/skyhawk/Desktop/App-Academy/VirtualShop/frontend/components/products/product_show.jsx: Unexpected token, expected \"{\" (5:0)\n\n\u001b[0m \u001b[90m 3 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 | \u001b[39m\u001b[36mclass\u001b[39m \u001b[33mProductShow\u001b[39m \u001b[36mextends\u001b[39m \u001b[33mReact\u001b[39m\u001b[33m.\u001b[39m\u001b[33mComponent\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 | \u001b[39m    constructor(props){\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m        \u001b[36msuper\u001b[39m()\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m        \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate \u001b[33m=\u001b[39m{\u001b[0m\n    at Object._raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:754:17)\n    at Object.raiseWithData (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:747:17)\n    at Object.raise (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.unexpected (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:8844:16)\n    at Object.expect (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:8830:28)\n    at Object.parseNamedImportSpecifiers (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12676:10)\n    at Object.parseImport (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12584:39)\n    at Object.parseStatementContent (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11291:27)\n    at Object.parseStatement (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11193:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11768:25)\n    at Object.parseBlockBody (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11754:10)\n    at Object.parseTopLevel (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:11124:10)\n    at Object.parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12826:10)\n    at parse (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/parser/lib/index.js:12879:38)\n    at parser (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/parser/index.js:54:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transformation/index.js:31:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/@babel/core/lib/transform.js:27:41)\n    at transform.next (<anonymous>)\n    at step (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/gensync/index.js:254:32)\n    at /Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/gensync/index.js:266:13\n    at async.call.result.err.err (/Users/skyhawk/Desktop/App-Academy/VirtualShop/node_modules/gensync/index.js:216:11)");
 
 /***/ }),
 
@@ -3396,7 +3134,6 @@ var uiReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
-/* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_actions_user_action__WEBPACK_IMPORTED_MODULE_0__);
 
 
 var userReducer = function userReducer() {
@@ -3567,10 +3304,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createComment", function() { return createComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteComment", function() { return deleteComment; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateComment", function() { return updateComment; });
-var getAllComments = function getAllComments() {
+var getAllComments = function getAllComments(product_Id) {
   return $.ajax({
     url: '/api/comments',
-    method: 'GET'
+    method: 'GET',
+    data: {
+      product_Id: product_Id
+    }
   });
 };
 var getComment = function getComment(commentId) {
@@ -3703,6 +3443,32 @@ var logout = function logout() {
   return $.ajax({
     method: 'DELETE',
     url: '/api/session'
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/utils/users.js":
+/*!*********************************!*\
+  !*** ./frontend/utils/users.js ***!
+  \*********************************/
+/*! exports provided: getUsers, getUser */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUsers", function() { return getUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getUser", function() { return getUser; });
+var getUsers = function getUsers() {
+  return $.ajax({
+    url: "api/users",
+    method: 'GET'
+  });
+};
+var getUser = function getUser(userId) {
+  return $.ajax({
+    url: "/api/users/".concat(userId),
+    method: 'GET'
   });
 };
 
