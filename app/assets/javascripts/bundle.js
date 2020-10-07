@@ -3904,7 +3904,7 @@ var getAllComments = function getAllComments(product_Id) {
     url: '/api/comments',
     method: 'GET',
     data: {
-      product_Id: product_Id
+      comments: product_Id
     }
   });
 };
