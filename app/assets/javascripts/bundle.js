@@ -1219,8 +1219,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
 /* harmony import */ var _comments__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./comments */ "./frontend/components/comments/comments.jsx");
-!(function webpackMissingModule() { var e = new Error("Cannot find module '../../actions/'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-
 
 
 
@@ -1228,10 +1226,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var mpst = function mpst(state) {
   var currentUser = state.session.currentUser;
+  var product = state.entities.products;
+  var productId = product.Id;
   return {
     comments: Object.values(state.entities.comments),
     users: Object.values(state.entities.users),
-    currentUser: currentUser
+    currentUser: currentUser,
+    productId: productId
   };
 };
 
@@ -1299,45 +1300,17 @@ var Comment = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(Comment);
 
   function Comment(props) {
-    var _this;
-
     _classCallCheck(this, Comment);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      body: "",
-      product_id: "",
-      user_id: ""
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(Comment, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var productId = this.props.match.params.id;
+      var productId = this.props.productId;
       this.props.getComments(productId);
       this.props.getUsers();
-    }
-  }, {
-    key: "handleChange",
-    value: function handleChange(e) {
-      var user_id = this.props.curreUser;
-      var product_id = this.props.product.id;
-      var body = e.currentTarget.value;
-      this.setState({
-        user_id: user_id,
-        product_id: product_id,
-        body: body
-      });
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.createComment(this.state);
     }
   }, {
     key: "render",
@@ -1358,18 +1331,7 @@ var Comment = /*#__PURE__*/function (_React$Component) {
             body: d.body
           });
         });
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "form",
-          onSubmit: this.handleSubmit
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-          type: "text",
-          onChange: this.handleChange,
-          className: "input-comment",
-          placeholder: "Write  comment...."
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          type: "submit",
-          className: "submit"
-        }, " Add comment")));
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display);
       } else {
         return null;
       }
@@ -2624,16 +2586,20 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, ProductShow);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
       quantity: " ",
       modal: " ",
       cart_id: "",
       product_id: "",
-      checked_out: false
+      checked_out: false,
+      user_id: "",
+      body: ""
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleChange1 = _this.handleChange.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleSubmit1 = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.closeAlert = _this.closeAlert.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2661,7 +2627,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         var cart = carts.find(function (car) {
           return car.user_id == Id;
         });
-        console.log(cart);
         var cart_id = cart.id;
         var q = parseInt(e.currentTarget.value);
         this.setState({
@@ -2673,7 +2638,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         this.setState({
           product_id: product_id
         });
-        console.log(this.state);
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2697,6 +2661,24 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       this.props.addToCart(this.state);
+    }
+  }, {
+    key: "handleSubmit1",
+    value: function handleSubmit1(e) {
+      e.preventDefault();
+      this.props.createComment(this.state);
+    }
+  }, {
+    key: "handleChange1",
+    value: function handleChange1(e) {
+      var user_id = this.props.curreUser;
+      var product_id = this.props.product.id;
+      var body = e.currentTarget.value;
+      this.setState({
+        user_id: user_id,
+        product_id: product_id,
+        body: body
+      });
     }
   }, {
     key: "render",
@@ -2803,7 +2785,18 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           type: "submit",
           className: "AddToCart",
           value: "Add to Cart"
-        })))))));
+        })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "form",
+          onSubmit: this.handleSubmit1
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          onChange: this.handleChange1,
+          className: "input-comment",
+          placeholder: "Write  comment...."
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "submit",
+          className: "submit"
+        }, " Add comment")));
       } else {
         return null;
       }
@@ -2833,6 +2826,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_cart_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/cart_action */ "./frontend/actions/cart_action.js");
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
+
 
 
 
@@ -2876,6 +2870,9 @@ var mapdt = function mapdt(dispatch) {
     },
     getUsers: function getUsers() {
       return dispatch(Object(_actions_user_action__WEBPACK_IMPORTED_MODULE_6__["getUsers"])());
+    },
+    createComment: function createComment(comment) {
+      return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_5__["createComment"])(comment));
     }
   };
 };

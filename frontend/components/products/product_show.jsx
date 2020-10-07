@@ -4,17 +4,21 @@ import Comment from '../comments/commentContainer'
 
 class ProductShow extends React.Component {
     constructor(props){
-        super()
+        super(props)
         this.state ={
             quantity:" ", 
             modal: " ",
             cart_id:"", 
             product_id:"", 
-            checked_out: false 
+            checked_out: false ,
+            user_id:"", 
+            body:""
         }
 
         this.handleChange = this.handleChange.bind(this)
+        this.handleChange1 = this.handleChange.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit1 = this.handleSubmit.bind(this)
         this.closeAlert = this.closeAlert.bind(this)
     }
     
@@ -35,14 +39,13 @@ class ProductShow extends React.Component {
             const Id = this.props.currentUser.id
             const carts = Array.from(this.props.carts)
             const cart = carts.find(car => car.user_id == Id)
-            console.log(cart)
+            
             const cart_id = cart.id
             const q = parseInt(e.currentTarget.value)
             this.setState({quantity : q })
             this.setState({cart_id : cart_id})
             this.setState({ product_id: product_id})
-            console.log(this.state)
-
+            
         }else {
             this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
@@ -64,6 +67,20 @@ class ProductShow extends React.Component {
         this.props.addToCart(this.state); 
   
     }
+    handleSubmit1(e) {
+        e.preventDefault();
+        this.props.createComment(this.state)
+    }
+    handleChange1(e) {
+        const user_id = this.props.curreUser
+        const product_id = this.props.product.id
+        const body = e.currentTarget.value
+        this.setState({
+            user_id: user_id,
+            product_id: product_id,
+            body: body
+        })
+    }
     render(){
        
          const pro = this.props.product
@@ -83,6 +100,7 @@ class ProductShow extends React.Component {
 
                                             <div>
                                                   <Comment/>  
+                                                   
                                             </div>
                                     </div>
 
@@ -145,6 +163,12 @@ class ProductShow extends React.Component {
                         </div>
                     </div> 
                     </form>
+                <form className="form" onSubmit={this.handleSubmit1}>
+
+                    <input type="text" onChange={this.handleChange1} className="input-comment" placeholder="Write  comment...." />
+
+                    <button type="submit" className="submit"> Add comment</button>
+                </form>
             </div>
         ) }
         else {
