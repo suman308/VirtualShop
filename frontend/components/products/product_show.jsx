@@ -119,7 +119,7 @@ class ProductShow extends React.Component {
                                 <label htmlFor="quantity" className="label-quantity"> Quantity</label>
                                 <br/>
                                 <select className="quantity" type="select" onChange={this.handleChange}> 
-                                    <option value="0" >0 </option>
+                                    
                                     <option value="1" >1 </option>
                                     <option value="2" >2 </option>
                                     <option value="3" >3 </option>

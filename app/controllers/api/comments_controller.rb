@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
     def index 
-        @comments = Comment.where(product_id: params[:product_id])
+        @comments = Comment.where(product_id: params[:Id])
         if @comments 
             render :index 
         else 
@@ -20,6 +20,16 @@ class Api::CommentsController < ApplicationController
 
     def edit 
         @comment 
+    end 
+
+    def create 
+        @comment = Comment.new(params_params)
+        if @comment 
+            @comment.save!
+            render :show
+        else 
+            render json: @comment.errorrs.full_messages, status: 422 
+        end 
     end 
     def params_params 
         params.require(:comment).permit(:product_Id, :body, :user_id, :Id)
