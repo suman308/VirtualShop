@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
 
     def index 
-        @comments = Comment.where(product_id: params[:Id])
+        @comments = Comment.all
         if @comments 
             render :index 
         else 
@@ -23,11 +23,14 @@ class Api::CommentsController < ApplicationController
     end 
 
     def create 
+        debugger 
         @comment = Comment.new(params_params)
         if @comment 
             @comment.save!
+            debugger 
             render :show
         else 
+            debugger 
             render json: @comment.errorrs.full_messages, status: 422 
         end 
     end 

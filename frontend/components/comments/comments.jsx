@@ -24,14 +24,14 @@ render() {
     let da = comments.map(comment=> {
         let data = new Object(); 
         data.body = comment.body; 
-        let user = users.filter(user.id == comment.user_id)
-        data.name = user.name;
+        let user = users.filter(user => user.id == comment.user_id)
+        data.name = user.username;
         return data 
     })
     
 
     const display = da.map(d => <CommentIndex name = {d.name} body={d.body}  />)
-    
+
     return  (
         <div>
             {display}

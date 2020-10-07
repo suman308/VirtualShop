@@ -1321,8 +1321,10 @@ var Comment = /*#__PURE__*/function (_React$Component) {
         var da = comments.map(function (comment) {
           var data = new Object();
           data.body = comment.body;
-          var user = users.filter(user.id == comment.user_id);
-          data.name = user.name;
+          var user = users.filter(function (user) {
+            return user.id == comment.user_id;
+          });
+          data.name = user.username;
           return data;
         });
         var display = da.map(function (d) {
