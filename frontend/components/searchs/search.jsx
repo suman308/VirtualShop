@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 
 class Search extends React.Component {
     constructor(props) {
-        super()
+        super(props)
         this.state = {
             name: ""
         }
@@ -20,7 +20,7 @@ class Search extends React.Component {
        })
     }
     handleFocus(){
-      this.setState({name: " "})
+      this.setState({name: "Search for the items... "})
     }
     handleSubmit(e){
         e.preventDefault()
@@ -35,9 +35,9 @@ class Search extends React.Component {
             <div className="search" >
 
                 <input type="text" className="search-bar" 
-                 placeholder="Search for the items" 
+                 placeholder="Search for the items..." 
                  onChange={this.handleChange} onBlur={this.handleFocus} 
-                 value={this.state.name}/>
+                 />
 
                 <div className="submit-button" onClick={this.handleSubmit}>
                     <div className="searchIcon">

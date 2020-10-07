@@ -2960,7 +2960,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, Search);
 
-    _this = _super.call(this);
+    _this = _super.call(this, props);
     _this.state = {
       name: ""
     };
@@ -2982,7 +2982,7 @@ var Search = /*#__PURE__*/function (_React$Component) {
     key: "handleFocus",
     value: function handleFocus() {
       this.setState({
-        name: " "
+        name: "Search for the items... "
       });
     }
   }, {
@@ -3001,10 +3001,9 @@ var Search = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "search-bar",
-        placeholder: "Search for the items",
+        placeholder: "Search for the items...",
         onChange: this.handleChange,
-        onBlur: this.handleFocus,
-        value: this.state.name
+        onBlur: this.handleFocus
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "submit-button",
         onClick: this.handleSubmit
