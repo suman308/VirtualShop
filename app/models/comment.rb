@@ -3,6 +3,6 @@ class Comment < ApplicationRecord
     validates :product_id, presence:true 
     validates :body, presence:true
 
-    belongs_to :user, foreign_key: :user_id, class_name: :Comment
-    belongs_to :Product, foreign_key: :product_id, class_name: :Comment
+    belongs_to :user, foreign_key: :user_id, class_name: :User
+    belongs_to :product, foreign_key: :product_id, class_name: :Product
 end 
