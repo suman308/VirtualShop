@@ -2,7 +2,7 @@ export const getAllComments = (Id) => {
     return $.ajax({
         url: '/api/comments',
         method: 'GET',
-        data: {comments: Id}
+        data: {productId: Id}
 
     })
 }

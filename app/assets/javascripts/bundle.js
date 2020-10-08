@@ -1233,6 +1233,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mpst = function mpst(state, ownProps) {
   var productId = ownProps.product.id;
+  console.log('printing the ownprops');
+  console.log(productId);
   var currentUser = state.session.currentUser;
   return {
     comments: Object.values(state.entities.comments),
@@ -3960,7 +3962,7 @@ var getAllComments = function getAllComments(Id) {
     url: '/api/comments',
     method: 'GET',
     data: {
-      comments: Id
+      productId: Id
     }
   });
 };
