@@ -1189,13 +1189,16 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var name = this.props.name;
       var comment = this.props.body;
+      var date = this.props.date;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "comment-name"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "name"
       }, " ", name, ":"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "date"
+      }, " ", date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "comment"
-      }, " ", comment)));
+      }, " \"", comment, " \"")));
     }
   }]);
 
@@ -1311,11 +1314,12 @@ var Comment = /*#__PURE__*/function (_React$Component) {
       var productId = this.props.productId;
       this.props.getComments(productId);
       this.props.getUsers();
+      this.props.getComments();
     }
   }, {
     key: "render",
     value: function render() {
-      if (this.props) {
+      if (this.props.users && this.props.comments) {
         var comments = this.props.comments;
         var users = this.props.users;
         var da = comments.map(function (comment) {
@@ -1324,13 +1328,16 @@ var Comment = /*#__PURE__*/function (_React$Component) {
           var user = users.filter(function (user) {
             return user.id == comment.user_id;
           });
-          data.name = user.username;
+          var user1 = Array.from(user)[0];
+          data.name = user1.username;
           return data;
         });
-        var display = da.map(function (d) {
+        var display = da.map(function (d, ind) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: ind,
             name: d.name,
-            body: d.body
+            body: d.body,
+            date: d.date
           });
         });
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, display);
@@ -2611,6 +2618,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.getProduct(this.props.match.params.id);
       this.props.getCarts();
+      this.props.getUsers();
     }
   }, {
     key: "closeAlert",
@@ -2673,14 +2681,32 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChange1",
     value: function handleChange1(e) {
-      var user_id = this.props.curreUser;
-      var product_id = this.props.product.id;
-      var body = e.currentTarget.value;
-      this.setState({
-        user_id: user_id,
-        product_id: product_id,
-        body: body
-      });
+      if (this.props.currentUser) {
+        var user_id = this.props.curreUser;
+        var product_id = this.props.product.id;
+        var body = e.currentTarget.value;
+        this.setState({
+          user_id: user_id,
+          product_id: product_id,
+          body: body
+        });
+      } else {
+        this.setState({
+          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "modal-background",
+            onClick: this.closeAlert
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "modal-child",
+            onClick: function onClick(e) {
+              return e.stopPropagation();
+            }
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "alert-box"
+          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "alert-message"
+          }, "you need to sign in to comment"))))
+        });
+      }
     }
   }, {
     key: "render",

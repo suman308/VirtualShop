@@ -24,8 +24,9 @@ class ProductShow extends React.Component {
     
     componentDidMount(){
     
-    this.props.getProduct(this.props.match.params.id) 
-    this.props.getCarts()
+    this.props.getProduct(this.props.match.params.id);
+    this.props.getCarts();
+    this.props.getUsers();
     
        
     } 
@@ -72,6 +73,7 @@ class ProductShow extends React.Component {
         this.props.createComment(this.state)
     }
     handleChange1(e) {
+        if (this.props.currentUser){
         const user_id = this.props.curreUser
         const product_id = this.props.product.id
         const body = e.currentTarget.value
@@ -80,7 +82,24 @@ class ProductShow extends React.Component {
             product_id: product_id,
             body: body
         })
-    }
+    } else {
+            this.setState({
+                modal: <div className="modal-background" onClick={this.closeAlert}>
+                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                        <div className="alert-box">
+                            ! Alert !
+                        <div className="alert-message">
+                                you need to sign in to comment 
+                        </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            })
+
+}
+}
     render(){
        
          const pro = this.props.product

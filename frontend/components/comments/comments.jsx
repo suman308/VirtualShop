@@ -12,12 +12,13 @@ componentDidMount(){
     const productId = this.props.productId 
     this.props.getComments(productId)
     this.props.getUsers(); 
+    this.props.getComments();
 
 }
 
 
 render() {
-    if(this.props){
+    if(this.props.users && this.props.comments){
     const comments = this.props.comments 
     const users = this.props.users
     
@@ -25,12 +26,13 @@ render() {
         let data = new Object(); 
         data.body = comment.body; 
         let user = users.filter(user => user.id == comment.user_id)
-        data.name = user.username;
+         let user1 = Array.from(user)[0]
+        data.name = user1.username;
         return data 
     })
     
 
-    const display = da.map(d => <CommentIndex name = {d.name} body={d.body}  />)
+    const display = da.map((d, ind) => <CommentIndex  key={ind} name = {d.name} body={d.body} date={d.date}  />)
 
     return  (
         <div>
