@@ -51,7 +51,7 @@ class ProductShow extends React.Component {
             this.setState({modal: <div className="modal-background" >
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     <div className="alert-box"> 
-                     ! Alert !
+                        ALERT
                         <div className="alert-message">
                             you need to sign up to put the product to the cart
                         </div>
@@ -71,14 +71,14 @@ class ProductShow extends React.Component {
     }
     handleSubmit1(e) {
         if (this.props.currentUser){
-        e.preventDefault();
-        this.props.createComment(this.state)
-    } else {
+            
+            this.props.createComment(this.state)
+        } else {
             this.setState({
                 modal: <div className="modal-background" >
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="alert-box">
-                            ! Alert !
+                            ALERT
                         <div className="alert-message">
                                 you need to sign in to comment
                         </div>
@@ -93,7 +93,7 @@ class ProductShow extends React.Component {
 
 }
     handleChange1(e) {
-        if (this.props.currentUser){
+       
         const user_id = this.props.curreUser
         const product_id = this.props.product.id
         const body = e.currentTarget.value
@@ -102,25 +102,10 @@ class ProductShow extends React.Component {
             product_id: product_id,
             body: body
         })
-    } else {
-            this.setState({
-                modal: <div className="modal-background" >
-                    <div className="modal-child" onClick={e => e.stopPropagation()}>
-                        <div className="alert-box">
-                            ! Alert !
-                        <div className="alert-message">
-                                you need to sign in to comment 
-                        </div>
-                            <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
-                        </div>
-
-
-                    </div>
-                </div>
-            })
+   
 
 }
-}
+
     render(){
        
          const pro = this.props.product
@@ -205,9 +190,9 @@ class ProductShow extends React.Component {
                     </form>
                 <form className="form" onSubmit={this.handleSubmit1}>
 
-                    <input type="text" onChange={this.handleChange1} className="input-comment" placeholder="Write  comment...." />
+                    <input type="text"  className="input-comment" placeholder="Write  comment...." />
 
-                    <button type="submit" className="submit"> Add comment</button>
+                    <input type="submit" className="submit" value="Add Comment"/>
                 </form>
             </div>
         ) }

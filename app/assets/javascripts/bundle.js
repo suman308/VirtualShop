@@ -2659,7 +2659,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             }
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-box"
-          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, "ALERT", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
           }, "you need to sign up to put the product to the cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "modal-close-button",
@@ -2678,7 +2678,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit1",
     value: function handleSubmit1(e) {
       if (this.props.currentUser) {
-        e.preventDefault();
         this.props.createComment(this.state);
       } else {
         this.setState({
@@ -2691,7 +2690,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             }
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-box"
-          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, "ALERT", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
           }, "you need to sign in to comment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "modal-close-button",
@@ -2703,34 +2702,14 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChange1",
     value: function handleChange1(e) {
-      if (this.props.currentUser) {
-        var user_id = this.props.curreUser;
-        var product_id = this.props.product.id;
-        var body = e.currentTarget.value;
-        this.setState({
-          user_id: user_id,
-          product_id: product_id,
-          body: body
-        });
-      } else {
-        this.setState({
-          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-background"
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-child",
-            onClick: function onClick(e) {
-              return e.stopPropagation();
-            }
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "alert-box"
-          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "alert-message"
-          }, "you need to sign in to comment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-            className: "modal-close-button",
-            onClick: this.closeAlert
-          }, " Ok "))))
-        });
-      }
+      var user_id = this.props.curreUser;
+      var product_id = this.props.product.id;
+      var body = e.currentTarget.value;
+      this.setState({
+        user_id: user_id,
+        product_id: product_id,
+        body: body
+      });
     }
   }, {
     key: "render",
@@ -2840,13 +2819,13 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           onSubmit: this.handleSubmit1
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
-          onChange: this.handleChange1,
           className: "input-comment",
           placeholder: "Write  comment...."
-        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
-          className: "submit"
-        }, " Add comment")));
+          className: "submit",
+          value: "Add Comment"
+        })));
       } else {
         return null;
       }
