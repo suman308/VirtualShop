@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .main-product-show{
-    position:absolute;
-    height:100%;
+   
+    height:1000px;
     width:100%;
     display:block;
 }
@@ -112,10 +112,45 @@
     justify-content:space-evenly;
 }
 
-.comment-show-page {
-    display:block;
-    margin:10px;
-    padding:10px;
 
+.name-date-holder{
+    display:flex; 
+    width:100%;
+    border-bottom: gainsboro solid 1px;
+    margin-top:4px;
+    margin-bottom: 4px;
+  
+    
 }
-
+.comment {
+    display:block;
+    width:50%;
+    
+}
+.comment-holder{
+    display:block; 
+    width:50%;
+    
+}
+comment-name {
+    display:block;
+}
+.line {
+    display: block;
+    height: 1px;
+    width:40%; 
+    background-color: rgb(255, 254, 254);
+ 
+}
+.title-comment {
+    display:block;
+    width:100%;
+    height: 28px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+     margin:20px;
+    background-color: rgba(185, 184, 184, 0.801);
+    
+     
+     
+}

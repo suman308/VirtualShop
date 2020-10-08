@@ -10,15 +10,28 @@ class CommentIndex extends React.Component {
         const comment = this.props.body
         const date = this.props.date
         return (
-            <div>
-                <div className="comment-name">
-                   <div>
-                        <h1 className="name"> {name}</h1>
-                        <h1 className="date"> {date}</h1>
+           
+                <div > 
+                   
+
+                   <div className="name-date-holder"> 
+                    <div className="profile-pic">
+                        <img src={''} />
                     </div>
-                    <h1 className="comment"> "{comment} "</h1>
+                        <div>
+                            <h1 className="name"> {name}::</h1>
+                            <h1 className="date"> {date}</h1>
+                        </div>
+
+                        <h1 className="comment"> "{comment} "</h1>
+
+                    </div>
+
+                    <div className="comment-show-page">
+                        
+                    </div>
                 </div>
-            </div>
+           
         )
     }
 }
