@@ -1318,7 +1318,7 @@ var Comment = /*#__PURE__*/function (_React$Component) {
       var productId = this.props.productId;
       this.props.getComments(productId);
       this.props.getUsers();
-      this.props.getComments();
+      this.props.getComments(productId);
     }
   }, {
     key: "render",
