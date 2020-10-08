@@ -1190,7 +1190,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
       var name = this.props.name;
       var comment = this.props.body;
       var date = this.props.date;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "name-date-holder"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-pic"
@@ -1202,9 +1202,7 @@ var CommentIndex = /*#__PURE__*/function (_React$Component) {
         className: "date"
       }, " ", date)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "comment"
-      }, " \"", comment, " \"")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "comment-show-page"
-      }));
+      }, " \"", comment, " \""));
     }
   }]);
 

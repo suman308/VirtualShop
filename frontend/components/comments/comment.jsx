@@ -11,7 +11,7 @@ class CommentIndex extends React.Component {
         const date = this.props.date
         return (
            
-                <div > 
+             
                    
 
                    <div className="name-date-holder"> 
@@ -27,10 +27,7 @@ class CommentIndex extends React.Component {
 
                     </div>
 
-                    <div className="comment-show-page">
-                        
-                    </div>
-                </div>
+                    
            
         )
     }
