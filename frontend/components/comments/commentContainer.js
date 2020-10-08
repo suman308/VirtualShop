@@ -6,8 +6,6 @@ import Comment from './comments';
 
 const mpst = (state, ownProps) => {
     const productId = ownProps.product.id
-    console.log('printing the ownprops')
-    console.log(productId)
     const currentUser = state.session.currentUser
     
     return {

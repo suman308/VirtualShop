@@ -106,9 +106,12 @@ class ProductShow extends React.Component {
 }
     handleChange1(e) {
        
-        const user_id = this.props.curreUser
+        const user_id = this.props.currentUser.id
         const product_id = this.props.product.id
         const body = e.currentTarget.value
+        console.log(user_id)
+        console.log(product_id)
+        console.log(body)
         this.setState({
             user_id: user_id,
             product_id: product_id,
@@ -207,7 +210,7 @@ class ProductShow extends React.Component {
             </div>
                 <form onSubmit={this.handleSubmit1} className="form">
 
-                    <input type="text" className="input-comment" placeholder="Write  comment...." />
+                    <input type="text" className="input-comment" placeholder="Write  comment...." onChange={this.handleChange1}/>
 
                     <input type="submit" className="submit" value="Add Comment" />
                 </form>

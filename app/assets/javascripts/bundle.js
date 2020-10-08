@@ -1233,8 +1233,6 @@ __webpack_require__.r(__webpack_exports__);
 
 var mpst = function mpst(state, ownProps) {
   var productId = ownProps.product.id;
-  console.log('printing the ownprops');
-  console.log(productId);
   var currentUser = state.session.currentUser;
   return {
     comments: Object.values(state.entities.comments),
@@ -2719,9 +2717,12 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleChange1",
     value: function handleChange1(e) {
-      var user_id = this.props.curreUser;
+      var user_id = this.props.currentUser.id;
       var product_id = this.props.product.id;
       var body = e.currentTarget.value;
+      console.log(user_id);
+      console.log(product_id);
+      console.log(body);
       this.setState({
         user_id: user_id,
         product_id: product_id,
@@ -2845,7 +2846,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           className: "input-comment",
-          placeholder: "Write  comment...."
+          placeholder: "Write  comment....",
+          onChange: this.handleChange1
         }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "submit",
           className: "submit",

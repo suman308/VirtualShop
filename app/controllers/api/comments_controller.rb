@@ -11,7 +11,7 @@ class Api::CommentsController < ApplicationController
     end 
 
     def show 
-        @comment = Comment.find(params[:Id])
+        @comment = Comment.find(params[:id])
         if @comment 
             render :show 
         else 
