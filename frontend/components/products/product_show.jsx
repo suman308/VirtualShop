@@ -123,7 +123,7 @@ class ProductShow extends React.Component {
                                             
                                                 <ProductImagesList images={images}/>
 
-                                            <div>
+                                            <div className="comments-show-page">
                                                   <Comment/>  
                                                    
                                             </div>

@@ -82,3 +82,21 @@
     
 }
 
+.submit {
+  height:50px; 
+  width:300px;
+  background-color: rgb(12, 117, 238);
+  color: white;
+  border-radius: 6px;
+}
+.submit:hover{
+ background-color: rgb(63, 160, 240);
+}
+.submit:active{
+  background-color: blue;
+ 
+}
+
+// .comments-show-page{
+
+// }
