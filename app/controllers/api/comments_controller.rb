@@ -24,8 +24,9 @@ class Api::CommentsController < ApplicationController
     end 
 
     def create 
-       debugger
+      
         @comment = Comment.new(params_params)
+        debugger
         if @comment 
             @comment.save!
            debugger 
@@ -36,7 +37,7 @@ class Api::CommentsController < ApplicationController
         end 
     end 
     def params_params 
-        debugger 
+       
         params.require(:comment).permit(:product_id, :body, :user_id, :id)
     end 
 end
