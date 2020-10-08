@@ -4,22 +4,26 @@
     padding-left:60px;
   height: 100px; 
   width:500px; 
-font-size: 30px;
- color: rgb(214, 26, 26); 
+ font-size: 30px;
+ color: rgb(7, 7, 7); 
   background-color: white;
   text-align: center;
-
   
 }
 .alert-box {
 display: block;
-height:200px;
+height:250px;
 width:650px;
 font-size: 30px;
 color: rgb(214, 26, 26); 
 background-color: rgb(255, 255, 255);
 text-align: center;
 padding-top: 5px;
+border-radius: 20px;
 
 
+}
+.modal-close-button {
+  height:30px; 
+  width:200px;
 }

@@ -48,13 +48,14 @@ class ProductShow extends React.Component {
             this.setState({ product_id: product_id})
             
         }else {
-            this.setState({modal: <div className="modal-background" onClick={this.closeAlert}>
+            this.setState({modal: <div className="modal-background" >
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
                     <div className="alert-box"> 
                      ! Alert !
                         <div className="alert-message">
                             you need to sign up to put the product to the cart
                         </div>
+                        <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
                     </div>
                    
                     
@@ -74,13 +75,14 @@ class ProductShow extends React.Component {
         this.props.createComment(this.state)
     } else {
             this.setState({
-                modal: <div className="modal-background" onClick={this.closeAlert}>
+                modal: <div className="modal-background" >
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="alert-box">
                             ! Alert !
                         <div className="alert-message">
                                 you need to sign in to comment
                         </div>
+                        <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
                         </div>
 
 
@@ -102,13 +104,14 @@ class ProductShow extends React.Component {
         })
     } else {
             this.setState({
-                modal: <div className="modal-background" onClick={this.closeAlert}>
+                modal: <div className="modal-background" >
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="alert-box">
                             ! Alert !
                         <div className="alert-message">
                                 you need to sign in to comment 
                         </div>
+                            <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
                         </div>
 
 

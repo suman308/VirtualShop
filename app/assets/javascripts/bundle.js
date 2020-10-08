@@ -2651,8 +2651,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-background",
-            onClick: this.closeAlert
+            className: "modal-background"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "modal-child",
             onClick: function onClick(e) {
@@ -2662,7 +2661,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             className: "alert-box"
           }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
-          }, "you need to sign up to put the product to the cart"))))
+          }, "you need to sign up to put the product to the cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "modal-close-button",
+            onClick: this.closeAlert
+          }, " Ok "))))
         });
       }
     }
@@ -2681,8 +2683,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-background",
-            onClick: this.closeAlert
+            className: "modal-background"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "modal-child",
             onClick: function onClick(e) {
@@ -2692,7 +2693,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             className: "alert-box"
           }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
-          }, "you need to sign in to comment"))))
+          }, "you need to sign in to comment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "modal-close-button",
+            onClick: this.closeAlert
+          }, " Ok "))))
         });
       }
     }
@@ -2711,8 +2715,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       } else {
         this.setState({
           modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "modal-background",
-            onClick: this.closeAlert
+            className: "modal-background"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "modal-child",
             onClick: function onClick(e) {
@@ -2722,7 +2725,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             className: "alert-box"
           }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
-          }, "you need to sign in to comment"))))
+          }, "you need to sign in to comment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "modal-close-button",
+            onClick: this.closeAlert
+          }, " Ok "))))
         });
       }
     }
