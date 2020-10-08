@@ -29,3 +29,11 @@ border-radius: 10px;
   font-size:20px;
   border-radius: 10px;
 }
+.modal-close-button:active {
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+.modal-close-button:hover{
+  color: rgba(238, 238, 238, 0.589);
+  background-color: rgba(131, 127, 127, 0.63);
+}
