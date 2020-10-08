@@ -200,7 +200,7 @@ class ProductShow extends React.Component {
                     </form>
                 <div className="comment-holder">
                    <h1 className="title-comment"> Comments for the {pro.name}</h1>
-                    <Comment />
+                    <Comment product={pro}/>
 
                 </div>
                

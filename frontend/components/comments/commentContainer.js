@@ -4,10 +4,10 @@ import {getUsers} from '../../actions/user_action'
 import Comment from './comments';
 
 
-const mpst = (state) => {
+const mpst = (state, ownProps) => {
+    const productId = ownProps.product.id
     const currentUser = state.session.currentUser
-    const product = state.entities.products
-    const productId = product.Id
+    
     return {
         comments : Object.values(state.entities.comments),
         users: Object.values(state.entities.users),

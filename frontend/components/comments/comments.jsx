@@ -9,9 +9,11 @@ class Comment extends React.Component {
     }
 
 componentDidMount(){
+
     const productId = this.props.productId 
     this.props.getComments(productId)
-    this.props.getUsers(); 
+    this.props.getUsers();
+    
     this.props.getComments(productId);
 
 }

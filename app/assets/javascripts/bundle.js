@@ -1231,10 +1231,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mpst = function mpst(state) {
+var mpst = function mpst(state, ownProps) {
+  var productId = ownProps.product.id;
   var currentUser = state.session.currentUser;
-  var product = state.entities.products;
-  var productId = product.Id;
   return {
     comments: Object.values(state.entities.comments),
     users: Object.values(state.entities.users),
@@ -2836,7 +2835,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "comment-holder"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "title-comment"
-        }, " Comments for the ", pro.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_commentContainer__WEBPACK_IMPORTED_MODULE_2__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        }, " Comments for the ", pro.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comments_commentContainer__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          product: pro
+        }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit1,
           className: "form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
