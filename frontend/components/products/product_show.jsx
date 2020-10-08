@@ -69,9 +69,27 @@ class ProductShow extends React.Component {
   
     }
     handleSubmit1(e) {
+        if (this.props.currentUser){
         e.preventDefault();
         this.props.createComment(this.state)
+    } else {
+            this.setState({
+                modal: <div className="modal-background" onClick={this.closeAlert}>
+                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                        <div className="alert-box">
+                            ! Alert !
+                        <div className="alert-message">
+                                you need to sign in to comment
+                        </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            })
     }
+
+}
     handleChange1(e) {
         if (this.props.currentUser){
         const user_id = this.props.curreUser

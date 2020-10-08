@@ -2675,8 +2675,26 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleSubmit1",
     value: function handleSubmit1(e) {
-      e.preventDefault();
-      this.props.createComment(this.state);
+      if (this.props.currentUser) {
+        e.preventDefault();
+        this.props.createComment(this.state);
+      } else {
+        this.setState({
+          modal: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "modal-background",
+            onClick: this.closeAlert
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "modal-child",
+            onClick: function onClick(e) {
+              return e.stopPropagation();
+            }
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "alert-box"
+          }, "! Alert !", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "alert-message"
+          }, "you need to sign in to comment"))))
+        });
+      }
     }
   }, {
     key: "handleChange1",
