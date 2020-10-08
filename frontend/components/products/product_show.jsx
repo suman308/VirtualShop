@@ -125,7 +125,7 @@ class ProductShow extends React.Component {
          if (pro && carts) {
             const images = pro.imageUrls
         return (
-            <div>
+            <div className="main-product-show">
                {this.state.modal}
                     <form onSubmit={this.handleSubmit}>
                     <div className="inline-images-holder">
@@ -135,10 +135,7 @@ class ProductShow extends React.Component {
                                             
                                                 <ProductImagesList images={images}/>
 
-                                            <div className="comments-show-page">
-                                                  <Comment/>  
-                                                   
-                                            </div>
+                                           
                                     </div>
 
                         <div className="Outer-productInformation">
@@ -200,6 +197,10 @@ class ProductShow extends React.Component {
                         </div>
                     </div> 
                     </form>
+                <div className="comments-show-page">
+                    <Comment />
+
+                </div>
                 <form onSubmit={this.handleSubmit1} className="form">
 
                     <input type="text"  className="input-comment" placeholder="Write  comment...." />

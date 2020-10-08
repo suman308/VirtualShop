@@ -13,7 +13,7 @@ class CommentIndex extends React.Component {
             <div>
                 <div className="comment-name">
                    <div>
-                        <h1 className="name"> {name}:</h1>
+                        <h1 className="name"> {name}</h1>
                         <h1 className="date"> {date}</h1>
                     </div>
                     <h1 className="comment"> "{comment} "</h1>
