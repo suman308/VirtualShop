@@ -16,9 +16,9 @@ class ProductShow extends React.Component {
         }
 
         this.handleChange = this.handleChange.bind(this)
-        this.handleChange1 = this.handleChange.bind(this)
+        this.handleChange1 = this.handleChange1.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.handleSubmit1 = this.handleSubmit.bind(this)
+        this.handleSubmit1 = this.handleSubmit1.bind(this)
         this.closeAlert = this.closeAlert.bind(this)
     }
     
@@ -69,9 +69,8 @@ class ProductShow extends React.Component {
         this.props.addToCart(this.state); 
   
     }
-    handleSubmit1(e) {
+    handleSubmit1() {
         if (this.props.currentUser){
-            
             this.props.createComment(this.state)
         } else {
             this.setState({
@@ -188,7 +187,7 @@ class ProductShow extends React.Component {
                         </div>
                     </div> 
                     </form>
-                <form className="form" onSubmit={this.handleSubmit1}>
+                <form onSubmit={this.handleSubmit1} className="form">
 
                     <input type="text"  className="input-comment" placeholder="Write  comment...." />
 

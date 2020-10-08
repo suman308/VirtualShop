@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-
+    before_action :logged_in?, only:[ :create]
     def index 
         @comments = Comment.all
         if @comments 

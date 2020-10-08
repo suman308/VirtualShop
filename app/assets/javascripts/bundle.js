@@ -2606,9 +2606,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       body: ""
     };
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleChange1 = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleChange1 = _this.handleChange1.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleSubmit1 = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleSubmit1 = _this.handleSubmit1.bind(_assertThisInitialized(_this));
     _this.closeAlert = _this.closeAlert.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -2676,7 +2676,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "handleSubmit1",
-    value: function handleSubmit1(e) {
+    value: function handleSubmit1() {
       if (this.props.currentUser) {
         this.props.createComment(this.state);
       } else {
@@ -2817,8 +2817,8 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           className: "AddToCart",
           value: "Add to Cart"
         })))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-          className: "form",
-          onSubmit: this.handleSubmit1
+          onSubmit: this.handleSubmit1,
+          className: "form"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
           className: "input-comment",
