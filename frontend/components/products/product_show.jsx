@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
 import Comment from '../comments/commentContainer'
-
+import {signup} from '../../actions/session'
 class ProductShow extends React.Component {
     constructor(props){
         super(props)
@@ -35,7 +35,7 @@ class ProductShow extends React.Component {
     }
 
     handleChange(e) {
-        if (this.props.currentUser ){
+     
             const product_id = this.props.product.id
             const Id = this.props.currentUser.id
             const carts = Array.from(this.props.carts)
@@ -46,29 +46,33 @@ class ProductShow extends React.Component {
             this.setState({quantity : q })
             this.setState({cart_id : cart_id})
             this.setState({ product_id: product_id})
-            
-        }else {
-            this.setState({modal: <div className="modal-background" >
-                <div className="modal-child" onClick={e => e.stopPropagation()}>
-                    <div className="alert-box"> 
-                        ALERT
-                        <div className="alert-message">
-                            you need to sign up to put the product to the cart
-                        </div>
-                        <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
-                    </div>
-                   
-                    
-                </div>
-        </div> })
-        }
+       
     }
+    
     handleSubmit(e){
+        if(this.props.currentUser){
         e.preventDefault();
         
         this.props.addToCart(this.state); 
   
+    } else {
+            this.setState({
+                modal: <div className="modal-background" >
+                    <div className="modal-child" onClick={e => e.stopPropagation()}>
+                        <div className="alert-box">
+                            ALERT
+                        <div className="alert-message">
+                                you need to sign up to put the product to the cart
+                        </div>
+                            <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
+                        </div>
+
+
+                    </div>
+                </div>
+            })
     }
+}
     handleSubmit1() {
         if (this.props.currentUser){
             this.props.createComment(this.state)
