@@ -7,6 +7,7 @@ import { getCarts} from '../../actions/cart_action'
 import {getComments} from '../../actions/comment_action'
 import {getUsers} from '../../actions/user_action'
 import {createComment} from '../../actions/comment_action'
+import { openModal } from '../../actions/modal_actions'
 const mpst = (state, ownProps) => {
  
   const carts = state.entities.carts
@@ -35,7 +36,8 @@ const mapdt = dispatch => {
       addToCart : (orderList)=> dispatch(createOrderList(orderList)),
       getComments: (Id)=>dispatch(getComments(Id)), 
       getUsers: ()=> dispatch(getUsers()), 
-      createComment:(comment)=> dispatch(createComment(comment))
+      createComment:(comment)=> dispatch(createComment(comment)),
+      openModal: modal => dispatch(openModal(modal))
     }
 }
    

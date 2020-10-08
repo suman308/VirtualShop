@@ -1,7 +1,7 @@
 import React from 'react';
 import ProductImagesList from './productImagesList';
 import Comment from '../comments/commentContainer'
-import {signup} from '../../actions/session'
+
 class ProductShow extends React.Component {
     constructor(props){
         super(props)
@@ -20,6 +20,7 @@ class ProductShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleSubmit1 = this.handleSubmit1.bind(this)
         this.closeAlert = this.closeAlert.bind(this)
+        this.handleModal = this.handleModal.bind(this)
     }
     
     componentDidMount(){
@@ -39,8 +40,7 @@ class ProductShow extends React.Component {
             const product_id = this.props.product.id
             const Id = this.props.currentUser.id
             const carts = Array.from(this.props.carts)
-            const cart = carts.find(car => car.user_id == Id)
-            
+            const cart = carts.find(car => car.user_id == Id)    
             const cart_id = cart.id
             const q = parseInt(e.currentTarget.value)
             this.setState({quantity : q })
@@ -48,23 +48,32 @@ class ProductShow extends React.Component {
             this.setState({ product_id: product_id})
        
     }
-    
+    handleModal(){
+        this.closeAlert();
+        this.props.openModal('login'); 
+
+    }
     handleSubmit(e){
+        
         if(this.props.currentUser){
         e.preventDefault();
         
         this.props.addToCart(this.state); 
   
     } else {
+        
             this.setState({
                 modal: <div className="modal-background" >
                     <div className="modal-child" onClick={e => e.stopPropagation()}>
                         <div className="alert-box">
                             ALERT
                         <div className="alert-message">
-                                you need to sign up to put the product to the cart
+                                you need to login to put the product to the cart
                         </div>
-                            <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
+                            <div className="alert-button-holder">
+                                <button className="modal-close-button" onClick={this.closeAlert}> Cancel </button>
+                                <button className="modal-close-button" onClick={this.handleModal } > Log In</button>
+                            </div>
                         </div>
 
 
@@ -85,7 +94,7 @@ class ProductShow extends React.Component {
                         <div className="alert-message">
                                 you need to sign in to comment
                         </div>
-                        <button className="modal-close-button" onClick={this.closeAlert}> Ok </button>
+                        <button className="modal-close-button" onClick={this.closeAlert}> Cancel</button>
                         </div>
 
 

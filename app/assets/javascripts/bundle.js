@@ -2559,7 +2559,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _productImagesList__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./productImagesList */ "./frontend/components/products/productImagesList.jsx");
 /* harmony import */ var _comments_commentContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../comments/commentContainer */ "./frontend/components/comments/commentContainer.js");
-/* harmony import */ var _actions_session__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/session */ "./frontend/actions/session.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2581,7 +2580,6 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
 
 
 
@@ -2612,6 +2610,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleSubmit1 = _this.handleSubmit1.bind(_assertThisInitialized(_this));
     _this.closeAlert = _this.closeAlert.bind(_assertThisInitialized(_this));
+    _this.handleModal = _this.handleModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2651,6 +2650,12 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "handleModal",
+    value: function handleModal() {
+      this.closeAlert();
+      this.props.openModal('login');
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       if (this.props.currentUser) {
@@ -2669,10 +2674,15 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
             className: "alert-box"
           }, "ALERT", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "alert-message"
-          }, "you need to sign up to put the product to the cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          }, "you need to login to put the product to the cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "alert-button-holder"
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "modal-close-button",
             onClick: this.closeAlert
-          }, " Ok "))))
+          }, " Cancel "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "modal-close-button",
+            onClick: this.handleModal
+          }, " Log In")))))
         });
       }
     }
@@ -2697,7 +2707,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
           }, "you need to sign in to comment"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "modal-close-button",
             onClick: this.closeAlert
-          }, " Ok "))))
+          }, " Cancel"))))
         });
       }
     }
@@ -2859,6 +2869,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_cart_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/cart_action */ "./frontend/actions/cart_action.js");
 /* harmony import */ var _actions_comment_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/comment_action */ "./frontend/actions/comment_action.js");
 /* harmony import */ var _actions_user_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/user_action */ "./frontend/actions/user_action.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -2906,6 +2918,9 @@ var mapdt = function mapdt(dispatch) {
     },
     createComment: function createComment(comment) {
       return dispatch(Object(_actions_comment_action__WEBPACK_IMPORTED_MODULE_5__["createComment"])(comment));
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_7__["openModal"])(modal));
     }
   };
 };
