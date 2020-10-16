@@ -39,10 +39,10 @@ class Greeting extends React.Component {
                         
                             <Link to='/reload'  className="Virtual-logo" >
                             </Link>
-                        <br/>
+                       
                             <Search />
                         
-                        
+                        <br />
 
                       <h2 className="greeting">Hello !! {currentUser.username}</h2>
                       
