@@ -44,10 +44,10 @@ class Greeting extends React.Component {
                         
                         <br />
 
-                      <h2 className="greeting">Hello !! {currentUser.username}</h2>
                       
                         <div className="ls-inline-container" >
-                          
+                            <h2 className="greeting">Hello {currentUser.username}</h2>
+
                                 <div className="ls-inlineCT" >
                                     <Link to='/cart'  > 
                                     <div className="Cart-Icon" onClick={this.handleClick}>
