@@ -28,5 +28,8 @@ def create
         render json: @rating.errorrs.full_messages, status:422 
     end 
 end 
+def params_params 
+    params.require(:rating).permit(:product_id, :rating, :user_id, :id)
+end 
 end 
 
