@@ -26,13 +26,13 @@ class Api::CommentsController < ApplicationController
     def create 
       
         @comment = Comment.new(params_params)
-        debugger
+       
         if @comment 
             @comment.save!
-           debugger 
+          
             render :show
         else 
-           debugger 
+          
             render json: @comment.errorrs.full_messages, status: 422 
         end 
     end 
