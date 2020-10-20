@@ -27,6 +27,7 @@ class User < ApplicationRecord
     has_one :store, foreign_key: :owner_id, class_name: :Store
     has_one :cart, foreign_key: :user_id, class_name: :Cart 
     has_many :comments, foreign_key: :user_id, class_name: :Comment
+    has_many :ratings, foreign_key: :user_id, class_name: :Rating
     has_many :order_product, 
     through: :orderlist,
     source: :products

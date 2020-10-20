@@ -27,6 +27,8 @@ class Product < ApplicationRecord
     belongs_to :store, foreign_key: :store_id, class_name: :Store
     has_many_attached :images
     has_many :comments, foreign_key: :product_id, class_name: :Comment
+    has_many :ratings, foreign_key: :product_id, class_name: :Rating 
+    
     def self.search_name(input)
         searched = self.where("lower(name) like ?", "%"+input.downcase+"%")
         if searched != []
