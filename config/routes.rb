@@ -11,7 +11,7 @@ Rails.application.routes.draw do
       resources :stores, only:[:show, :edit, :update]
       resources :carts, only:[ :index, :create, :show, :edit, :update, :destroy]
       resources :orderlists, only:[ :index, :create, :show, :edit, :update, :destroy]
-
+      resources :ratings, only:[:index, :create, :show]
       get '/search', :to => 'searchs#index', :as => 'search_name' 
 
       get '/category', :to => 'searchs#index', :as => 'search_category'
