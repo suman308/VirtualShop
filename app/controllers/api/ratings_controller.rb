@@ -1,3 +1,6 @@
+class Api::CommentsController < ApplicationController
+   before_action :logged_in?, only:[  :create]
+
 def index 
     @ratings = Rating.where("product_id = ?", params[:productId])
     if @ratings 
@@ -17,7 +20,13 @@ def show
 end 
 
 def create 
-    @rating = Rating.new(params_params)
+    @rating = Rating.new(params_params) 
+    if @rating 
+        @rating.save! 
+        render :show 
+    else 
+        render json: @rating.errorrs.full_messages, status:422 
+    end 
 end 
-
+end 
 
