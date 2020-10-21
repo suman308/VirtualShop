@@ -10,7 +10,7 @@ class Search extends React.Component {
         }
         this.handleSubmit= this.handleSubmit.bind(this)
         this.handleChange= this.handleChange.bind(this)
-        this.handleFocus = this.handleFocus.bind(this)
+       
     }
     handleChange(e){
        const query = (e.target.value).trim()
@@ -19,9 +19,7 @@ class Search extends React.Component {
            
        })
     }
-    handleFocus(){
-      this.setState({name: "Search for the items... "})
-    }
+   
     handleSubmit(e){
         e.preventDefault()
         this.props.clearProducts();

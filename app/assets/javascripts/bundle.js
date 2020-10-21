@@ -3027,7 +3027,6 @@ var Search = /*#__PURE__*/function (_React$Component) {
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    _this.handleFocus = _this.handleFocus.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3037,13 +3036,6 @@ var Search = /*#__PURE__*/function (_React$Component) {
       var query = e.target.value.trim();
       this.setState({
         name: query
-      });
-    }
-  }, {
-    key: "handleFocus",
-    value: function handleFocus() {
-      this.setState({
-        name: "Search for the items... "
       });
     }
   }, {

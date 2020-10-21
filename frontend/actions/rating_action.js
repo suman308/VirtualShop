@@ -1,32 +1,32 @@
 import * as AllUtil from '../utils/comments'
 import { receiveErrors } from './product_actions';
 
-export const RECEIVE_ALL_COMMENTS = 'RECEIVE_ALL_COMMENTS';
-export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
-export const UPDATE_COMMENT = 'UPDATE_COMMENT';
-export const REMOVE_COMMENT = 'REMOVE_COMMENT';
-export const REMOVE_ERRORS = 'REMOVE_ERRORS';
-export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-export const CLEAR_COMMENTS = "CLEAR_COMMENTS";
+export const RECEIVE_ALL_RATINGS = 'RECEIVE_ALL_RATINGS';
+export const RECEIVE_RATING = 'RECEIVE_RATING';
+export const UPDATE_RATING = 'UPDATE_RATING';
+export const REMOVE_RATING = 'REMOVE_RATING';
+export const REMOVE_RATING = 'REMOVE_RATING';
+export const RECEIVE_RATING = 'RECEIVE_RATING ';
+export const CLEAR_RATINGS = "CLEAR_RATINGS";
 
-export const receiveComments = (comments) => {
+export const receiveRatings = (ratings) => {
     return {
-        type: RECEIVE_ALL_COMMENTS,
-        comments
+        type: RECEIVE_ALL_RATINGS,
+        ratings
     }
 }
 
-export const receiveComment = (comment) => {
+export const receiveRating = (rating) => {
     return {
-        type: RECEIVE_COMMENT,
-        comment
+        type: RECEIVE_RATING,
+        rating
     }
 }
 
-export const removeComment = (commentId) => {
+export const removeRating = (ratingId) => {
     return {
-        type: REMOVE_COMMENT,
-        commentId
+        type: REMOVE_RATING,
+        ratingId
     }
 }
 export const clearComments = () => {
