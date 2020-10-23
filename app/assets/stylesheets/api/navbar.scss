@@ -11,7 +11,7 @@
     display: block;
     height:24px;
     width:84px;
-    color: rgb(7, 6, 7);
+     color: rgb(250, 173, 57);
     margin-bottom:8px;
     margin-top:8px;
     font-size: 18px;
@@ -23,5 +23,6 @@
 }
 .Category:hover{ 
 display: block;
- color: white;
+ color: rgb(51, 48, 48);
+ border-right: solid rgb(187, 181, 181) 2px;
 }
